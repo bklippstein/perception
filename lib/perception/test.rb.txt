@@ -1,0 +1,115 @@
+# ruby encoding: utf-8
+# ü
+require 'test/unit/util/backtracefilter'
+require 'kyanite/general/kernel'
+
+module Perception 
+  module BacktraceFilter # :nodoc:
+  
+        CALLER_RE = /(.*):([0-9]+)(:in \`(.*)')?/
+        def parse_caller( input )
+          input.collect do |c|
+            captures = CALLER_RE.match(c)
+            [captures[1], captures[2], captures[4]]
+          end
+        end
+        
+        def parse_test_name( input )
+          test_full_name = input.split('(')
+          test_class     = test_full_name[1][0..-2]
+          test_method    = test_full_name[0]
+          [test_class, test_method]
+        end
+
+  
+        def filter_backtrace_perception(backtrace, header)
+          result = filter_backtrace(backtrace, nil)
+          result = result.collect { |zeile| zeile.gsub(RUBYDIR,'RUBYDIR').gsub($0, "###  #{$0}" ) }
+          result = parse_caller(result).collect {  |file, line, method| 
+            [ File.dirname(file), 
+              File.basename(file), 
+              line,
+              method ] unless method =~ /^assert_/
+          }
+          result.compact!
+          result.unshift header                    if header 
+        # result.unshift %w{DIR FILE METHOD LINE}  unless result.size == 1
+          result = result.inspect_see.
+            mask( :with_brackets  => true,
+                  :level_start    => 0,
+                  :level_end      => 1,
+                  :pattern     => /\[/                                 
+                ) {|s| s.tr('[]',' ')}  
+
+          result = result.
+            mask( :with_brackets  => true,
+                  :level_start    => 0,
+                  :level_end      => 1,
+                  :pattern     => /\'/                                 
+                ) {|s| s.tr("',",' ')}  
+                
+          result 
+        end 
+  
+ end
+end
+  
+
+module Test       # :nodoc: 
+  module Unit     # :nodoc: 
+  
+  
+    class Error   # :nodoc:
+      include Perception::BacktraceFilter
+      def long_display
+        test_class, test_method = parse_test_name(@test_name)      
+        header = ['', test_class, '', '']
+        backtrace = filter_backtrace_perception(@exception.backtrace, header) 
+        "Error:    #{message.tr("`","'")}\n#{backtrace}\n\n\n\n"
+      end      
+    end # class
+    
+    
+    class Failure # :nodoc:
+      include Perception::BacktraceFilter    
+      include Util::BacktraceFilter    
+      def long_display
+        test_class, test_method = parse_test_name(@test_name)     
+        header = ['', test_class, '', '']     
+        backtrace = filter_backtrace_perception(location, header)      
+        "Failure:  #{message.tr("`","'")}\n#{backtrace}\n\n\n\n"
+      end    
+    end # class
+  
+  
+  end
+end    
+      
+      
+      
+      
+
+module Perception
+  module Assertions  
+   
+    def assert_equal(expected, actual, message=nil) # :nodoc:
+      if expected.kind_of?(Float)  &&  actual.kind_of?(Float)   
+        full_message = build_message(message, "<?> with some delta expected but was\n#{' '*15}<?>\n", expected, actual)
+        delta = 0.0000000000001
+        assert_block(full_message) { (expected - actual).abs <= delta }      
+      else
+        full_message = build_message(message, "<?> expected but was\n#{' '*15}<?>\n", expected, actual)
+        assert_block(full_message) { expected == actual }    
+      end
+    end  
+    
+  end
+end          
+
+module Test           # :nodoc: 
+  module Unit         # :nodoc: 
+    class TestCase    # :nodoc: 
+      include Perception::Assertions
+    end
+  end
+end           

@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf8" http-equiv="Content-Type">
+
+<title>class Object - Perception 0.3.0</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/perception/logging.rb
+    <li>lib/perception/perception_main.rb
+    <li>lib/perception/perception_private.rb
+    <li>lib/perception/string_spread.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">BasicObject
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Config</span>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-inspect_or_to_s">#inspect_or_to_s</a>
+    
+    <li><a href="#method-i-inspect_pp">#inspect_pp</a>
+    
+    <li><a href="#method-i-inspect_see">#inspect_see</a>
+    
+    <li><a href="#method-i-log">#log</a>
+    
+    <li><a href="#method-i-rawlog">#rawlog</a>
+    
+    <li><a href="#method-i-see">#see</a>
+    
+    <li><a href="#method-i-see_each">#see_each</a>
+    
+    <li><a href="#method-i-see_flash">#see_flash</a>
+    
+    <li><a href="#method-i-see_pp">#see_pp</a>
+    
+    <li><a href="#method-i-see_print">#see_print</a>
+    
+    <li><a href="#method-i-see_puts">#see_puts</a>
+    
+    <li><a href="#method-i-see_temp">#see_temp</a>
+    
+    <li><a href="#method-i-seee">#seee</a>
+    
+    <li><a href="#method-i-wait_for_key">#wait_for_key</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./History_txt.html">History</a>
+  
+    <li class="file"><a href="./License_txt.html">License</a>
+  
+    <li class="file"><a href="./README_txt.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Perception.html">Perception</a>
+  
+    <li><a href="./Perception/NumericI.html">Perception::NumericI</a>
+  
+    <li><a href="./Perception/SeeSession.html">Perception::SeeSession</a>
+  
+    <li><a href="./Perception/StringSpreadI.html">Perception::StringSpreadI</a>
+  
+    <li><a href="./Perception/TimeI.html">Perception::TimeI</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./PPP.html">PPP</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Object</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-inspect_or_to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inspect_or_to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Liefert entweder inspect oder to_s, je nach Klassenzugehörigkeit Explizite
+Typabfrage ohne duck typing!</p>
+          
+
+          
+          <div class="method-source-code" id="inspect_or_to_s-source">
+            <pre><span class="ruby-comment"># File lib/perception/perception_private.rb, line 209</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect_or_to_s</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-string">'empty'</span>            <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span> <span class="ruby-operator">==</span> <span class="ruby-string">''</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_s</span>          <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">inspect_see</span>   <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Time</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">inspect_see</span>   <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Numeric</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">inspect_see</span>   <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Set</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">inspect</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- inspect_or_to_s-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- inspect_or_to_s-method -->
+
+    
+      <div id="method-i-inspect_pp" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inspect_pp</span><span
+            class="method-args">( wrap = 200 )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Like inspect, but uses the PrettyPrint library.  Returns the output of pp
+as String.</p>
+          
+
+          
+          <div class="method-source-code" id="inspect_pp-source">
+            <pre><span class="ruby-comment"># File lib/perception/perception_main.rb, line 271</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect_pp</span>( <span class="ruby-identifier">wrap</span> = <span class="ruby-value">200</span> )
+  <span class="ruby-identifier">result</span> = <span class="ruby-string">''</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">PPP</span><span class="ruby-operator">::</span><span class="ruby-identifier">pp</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">result</span>, <span class="ruby-identifier">wrap</span>) 
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- inspect_pp-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- inspect_pp-method -->
+
+    
+      <div id="method-i-inspect_see" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inspect_see</span><span
+            class="method-args">( wrap = 200 )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="Object.html#method-i-inspect_pp">#inspect_pp</a> with
+beautification</p>
+          
+
+          
+          <div class="method-source-code" id="inspect_see-source">
+            <pre><span class="ruby-comment"># File lib/perception/perception_main.rb, line 278</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect_see</span>( <span class="ruby-identifier">wrap</span> = <span class="ruby-value">200</span> )
+  <span class="ruby-identifier">result</span> = <span class="ruby-string">''</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-constant">PPP</span><span class="ruby-operator">::</span><span class="ruby-identifier">pp</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">result</span>, <span class="ruby-identifier">wrap</span>)  <span class="ruby-comment"># normal prettyprint</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-constant">PPP</span>.<span class="ruby-identifier">beautify</span>(<span class="ruby-identifier">result</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- inspect_see-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- inspect_see-method -->
+
+    
+      <div id="method-i-log" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">log</span><span
+            class="method-args">(input=:kein_input, *rest)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Same as method see, but outputs in logfile only</p>
+          
+
+          
+          <div class="method-source-code" id="log-source">
+            <pre><span class="ruby-comment"># File lib/perception/logging.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">log</span>(<span class="ruby-identifier">input</span>=<span class="ruby-value">:kein_input</span>, *<span class="ruby-identifier">rest</span>)
+  <span class="ruby-identifier">out_bak</span> = <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">out</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">out</span>=[<span class="ruby-value">:log</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">rest</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">see</span> <span class="ruby-identifier">input</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">process_print</span>( ( [<span class="ruby-identifier">input</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">rest</span>), <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:multi</span> )
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">out</span>=<span class="ruby-identifier">out_bak</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- log-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- log-method -->
+
+    
+      <div id="method-i-rawlog" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rawlog</span><span
+            class="method-args">(input='')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>raw output into logfile</p>
+          
+
+          
+          <div class="method-source-code" id="rawlog-source">
+            <pre><span class="ruby-comment"># File lib/perception/logging.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rawlog</span>(<span class="ruby-identifier">input</span>=<span class="ruby-string">''</span>)
+  <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">logger</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">input</span>)       
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- rawlog-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- rawlog-method -->
+
+    
+      <div id="method-i-see" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">see</span><span
+            class="method-args">(input=:kein_input, *rest)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This is the main method. It prints out objects. See the demo.</p>
+          
+
+          
+          <div class="method-source-code" id="see-source">
+            <pre><span class="ruby-comment"># File lib/perception/perception_main.rb, line 167</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">see</span>(<span class="ruby-identifier">input</span>=<span class="ruby-value">:kein_input</span>, *<span class="ruby-identifier">rest</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">input</span> <span class="ruby-operator">==</span> <span class="ruby-value">:kein_input</span>  
+    <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">process_print</span>( <span class="ruby-string">&quot;\n&quot;</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:puts</span> )
+    <span class="ruby-keyword">return</span> <span class="ruby-string">''</span>
+  <span class="ruby-keyword">end</span>        
+  
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">process_print</span>( ( [<span class="ruby-identifier">input</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">rest</span>), <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:multi</span> )    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">rest</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">see_puts</span>(<span class="ruby-identifier">input</span>)              <span class="ruby-keyword">if</span> <span class="ruby-identifier">input</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">see_pp</span>(<span class="ruby-identifier">input</span>)                <span class="ruby-keyword">if</span> <span class="ruby-identifier">input</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Hash</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">see_puts</span>(<span class="ruby-identifier">input</span>)              <span class="ruby-keyword">unless</span> (<span class="ruby-identifier">input</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:compact</span>)  <span class="ruby-operator">||</span>  <span class="ruby-identifier">input</span>.<span class="ruby-identifier">instance_variables</span> )   <span class="ruby-comment"># Ordinäre Objekte macht puts</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">see_pp</span>(<span class="ruby-identifier">input</span>)        <span class="ruby-comment"># Den Rest macht pp    </span>
+                          
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- see-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- see-method -->
+
+    
+      <div id="method-i-see_each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">see_each</span><span
+            class="method-args">(input)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="see_each-source">
+            <pre><span class="ruby-comment"># File lib/perception/perception_main.rb, line 183</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">see_each</span>(<span class="ruby-identifier">input</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contentclass</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Array</span>
+    <span class="ruby-identifier">see_puts</span> <span class="ruby-string">'['</span>
+    <span class="ruby-identifier">input</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">elt</span><span class="ruby-operator">|</span> <span class="ruby-identifier">see</span> <span class="ruby-identifier">elt</span>} 
+    <span class="ruby-identifier">see_puts</span><span class="ruby-string">']'</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">input</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">elt</span><span class="ruby-operator">|</span> <span class="ruby-identifier">see</span> <span class="ruby-identifier">elt</span>}     
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- see_each-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- see_each-method -->
+
+    
+      <div id="method-i-see_flash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">see_flash</span><span
+            class="method-args">(input=:kein_input, alternativtext=' ', times=6)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Shows two informations in one line. See the demo.</p>
+          
+
+          
+          <div class="method-source-code" id="see_flash-source">
+            <pre><span class="ruby-comment"># File lib/perception/perception_main.rb, line 208</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">see_flash</span>(<span class="ruby-identifier">input</span>=<span class="ruby-value">:kein_input</span>, <span class="ruby-identifier">alternativtext</span>=<span class="ruby-string">' '</span>, <span class="ruby-identifier">times</span>=<span class="ruby-value">6</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">input</span> <span class="ruby-operator">==</span> <span class="ruby-value">:kein_input</span>  
+    <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">delayed_newlines</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>   
+    <span class="ruby-keyword">return</span> <span class="ruby-string">''</span>
+  <span class="ruby-keyword">end</span>        
+  <span class="ruby-identifier">see_puts</span> <span class="ruby-identifier">input</span>
+  <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">flash!</span>(<span class="ruby-identifier">alternativtext</span>,<span class="ruby-identifier">times</span>)   <span class="ruby-keyword">if</span> <span class="ruby-identifier">input</span> <span class="ruby-operator">!=</span> <span class="ruby-value">:kein_input</span>     
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- see_flash-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- see_flash-method -->
+
+    
+      <div id="method-i-see_pp" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">see_pp</span><span
+            class="method-args">(input=:kein_input)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Like see, but forces behavior like the originally pp method.</p>
+          
+
+          
+          <div class="method-source-code" id="see_pp-source">
+            <pre><span class="ruby-comment"># File lib/perception/perception_main.rb, line 239</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">see_pp</span>(<span class="ruby-identifier">input</span>=<span class="ruby-value">:kein_input</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">input</span> <span class="ruby-operator">==</span> <span class="ruby-value">:kein_input</span>  
+    <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">delayed_newlines</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>   
+    <span class="ruby-keyword">return</span> <span class="ruby-string">''</span>
+  <span class="ruby-keyword">end</span>   
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">process_print</span>( <span class="ruby-identifier">input</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:pp</span> )
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- see_pp-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- see_pp-method -->
+
+    
+      <div id="method-i-see_print" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">see_print</span><span
+            class="method-args">(input=$_)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Like see, but forces behavior like the originally print method.</p>
+
+<p>So you have fully control over your newlines.  Note: If you use “n”, <a
+href="Object.html#method-i-see">#see</a> will indent it. See
+SEE_LEVEL_START.</p>
+          
+
+          
+          <div class="method-source-code" id="see_print-source">
+            <pre><span class="ruby-comment"># File lib/perception/perception_main.rb, line 233</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">see_print</span>(<span class="ruby-identifier">input</span>=<span class="ruby-identifier">$_</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">process_print</span>( <span class="ruby-identifier">input</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:print</span> )
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- see_print-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- see_print-method -->
+
+    
+      <div id="method-i-see_puts" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">see_puts</span><span
+            class="method-args">(input=:kein_input)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Like see, but forces behavior like the originally puts method.  So you get
+a newline after every print. Note: All newlines are delayed. This offers
+you to undo the print.</p>
+          
+
+          
+          <div class="method-source-code" id="see_puts-source">
+            <pre><span class="ruby-comment"># File lib/perception/perception_main.rb, line 221</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">see_puts</span>(<span class="ruby-identifier">input</span>=<span class="ruby-value">:kein_input</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">input</span> <span class="ruby-operator">==</span> <span class="ruby-value">:kein_input</span>  
+    <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">delayed_newlines</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>   
+    <span class="ruby-keyword">return</span> <span class="ruby-string">''</span>
+  <span class="ruby-keyword">end</span>   
+  <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">process_print</span>( <span class="ruby-identifier">input</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:puts</span> )
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- see_puts-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- see_puts-method -->
+
+    
+      <div id="method-i-see_temp" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">see_temp</span><span
+            class="method-args">(input=:kein_input)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Like see, but temporary print.  The following print will overwrite it. 
+Note: Indention will get lost.</p>
+          
+
+          
+          <div class="method-source-code" id="see_temp-source">
+            <pre><span class="ruby-comment"># File lib/perception/perception_main.rb, line 197</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">see_temp</span>(<span class="ruby-identifier">input</span>=<span class="ruby-value">:kein_input</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">input</span> <span class="ruby-operator">==</span> <span class="ruby-value">:kein_input</span>  
+    <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">delayed_newlines</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>   
+    <span class="ruby-keyword">return</span> <span class="ruby-string">''</span>
+  <span class="ruby-keyword">end</span>          
+  <span class="ruby-identifier">see_print</span> <span class="ruby-identifier">input</span>
+  <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">temp!</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- see_temp-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- see_temp-method -->
+
+    
+      <div id="method-i-seee" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">seee</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the SeeSession-<a href="Object.html">Object</a>. Offers the
+following methods:</p>
+<ul><li>
+<p>seee.indent!</p>
+</li><li>
+<p>seee.left!</p>
+</li><li>
+<p>seee.clear!</p>
+</li><li>
+<p>seee.slow!</p>
+</li><li>
+<p>seee.fast!</p>
+</li><li>
+<p>seee.temp!</p>
+</li><li>
+<p>seee.flash!</p>
+</li><li>
+<p>seee.bench</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="seee-source">
+            <pre><span class="ruby-comment"># File lib/perception/perception_main.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">seee</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Perception</span><span class="ruby-operator">::</span><span class="ruby-constant">SeeSession</span>.<span class="ruby-identifier">instance</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- seee-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- seee-method -->
+
+    
+      <div id="method-i-wait_for_key" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">wait_for_key</span><span
+            class="method-args">(message='Press any key')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Waits for you / the user to press a key. Returns the key. Display it with
+#{wait_for_key.chr.inspect}. Note: Indention will get lost.</p>
+          
+
+          
+          <div class="method-source-code" id="wait_for_key-source">
+            <pre><span class="ruby-comment"># File lib/perception/perception_main.rb, line 256</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">wait_for_key</span>(<span class="ruby-identifier">message</span>=<span class="ruby-string">'Press any key'</span>)
+  <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">clear_indent!</span>
+  <span class="ruby-comment">#seee.level -= 1 # Zählt nicht als Level</span>
+  <span class="ruby-identifier">see_temp</span> <span class="ruby-identifier">message</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">HighLine</span>)
+    <span class="ruby-identifier">require</span> <span class="ruby-string">'highline/import'</span>
+    <span class="ruby-constant">HighLine</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:public</span>, <span class="ruby-value">:get_character</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">input</span> = <span class="ruby-constant">HighLine</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">input</span>.<span class="ruby-identifier">get_character</span>  
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- wait_for_key-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- wait_for_key-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

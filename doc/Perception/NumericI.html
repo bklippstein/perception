@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf8" http-equiv="Content-Type">
+
+<title>module Perception::NumericI - Perception 0.3.0</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/perception/numeric.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-inspect_see">#inspect_see</a>
+    
+    <li><a href="#method-i-significant">#significant</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../History_txt.html">History</a>
+  
+    <li class="file"><a href="../License_txt.html">License</a>
+  
+    <li class="file"><a href="../README_txt.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Perception.html">Perception</a>
+  
+    <li><a href="../Perception/NumericI.html">Perception::NumericI</a>
+  
+    <li><a href="../Perception/SeeSession.html">Perception::SeeSession</a>
+  
+    <li><a href="../Perception/StringSpreadI.html">Perception::StringSpreadI</a>
+  
+    <li><a href="../Perception/TimeI.html">Perception::TimeI</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../PPP.html">PPP</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Perception::NumericI</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-inspect_see" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inspect_see</span><span
+            class="method-args">(options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Formatiert eine Zahl so, dass sie leicht menschenlesbar wird:</p>
+<ul><li>
+<p>Quasi-rechtsbündig (mit dem Komma als Bezugspunkt, abhängig von der
+Klassenzugehörigkeit der Zahl)</p>
+</li><li>
+<p>vorangestellte Währungszeichen oder angefügte Einheiten, ohne die
+Bündigkeit zu zerstören</p>
+</li><li>
+<p>intelligente Ausweichstrategie, wenn der vorgegebene Platz nicht ausreicht</p>
+</li><li>
+<p>nur die signifikanten Stellen werden angegeben, damit die Größenordnung
+leicht erfasst werden kann</p>
+</li><li>
+<p>Tausendertrennzeichen wenn nötig</p>
+</li></ul>
+
+<p>Optionen sind:</p>
+<ul><li>
+<p>:precision   Wieviel signifikante Stellen sollen ausgegeben werden?
+Default: 3</p>
+</li><li>
+<p>:space_l     Wieviel Platz wird vor dem Komma eingeplant?</p>
+</li><li>
+<p>:space_r     wie :space, bezieht sich aber nur auf den Nachkommateil. Wird
+abhängig davon vorbelegt, ob self Integer oder Float ist.</p>
+</li><li>
+<p>:separator   Kommazeichen</p>
+</li><li>
+<p>:delimiter   Tausendertrennzeichen</p>
+</li><li>
+<p>:pre         wird direkt vor der Zahl ausgegeben  (z.B. €)</p>
+</li><li>
+<p>:past        wird direkt nach der Zahl ausgegeben (z.B. %)</p>
+</li></ul>
+
+<p>Für eine schlichte linksbündige Ausgabe reicht die Methode #significant!</p>
+
+<p>vgl. <a
+href="http://de.wikipedia.org/wiki/Wikipedia:Schreibweise_von_Zahlen">de.wikipedia.org/wiki/Wikipedia:Schreibweise_von_Zahlen</a></p>
+          
+
+          
+          <div class="method-source-code" id="inspect_see-source">
+            <pre><span class="ruby-comment"># File lib/perception/numeric.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect_see</span>(<span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">precision</span> =         <span class="ruby-identifier">options</span>[<span class="ruby-value">:precision</span>]   <span class="ruby-operator">||</span>  <span class="ruby-value">3</span>
+  <span class="ruby-identifier">pre</span>  =              <span class="ruby-identifier">options</span>[<span class="ruby-value">:pre</span>]         <span class="ruby-operator">||</span>  <span class="ruby-string">''</span>
+  <span class="ruby-identifier">past</span>  =             <span class="ruby-identifier">options</span>[<span class="ruby-value">:past</span>]        <span class="ruby-operator">||</span>  <span class="ruby-string">''</span>      
+  <span class="ruby-identifier">space_l</span> =           <span class="ruby-identifier">options</span>[<span class="ruby-value">:space_l</span>]     <span class="ruby-operator">||</span>  <span class="ruby-value">9</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">pre</span>.<span class="ruby-identifier">size</span>  
+  <span class="ruby-identifier">space_r</span> =           <span class="ruby-identifier">options</span>[<span class="ruby-value">:space_r</span>]     <span class="ruby-operator">||</span>  (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Integer</span>) <span class="ruby-operator">?</span>  (<span class="ruby-value">0</span><span class="ruby-operator">+</span><span class="ruby-identifier">past</span>.<span class="ruby-identifier">size</span>) <span class="ruby-operator">:</span> (<span class="ruby-value">5</span><span class="ruby-operator">+</span><span class="ruby-identifier">past</span>.<span class="ruby-identifier">size</span>))    <span class="ruby-comment"># Integer oder Float?</span>
+  <span class="ruby-identifier">separator</span> =         <span class="ruby-identifier">options</span>[<span class="ruby-value">:separator</span>]   <span class="ruby-operator">||</span>  <span class="ruby-string">','</span>
+  <span class="ruby-identifier">delimiter</span>  =        <span class="ruby-identifier">options</span>[<span class="ruby-value">:delimiter</span>]   <span class="ruby-operator">||</span>  <span class="ruby-string">' '</span>
+
+  
+  <span class="ruby-comment"># auf die signifikanten Stellen reduzieren und aufteilen</span>
+  <span class="ruby-identifier">zusammengestrichen</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">significant</span>(<span class="ruby-identifier">precision</span>)
+  <span class="ruby-identifier">zahlenteile</span> = <span class="ruby-identifier">zusammengestrichen</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'.'</span>)
+  
+  <span class="ruby-comment"># Tausendertrennzeichen und Pre</span>
+  <span class="ruby-identifier">zahlenteile</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">%r(\d)(?=(\d\d\d)+(?!\d))/</span>, <span class="ruby-node">&quot;\\1#{delimiter}&quot;</span>)    <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">abs</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">10000</span>
+  <span class="ruby-identifier">zahlenteile</span>[<span class="ruby-value">0</span>] = <span class="ruby-identifier">pre</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">zahlenteile</span>[<span class="ruby-value">0</span>]                                 <span class="ruby-keyword">unless</span> <span class="ruby-identifier">pre</span>.<span class="ruby-identifier">empty?</span>
+  
+  <span class="ruby-comment"># übereinanderstehende Formatierung </span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">zahlenteile</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">rjust</span>(<span class="ruby-identifier">space_l</span>) 
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">zahlenteile</span>[<span class="ruby-value">1</span>]
+    
+    <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> (<span class="ruby-identifier">separator</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">zahlenteile</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">past</span>).<span class="ruby-identifier">ljust</span>( <span class="ruby-identifier">space_r</span> )
+    <span class="ruby-comment">#result += separator + (zahlenteile[1]).ljust( space_r-1 )</span>
+  <span class="ruby-keyword">else</span>      
+    <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">past</span> <span class="ruby-operator">+</span> (<span class="ruby-string">' '</span> * (<span class="ruby-identifier">space_r</span><span class="ruby-operator">-</span><span class="ruby-identifier">past</span>.<span class="ruby-identifier">size</span>)) 
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># zu großen Platzbedarf korrigieren</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">space_l</span><span class="ruby-operator">+</span><span class="ruby-identifier">space_r</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">space_l</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">zahlenteile</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">size</span>) <span class="ruby-operator">&lt;</span> ((<span class="ruby-identifier">space_r</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>) <span class="ruby-operator">-</span> <span class="ruby-identifier">zahlenteile</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">size</span>)
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">strip</span>.<span class="ruby-identifier">ljust</span>(<span class="ruby-identifier">space_l</span><span class="ruby-operator">+</span><span class="ruby-identifier">space_r</span>)<span class="ruby-comment">#.gsub(/ /,'_')  # linksbündig ausgeben</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">strip</span>.<span class="ruby-identifier">rjust</span>(<span class="ruby-identifier">space_l</span><span class="ruby-operator">+</span><span class="ruby-identifier">space_r</span>)<span class="ruby-comment">#.gsub(/ /,'_')  # rechtsbündig ausgeben </span>
+    <span class="ruby-keyword">end</span>
+    
+  <span class="ruby-comment"># Platz reicht aus  </span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span><span class="ruby-comment">#.gsub(/ /,'_')</span>
+  <span class="ruby-keyword">end</span>
+   
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- inspect_see-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- inspect_see-method -->
+
+    
+      <div id="method-i-significant" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">significant</span><span
+            class="method-args">( precision = 3)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Streicht überflüssige Stellen weg. Wandelt in Integer um, wenn das ohne
+Informationsverlust möglich ist. Überflüssig sind Stellen, die</p>
+<ul><li>
+<p>jenseits der Messprecision liegen oder</p>
+</li><li>
+<p>nicht von Menschen wahrgenommen werden (stattdessen stören sie die
+Rezeption)</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="significant-source">
+            <pre><span class="ruby-comment"># File lib/perception/numeric.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">significant</span>( <span class="ruby-identifier">precision</span> = <span class="ruby-value">3</span>)
+
+    <span class="ruby-comment"># sprintf mit gemischter Schreibweise</span>
+    <span class="ruby-identifier">fucking_c_lib_result</span> = <span class="ruby-identifier">sprintf</span>(<span class="ruby-node">&quot;%.#{precision}g&quot;</span>, <span class="ruby-keyword">self</span>)
+    <span class="ruby-identifier">fucking_c_lib_result</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r^(.*)e/</span>
+    <span class="ruby-identifier">meine_zahl</span> = <span class="ruby-node">$+</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">fucking_c_lib_result</span>            
+    <span class="ruby-identifier">exponent</span> = <span class="ruby-node">$'</span>
+    <span class="ruby-comment"># pp meine_zahl</span>
+    <span class="ruby-comment"># pp exponent</span>
+    
+    <span class="ruby-comment">#  ohne Exponent</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">exponent</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">result</span> = <span class="ruby-identifier">meine_zahl</span>.<span class="ruby-identifier">to_f</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">abs</span> <span class="ruby-operator">&gt;=</span> (<span class="ruby-value">10</span><span class="ruby-operator">**</span>(<span class="ruby-identifier">precision</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>))  <span class="ruby-operator">||</span>  <span class="ruby-identifier">result</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">to_i</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">to_i</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+      <span class="ruby-keyword">end</span>          
+     
+    <span class="ruby-comment"># mit Exponent</span>
+    <span class="ruby-keyword">else</span>
+ 
+      <span class="ruby-identifier">result</span> = <span class="ruby-identifier">meine_zahl</span>.<span class="ruby-identifier">to_f</span> * <span class="ruby-value">10</span><span class="ruby-operator">**</span>(<span class="ruby-identifier">exponent</span>.<span class="ruby-identifier">to_i</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">exponent</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-string">'+'</span> 
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">to_i</span>
+      
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+
+      <span class="ruby-keyword">end</span>
+    
+    <span class="ruby-keyword">end</span> <span class="ruby-comment"># Expontent?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- significant-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- significant-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
