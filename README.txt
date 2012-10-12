@@ -4,8 +4,7 @@
 
 http://bklippstein.github.com/perception/
 
-Perception is a intuitive toolkit for simple everyday debugging. 
-It offers a powerfull replacement for print, puts and pp. 
+Powerfull replacement for print, puts and pp. Intuitive toolkit for simple everyday debugging. 
 
 You get auto-intended and structured output on your console without any configuration. 
 
