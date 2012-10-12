@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf8" http-equiv="Content-Type">
+
+<title>class PPP - Perception 0.3.1</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/perception/ppp.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">PP
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-beautify">::beautify</a>
+    
+    <li><a href="#method-c-beautify_array_1dim">::beautify_array_1dim</a>
+    
+    <li><a href="#method-c-beautify_array_2dim">::beautify_array_2dim</a>
+    
+    <li><a href="#method-c-beautify_focus_level1">::beautify_focus_level1</a>
+    
+    <li><a href="#method-c-beautify_hash">::beautify_hash</a>
+    
+    <li><a href="#method-c-beautify_multi">::beautify_multi</a>
+    
+    <li><a href="#method-c-beautify_object">::beautify_object</a>
+    
+    <li><a href="#method-c-classify_structure">::classify_structure</a>
+    
+    <li><a href="#method-c-pp">::pp</a>
+    
+    <li><a href="#method-i-comma_newline">#comma_newline</a>
+    
+    <li><a href="#method-i-pp_hash">#pp_hash</a>
+    
+    <li><a href="#method-i-seplist">#seplist</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./History_txt.html">History</a>
+  
+    <li class="file"><a href="./License_txt.html">License</a>
+  
+    <li class="file"><a href="./README_txt.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Perception.html">Perception</a>
+  
+    <li><a href="./Perception/NumericI.html">Perception::NumericI</a>
+  
+    <li><a href="./Perception/SeeSession.html">Perception::SeeSession</a>
+  
+    <li><a href="./Perception/StringSpreadI.html">Perception::StringSpreadI</a>
+  
+    <li><a href="./Perception/TimeI.html">Perception::TimeI</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./PPP.html">PPP</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class PPP</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-beautify" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">beautify</span><span
+            class="method-args">(string)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Nachbearbeitung des PrettyPrint-Results</p>
+          
+
+          
+          <div class="method-source-code" id="beautify-source">
+            <pre><span class="ruby-comment"># File lib/perception/ppp.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">beautify</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">string</span><span class="ruby-comment"># .gsub!(&quot;`&quot;,&quot;'&quot;)</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">beautify_focus_level1</span>(<span class="ruby-identifier">result</span>)
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">classify_structure</span>(<span class="ruby-identifier">string</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:object</span>      <span class="ruby-keyword">then</span>  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">beautify_object</span>(<span class="ruby-identifier">result</span>)        
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:hash</span>        <span class="ruby-keyword">then</span>  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">beautify_hash</span>(<span class="ruby-identifier">result</span>)             
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:array_1dim</span>  <span class="ruby-keyword">then</span>  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">beautify_array_1dim</span>(<span class="ruby-identifier">result</span>)      
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:array_2dim</span>  <span class="ruby-keyword">then</span>  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">beautify_array_2dim</span>(<span class="ruby-identifier">result</span>)    
+    <span class="ruby-keyword">end</span>  
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+  <span class="ruby-comment"># rescue</span>
+    <span class="ruby-comment"># return string</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- beautify-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- beautify-method -->
+
+    
+      <div id="method-c-beautify_array_1dim" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">beautify_array_1dim</span><span
+            class="method-args">(string)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Eindimensionales Array oder Objekt, das sich wie ein Array ausdruckt – vor
+der eckigen Klammer ist ein Identifier erlaubt, z.B. WP[ 1, 2, 3]</p>
+          
+
+          
+          <div class="method-source-code" id="beautify_array_1dim-source">
+            <pre><span class="ruby-comment"># File lib/perception/ppp.rb, line 224</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">beautify_array_1dim</span>(<span class="ruby-identifier">string</span>) 
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">string</span>
+  <span class="ruby-comment"># tabstops = result[1..-2].analyze_columns( :level_start  =&gt; 0,     </span>
+                                            <span class="ruby-comment"># :level_end    =&gt; 0,</span>
+                                            <span class="ruby-comment"># :search       =&gt; ',',</span>
+                                            <span class="ruby-comment"># :stretch      =&gt; 0  )   </span>
+  <span class="ruby-comment"># tabstops = [25]   if tabstops.empty?</span>
+  <span class="ruby-comment"># maxtab = tabstops.sort[-1]    </span>
+
+
+  <span class="ruby-comment"># result = result.spread( :level_start  =&gt; 1,     </span>
+                          <span class="ruby-comment"># :level_end    =&gt; 1,</span>
+                          <span class="ruby-comment"># :tabstops     =&gt; (1..10).collect {|i| i * (maxtab+1)},</span>
+                          <span class="ruby-comment"># :search       =&gt; ',',</span>
+                          <span class="ruby-comment"># :position_add =&gt; 1 )</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- beautify_array_1dim-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- beautify_array_1dim-method -->
+
+    
+      <div id="method-c-beautify_array_2dim" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">beautify_array_2dim</span><span
+            class="method-args">(string)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Zweidimensionales Array</p>
+
+<p>very hackish</p>
+          
+
+          
+          <div class="method-source-code" id="beautify_array_2dim-source">
+            <pre><span class="ruby-comment"># File lib/perception/ppp.rb, line 245</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">beautify_array_2dim</span>(<span class="ruby-identifier">string</span>) 
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">string</span>
+
+  <span class="ruby-comment"># Komma retten</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">mask</span>( <span class="ruby-value">:level_start</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">3</span>,
+                        <span class="ruby-value">:pattern</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r['&quot;({&lt;\[]/</span>
+                      ) { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">tr</span>(<span class="ruby-string">','</span>, <span class="ruby-constant">Perception</span><span class="ruby-operator">::</span><span class="ruby-constant">PPP_KOMMA</span>)} 
+  
+  <span class="ruby-comment"># Tiefere Level retten</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">mask</span>( <span class="ruby-value">:level_start</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>,  
+                        <span class="ruby-value">:with_brackets</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>,                           
+                        <span class="ruby-value">:pattern</span>        =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r\[/</span> 
+                      ) { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">tr</span>(<span class="ruby-constant">Perception</span><span class="ruby-operator">::</span><span class="ruby-constant">PPP_TR_ARRAY_P</span>, <span class="ruby-constant">Perception</span><span class="ruby-operator">::</span><span class="ruby-constant">PPP_TR_ARRAY_Q</span>)}
+  
+  <span class="ruby-comment"># zeilenweise </span>
+  <span class="ruby-identifier">replaces</span> = [[<span class="ruby-regexp">%r,[^\n]/</span>, <span class="ruby-string">&quot;, \n &quot;</span>]]
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">mask</span>( <span class="ruby-value">:level_start</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>, 
+                        <span class="ruby-value">:level_end</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>, 
+                        <span class="ruby-value">:pattern</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r\[/</span> 
+                      ) { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">mgsub</span>(<span class="ruby-identifier">replaces</span>)}       
+
+  <span class="ruby-comment"># Tabstops </span>
+  <span class="ruby-identifier">tabstops</span> = <span class="ruby-identifier">result</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-2</span>].<span class="ruby-identifier">analyze_columns</span>( <span class="ruby-value">:level_start</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,     
+                                            <span class="ruby-value">:level_end</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,
+                                            <span class="ruby-value">:search</span>       =<span class="ruby-operator">&gt;</span> <span class="ruby-string">','</span>,
+                                            <span class="ruby-value">:stretch</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>  )   <span class="ruby-operator">||</span> [<span class="ruby-value">25</span>]    
+  <span class="ruby-identifier">tabstops2</span> = []   
+  <span class="ruby-identifier">tabstops</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">tabstops2</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">t</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">tabstops2</span>[<span class="ruby-value">-1</span>]<span class="ruby-operator">||</span><span class="ruby-value">0</span>)      
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># ausrichten</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">spread</span>(  <span class="ruby-value">:level_start</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>,     
+                           <span class="ruby-value">:level_end</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>,
+                           <span class="ruby-value">:tabstops</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">tabstops2</span>,
+                           <span class="ruby-value">:search</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r,/</span>   )      
+
+  <span class="ruby-comment"># Tiefere Level zurück</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">mask</span>( <span class="ruby-value">:level_start</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>, 
+                        <span class="ruby-value">:with_brackets</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>,                           
+                        <span class="ruby-value">:pattern</span>        =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r\[/</span>  
+                      ) { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">tr</span>(<span class="ruby-constant">Perception</span><span class="ruby-operator">::</span><span class="ruby-constant">PPP_TR_ARRAY_Q</span>, <span class="ruby-constant">Perception</span><span class="ruby-operator">::</span><span class="ruby-constant">PPP_TR_ARRAY_R</span>)}    
+
+  <span class="ruby-comment">#Komma zurück</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">mask</span>( <span class="ruby-value">:level_start</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">3</span>,
+                        <span class="ruby-value">:pattern</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r['&quot;({&lt;\[]/</span>
+                      ) { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-constant">Perception</span><span class="ruby-operator">::</span><span class="ruby-constant">PPP_KOMMA</span>, <span class="ruby-string">','</span>)} 
+  
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>    
+
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- beautify_array_2dim-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- beautify_array_2dim-method -->
+
+    
+      <div id="method-c-beautify_focus_level1" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">beautify_focus_level1</span><span
+            class="method-args">(string)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Level 2+ : nur noch eine Zeile</p>
+
+<p>Level 3+ : komplexe Objekte zusammenkürzen</p>
+          
+
+          
+          <div class="method-source-code" id="beautify_focus_level1-source">
+            <pre><span class="ruby-comment"># File lib/perception/ppp.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">beautify_focus_level1</span>(<span class="ruby-identifier">string</span>) 
+  <span class="ruby-comment">#return string</span>
+  <span class="ruby-identifier">replaces</span> = [[<span class="ruby-regexp">%r\n/</span>, <span class="ruby-string">''</span>], [<span class="ruby-regexp">%r {2,}/</span>,<span class="ruby-string">' '</span>]]
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">string</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">string</span>.<span class="ruby-identifier">mask</span>( <span class="ruby-value">:level_start</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span> ) { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">mgsub</span>(<span class="ruby-identifier">replaces</span>)}
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">mask</span>( <span class="ruby-value">:level_start</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">3</span> ) { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> (<span class="ruby-identifier">s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r@.*=.*/</span> <span class="ruby-operator">?</span> <span class="ruby-string">''</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">s</span>) } 
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- beautify_focus_level1-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- beautify_focus_level1-method -->
+
+    
+      <div id="method-c-beautify_hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">beautify_hash</span><span
+            class="method-args">(string)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Hash</p>
+          
+
+          
+          <div class="method-source-code" id="beautify_hash-source">
+            <pre><span class="ruby-comment"># File lib/perception/ppp.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">beautify_hash</span>(<span class="ruby-identifier">string</span>) 
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">string</span>
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">%r=&gt; *\n */</span>, <span class="ruby-string">'=&gt;'</span> )  <span class="ruby-comment"># unnötigen Zeilenumbruch vermeiden</span>
+  
+  <span class="ruby-comment"># mehrzeilige Darstellung</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">string</span>.<span class="ruby-identifier">mask</span>( <span class="ruby-value">:level_start</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>, 
+                          <span class="ruby-value">:level_end</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,
+                          <span class="ruby-value">:pattern</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r\{/</span> ) { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r=&gt;/</span>, <span class="ruby-string">' =&gt;'</span>)}
+    
+    <span class="ruby-comment"># Pfeil retten    </span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">mask</span>( <span class="ruby-value">:level_start</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>,
+                          <span class="ruby-value">:pattern</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r\{/</span> ) { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-string">'=&gt;'</span>, <span class="ruby-constant">Perception</span><span class="ruby-operator">::</span><span class="ruby-constant">PPP_PFEIL</span>)}     
+
+    <span class="ruby-comment"># Unterobjekte formatieren </span>
+    <span class="ruby-identifier">replaces</span> = [ [<span class="ruby-regexp">%r, /</span>,<span class="ruby-string">',  '</span>] ]     
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">mask</span>( <span class="ruby-value">:level_start</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>,
+                          <span class="ruby-value">:level_end</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span> ) { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">mgsub</span>(<span class="ruby-identifier">replaces</span>)}                               
+    
+    <span class="ruby-comment"># Tiefere Level retten</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">mask</span>( <span class="ruby-value">:level_start</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,  
+                          <span class="ruby-value">:with_brackets</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>,
+                          <span class="ruby-value">:pattern</span>        =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r\{/</span> 
+                        ) { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">tr</span>(<span class="ruby-constant">Perception</span><span class="ruby-operator">::</span><span class="ruby-constant">PPP_TR_ARRAY_P</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">5</span>], <span class="ruby-constant">Perception</span><span class="ruby-operator">::</span><span class="ruby-constant">PPP_TR_ARRAY_Q</span>)}   
+
+    <span class="ruby-identifier">tabstops</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">analyze_columns</span>(  <span class="ruby-value">:level_start</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,     
+                                        <span class="ruby-value">:level_end</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+                                        <span class="ruby-value">:search</span>       =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'='</span>   )  <span class="ruby-operator">||</span> [<span class="ruby-value">25</span>]
+    <span class="ruby-identifier">tabstops2</span> = []
+    <span class="ruby-identifier">tabstops2</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">tabstops</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+    <span class="ruby-identifier">tabstops2</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">tabstops</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">+</span> <span class="ruby-value">5</span>
+    
+    <span class="ruby-comment"># ausrichten</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">spread</span>( <span class="ruby-value">:level_start</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,     
+                            <span class="ruby-value">:level_end</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,
+                            <span class="ruby-value">:search</span>       =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r=&gt;/</span>,
+                            <span class="ruby-value">:position_add</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,      <span class="ruby-comment"># alle '=&gt;' übereinander  </span>
+                            <span class="ruby-value">:tabstops</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">tabstops2</span> )   
+    <span class="ruby-identifier">result</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-string">'=&gt;'</span>,<span class="ruby-string">'=&gt;  '</span>)
+
+    <span class="ruby-comment"># Tiefere Level zurück</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">mask</span>( <span class="ruby-value">:level_start</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>, 
+                          <span class="ruby-value">:with_brackets</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>,                             
+                          <span class="ruby-value">:pattern</span>        =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r\{/</span>  
+                        ) { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">tr</span>(<span class="ruby-constant">Perception</span><span class="ruby-operator">::</span><span class="ruby-constant">PPP_TR_ARRAY_Q</span>, <span class="ruby-constant">Perception</span><span class="ruby-operator">::</span><span class="ruby-constant">PPP_TR_ARRAY_R</span>)}  
+
+    <span class="ruby-comment"># Pfeil zurück</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">mask</span>( <span class="ruby-value">:level_start</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>,
+                          <span class="ruby-value">:pattern</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r\{/</span> )  { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-constant">Perception</span><span class="ruby-operator">::</span><span class="ruby-constant">PPP_PFEIL</span>, <span class="ruby-string">'=&gt;'</span>)}       
+    
+        
+
+  <span class="ruby-comment"># einzeilige Darstellung</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">string</span>.<span class="ruby-identifier">mask</span>( <span class="ruby-value">:level_start</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>, 
+                          <span class="ruby-value">:level_end</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,
+                          <span class="ruby-value">:pattern</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r\{/</span> ) { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r, /</span>, <span class="ruby-string">',  '</span>)}
+    
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- beautify_hash-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- beautify_hash-method -->
+
+    
+      <div id="method-c-beautify_multi" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">beautify_multi</span><span
+            class="method-args">(string)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Mehrere Ausgaben in einer Zeile. Die einzelnen Ausgaben liegen als Array
+vor. Das Ergebnis soll aber nicht wie ein Array ausssehen.</p>
+          
+
+          
+          <div class="method-source-code" id="beautify_multi-source">
+            <pre><span class="ruby-comment"># File lib/perception/ppp.rb, line 301</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">beautify_multi</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">string</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">beautify_focus_level1</span>(<span class="ruby-identifier">result</span>)    
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">mask</span>(     <span class="ruby-value">:level_start</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,
+                            <span class="ruby-value">:level_end</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,
+                            <span class="ruby-value">:pattern</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r\[/</span>                               
+                      ) {<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">tr</span>(<span class="ruby-string">','</span>, <span class="ruby-constant">Perception</span><span class="ruby-operator">::</span><span class="ruby-constant">PPP_KOMMA</span>)}      
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">spread_line</span>( [<span class="ruby-value">25</span>], <span class="ruby-constant">Perception</span><span class="ruby-operator">::</span><span class="ruby-constant">PPP_KOMMA</span>, <span class="ruby-value">0</span> )
+  
+  <span class="ruby-comment"># Äußeres Array entfernen</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">tr</span>(<span class="ruby-constant">Perception</span><span class="ruby-operator">::</span><span class="ruby-constant">PPP_TR_ALL</span>,<span class="ruby-string">''</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">mask</span>(     <span class="ruby-value">:with_brackets</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>,
+                            <span class="ruby-value">:level_start</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+                            <span class="ruby-value">:level_end</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+                            <span class="ruby-value">:pattern</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r\[/</span>                                 
+                      ) {<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">tr</span>(<span class="ruby-string">'[]'</span>,<span class="ruby-string">''</span>)}          
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- beautify_multi-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- beautify_multi-method -->
+
+    
+      <div id="method-c-beautify_object" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">beautify_object</span><span
+            class="method-args">(string)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="Object.html">Object</a></p>
+          
+
+          
+          <div class="method-source-code" id="beautify_object-source">
+            <pre><span class="ruby-comment"># File lib/perception/ppp.rb, line 127</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">beautify_object</span>(<span class="ruby-identifier">string</span>) 
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">string</span>
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">%r= *\n */</span>, <span class="ruby-string">'='</span> )  <span class="ruby-comment"># unnötigen Zeilenumbruch vermeiden</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">mask</span>( <span class="ruby-value">:level_start</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>, 
+                        <span class="ruby-value">:level_end</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,
+                        <span class="ruby-value">:pattern</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r&lt;/</span>  ) { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r=/</span>, <span class="ruby-string">' = '</span>)} 
+  <span class="ruby-identifier">replaces</span> = [ [<span class="ruby-regexp">%r @/</span>, <span class="ruby-string">'  @'</span>], [<span class="ruby-node">%r= #/</span>,<span class="ruby-string">'=#'</span>] ]  <span class="ruby-comment"># Unterobjekte formatieren</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">mask</span>( <span class="ruby-value">:level_start</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>, 
+                        <span class="ruby-value">:level_end</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span> ) { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">mgsub</span>(<span class="ruby-identifier">replaces</span>)}    
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">mask</span>( <span class="ruby-value">:level_start</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-value">4</span> ) { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-string">''</span>}    
+
+  <span class="ruby-identifier">tabstops</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">analyze_columns</span>(  <span class="ruby-value">:level_start</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,     
+                                      <span class="ruby-value">:level_end</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+                                      <span class="ruby-value">:search</span>       =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'='</span> )  <span class="ruby-operator">||</span> [<span class="ruby-value">25</span>]
+  <span class="ruby-identifier">tabstops2</span> = []
+  <span class="ruby-identifier">tabstops2</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">tabstops</span>[<span class="ruby-value">0</span>] 
+  <span class="ruby-identifier">tabstops2</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">tabstops</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">+</span> <span class="ruby-value">5</span>
+
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">spread</span>( <span class="ruby-value">:level_start</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,     
+                          <span class="ruby-value">:level_end</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,
+                          <span class="ruby-value">:search</span>       =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r=[^&gt;=]/</span>,
+                          <span class="ruby-value">:position_add</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,            <span class="ruby-comment"># alle '=' links                              </span>
+                          <span class="ruby-value">:tabstops</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">tabstops2</span> )   
+                      
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- beautify_object-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- beautify_object-method -->
+
+    
+      <div id="method-c-classify_structure" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">classify_structure</span><span
+            class="method-args">(object)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Klassifiziert die Struktur eines Objektes für die Ausgabe</p>
+          
+
+          
+          <div class="method-source-code" id="classify_structure-source">
+            <pre><span class="ruby-comment"># File lib/perception/ppp.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">classify_structure</span>(<span class="ruby-identifier">object</span>)
+
+  <span class="ruby-comment"># Hash</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-value">:hash</span>  <span class="ruby-keyword">if</span> <span class="ruby-identifier">object</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r^\{.*=&gt;.*\}/</span>     
+  
+  <span class="ruby-comment"># Object</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-value">:object</span>  <span class="ruby-keyword">if</span> <span class="ruby-identifier">object</span> <span class="ruby-operator">=~</span> <span class="ruby-node">%r^#&lt;.*&gt;$/</span>       
+
+  <span class="ruby-comment"># Eindimensionales Array</span>
+  <span class="ruby-comment"># oder Objekt, das sich wie ein Array ausdruckt -- vor der eckigen Klammer ist ein Identifier erlaubt, z.B. WP[ 1, 2, 3]  </span>
+  <span class="ruby-keyword">return</span> <span class="ruby-value">:array_1dim</span>  <span class="ruby-keyword">if</span> <span class="ruby-identifier">object</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r^[A-Z_0-9a-z]{0,30}\[[^\[].*[^\]]\]$/</span> 
+  
+  <span class="ruby-comment"># Zweidimensionales Array</span>
+  <span class="ruby-comment"># Anfang prüfen: Zwei eckige Klammern auf, danach keine eckige Klammer auf</span>
+  <span class="ruby-comment"># oder alternativ ein Text zwischen den beiden Klammern auf</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-value">:array_2dim</span>  <span class="ruby-keyword">if</span> <span class="ruby-identifier">object</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r^\[[A-Z_0-9a-z]{0,30}\[[^\[]/</span>
+  <span class="ruby-comment">#return self unless object =~ /[^\]]\]\]$/   # Ende prüfen: Zwei eckige Klammern zu, davor keine eckige Klammer zu  </span>
+     
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- classify_structure-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- classify_structure-method -->
+
+    
+      <div id="method-c-pp" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pp</span><span
+            class="method-args">(obj, out=$>, width=79 )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <hr style="height: 10px">
+          
+
+          
+          <div class="method-source-code" id="pp-source">
+            <pre><span class="ruby-comment"># File lib/perception/ppp.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">pp</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">out</span>=<span class="ruby-identifier">$&gt;</span>, <span class="ruby-identifier">width</span>=<span class="ruby-value">79</span> )
+  <span class="ruby-identifier">q</span> = <span class="ruby-constant">PPP</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">out</span>, <span class="ruby-identifier">width</span>, <span class="ruby-string">&quot;\n&quot;</span>)
+  <span class="ruby-identifier">q</span>.<span class="ruby-identifier">guard_inspect_key</span> {<span class="ruby-identifier">q</span>.<span class="ruby-identifier">pp</span>(<span class="ruby-identifier">obj</span>)}
+  <span class="ruby-identifier">q</span>.<span class="ruby-identifier">flush</span>
+  <span class="ruby-comment">#$pp = q</span>
+  <span class="ruby-identifier">out</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pp-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pp-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-comma_newline" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">comma_newline</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="comma_newline-source">
+            <pre><span class="ruby-comment"># File lib/perception/ppp.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">comma_newline</span>
+  <span class="ruby-identifier">text</span> <span class="ruby-string">&quot;,&quot;</span>
+  <span class="ruby-identifier">breakable</span>(<span class="ruby-string">''</span>,<span class="ruby-value">9999</span>)   
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- comma_newline-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- comma_newline-method -->
+
+    
+      <div id="method-i-pp_hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pp_hash</span><span
+            class="method-args">(obj)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Hashes mit mehr als drei Keys werden untereinander dargestellt</p>
+          
+
+          
+          <div class="method-source-code" id="pp_hash-source">
+            <pre><span class="ruby-comment"># File lib/perception/ppp.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pp_hash</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-identifier">group</span>(<span class="ruby-value">1</span>, <span class="ruby-string">'{'</span>, <span class="ruby-string">'}'</span>) {
+    <span class="ruby-identifier">seplist</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-value">3</span>, <span class="ruby-value">:each_pair</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">group</span> {
+        <span class="ruby-identifier">pp</span> <span class="ruby-identifier">k</span>
+        <span class="ruby-identifier">text</span> <span class="ruby-string">'=&gt;'</span>
+        <span class="ruby-identifier">group</span>(<span class="ruby-value">1</span>) {
+          <span class="ruby-identifier">breakable</span> <span class="ruby-string">''</span>
+          <span class="ruby-identifier">pp</span> <span class="ruby-identifier">v</span>
+        }
+      }
+    }
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pp_hash-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pp_hash-method -->
+
+    
+      <div id="method-i-seplist" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">seplist</span><span
+            class="method-args">(list, sep=nil, iter_method=:each) { |element| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>sorgt dafür, dass Listen länger als 3 Elemente untereinander ausgegeben
+werden</p>
+          
+
+          
+          <div class="method-source-code" id="seplist-source">
+            <pre><span class="ruby-comment"># File lib/perception/ppp.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">seplist</span>(<span class="ruby-identifier">list</span>, <span class="ruby-identifier">sep</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">iter_method</span>=<span class="ruby-value">:each</span>) <span class="ruby-comment"># :yield: element</span>
+  <span class="ruby-identifier">sep</span> = <span class="ruby-identifier">lambda</span> { <span class="ruby-identifier">comma_newline</span> }   <span class="ruby-keyword">if</span> (<span class="ruby-identifier">sep</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Integer</span>)  <span class="ruby-operator">&amp;&amp;</span>  <span class="ruby-identifier">list</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">sep</span> )
+  <span class="ruby-identifier">sep</span> = <span class="ruby-identifier">lambda</span> { <span class="ruby-identifier">comma_breakable</span> } <span class="ruby-keyword">if</span> (<span class="ruby-identifier">sep</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">sep</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Integer</span>))
+  <span class="ruby-identifier">first</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">list</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">iter_method</span>) {<span class="ruby-operator">|</span>*<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">first</span>
+      <span class="ruby-identifier">first</span> = <span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">sep</span>.<span class="ruby-identifier">call</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">yield</span>(*<span class="ruby-identifier">v</span>)
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- seplist-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- seplist-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
