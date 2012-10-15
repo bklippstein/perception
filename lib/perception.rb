@@ -1,18 +1,8 @@
 # ruby encoding: utf-8
 # ü
-if $:.include?(File.dirname(__FILE__))  ||  $:.include?(File.expand_path(File.dirname(__FILE__)))
-  #puts 'Path schon aktuell'
-else
-  $:.unshift(File.dirname(__FILE__)) 
-end
+# puts 'Using Perception'
 
-
-
-module Perception #:nodoc
-  VERSION = '0.3.1'
-end
-
-
+require 'drumherum'
 require 'pp'
 require 'set'
 require 'kyanite/string/mgsub'
@@ -30,4 +20,8 @@ require 'perception/string_spread'
 require 'perception/numeric' 
 require 'perception/date_and_time' 
 require 'perception/logging' 
+
+Drumherum::loaded!
+
+
  

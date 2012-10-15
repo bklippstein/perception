@@ -1,8 +1,8 @@
 # ruby encoding: utf-8
 # ü
 if $0 == __FILE__ 
-  require File.join(File.dirname(__FILE__), '..', 'lib', 'perception' )  
-else
+  require 'drumherum'
+  smart_init
   require 'perception'
 end
  

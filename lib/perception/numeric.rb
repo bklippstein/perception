@@ -1,8 +1,8 @@
 # ruby encoding: utf-8
 # ü
 if $0 == __FILE__ 
-  require 'kyanite/smart_load_path'
-  smart_load_path   
+  require 'drumherum'
+  smart_init
   require 'perception'
 end
 
@@ -138,19 +138,18 @@ end
 # -----------------------------------------------------------------------------------------
 # Ausprobieren, Tests
 #
-
-
-if $0 == __FILE__ then
+if $0 == __FILE__  &&  Drumherum::loaded? then
 
   # Hier einstellen, was laufen soll
-  $run = :inspect_see
-  $run = :significant
+  $run = :try1
+  #$run = :try2
   #$run = :tests
+  #$run = :demo
   
   case $run 
   
 
-  when :significant #------------------------------------------------------------------------
+  when :try1 #-------------------------------------------------------------------------------   
   
     test = [12567.89, 1256.789, 123.56789, 100.01, 100.0, 99.9, 12.0, 12, 12.56789, 1.256789, 1.5, 0, 0.1256789,0.01256789,0.001256789,0.0001256789, ]
     test.each do |t|
@@ -161,7 +160,7 @@ if $0 == __FILE__ then
     end
     
     
-  when :inspect_see #------------------------------------------------------------------------    
+  when :try2 #-------------------------------------------------------------------------------      
     
     test = [7213541, 553337, 12567.89, 1256.789, 123.56789, 100.01, 100.0, 99.9, 12.0, 12, 12.56789, 1.256789, 1.5, 0, 0.1256789,0.01256789,0.001256789,0.0001256789, ]
     test.each do |t|
@@ -171,9 +170,16 @@ if $0 == __FILE__ then
       see_print t.to_s.rjust(15) +      ' ########'     + t.to_f.inspect_see + "########\n"  
     end    
     
+    
+  when :demo #------------------------------------------------------------------------------     
+  
+    require File.join(Drumherum::directory_main, 'demo', 'demo_pp' )
+    Perception::DemoSee.see_all_demos   
+  
+    
   when :tests #------------------------------------------------------------------------------     
   
-    require File.join(File.dirname(__FILE__), '..', '..', 'test', 'test_numeric' )     
+    require File.join(Drumherum::directory_main, 'test', 'test_numeric' )  
     
     
   else #--------------------------------------------------------------------------------------

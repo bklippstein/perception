@@ -1,7 +1,7 @@
 # ruby encoding: utf-8
 # ü
 require 'test/unit/util/backtracefilter'
-require 'kyanite/general/kernel'
+
 
 module Perception 
   module BacktraceFilter # :nodoc:

@@ -1,35 +1,32 @@
 # ruby encoding: utf-8
 # ü
 
-require 'kyanite/smart_load_path'
-smart_load_path  
-require 'kyanite/hoe'
-Kyanite.projectname = File.dirname(__FILE__).split("/")[-1].strip   # Name des Projekt-Stammverzeichnisses
-Kyanite.github_username = 'bklippstein'
+require 'drumherum'
+smart_init
+require 'version' 
 require 'rdoc/task'
-require 'kyanite/rake'
+require 'drumherum/rake'
 
+Drumherum.github_username = 'bklippstein'
 require 'perception'
 
-# puts Kyanite.github_username
-# puts Kyanite.projectname
-# puts Hoe.class
 
 #  ----------------------------------------------------------------------------------------------
 #  Hoe
 #  
 # http://nubyonrails.com/articles/tutorial-publishing-rubygems-with-hoe
 #
-$hoe = Hoe.spec Kyanite.projectname do 
+$hoe = Hoe.spec Drumherum.project_name do 
 
   # self.rubyforge_name = 'yourgemx' # if different than 'yourgem'
    
   developer('Bjoern Klippstein', 'klippstein@klippstein.com')
-  summary               = 'Beautiful and readable printouts for console and logs.'  
+  summary               = 'Beautiful and readable printouts for console and logs.' 
+  extra_deps            << ['drumherum',  '>= 0.1.10']
   extra_deps            << ['kyanite',    '>= 0.5.17']
   extra_deps            << ['highline',   '>= 1.6.15']
   remote_rdoc_dir = '' # Release to root only one project  
-  urls                  = [["http://#{Kyanite.github_username}.github.com/#{Kyanite.projectname}/"]]
+  urls                  = [["http://#{Drumherum.github_username}.github.com/#{Drumherum.project_name}/"]]
                               
 end
 
@@ -47,7 +44,7 @@ remove_task 'docs'
 desc "generate RDoc documentation"
 Rake::RDocTask.new(:docs) do |rd| 
 
-    rd.title    = "#{Kyanite.projectname.capitalize} #{Kyanite.projectname.to_class.const_get('VERSION')}"
+    rd.title    = "#{Drumherum.project_class.to_s} #{Drumherum.project_version}"
 
     rd.rdoc_dir = 'doc'   
     rd.rdoc_files.include('lib/**/*.rb')

@@ -1,8 +1,8 @@
 # ruby encoding: utf-8
 # ü
 if $0 == __FILE__ 
-  require 'kyanite/smart_load_path'
-  smart_load_path   
+  require 'drumherum'
+  smart_init
   require 'perception'
 end
 
@@ -304,11 +304,12 @@ end # class
 
 
  
- 
-if $0 == __FILE__ then
-  require File.join(File.dirname(__FILE__), '..', '..', 'demo', 'demo_pp' )    
-  Perception::DemoSee.see_all_demos     
-
+# -----------------------------------------------------------------------------------------
+#  ausprobieren
+# 
+if $0 == __FILE__  &&  Drumherum::loaded? then
+    require File.join(Drumherum::directory_main, 'demo', 'demo_pp' )
+    Perception::DemoSee.see_all_demos     
 end # if
 
 

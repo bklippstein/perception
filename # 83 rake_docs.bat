@@ -4,7 +4,7 @@
 set RUBYOPT=-rubygems
 echo.
 
-rake docs
+rake redocs
 
 echo.
 echo.

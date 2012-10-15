@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=utf8" http-equiv="Content-Type">
 
-<title>class Perception::SeeSession - Perception 0.3.1</title>
+<title>class Perception::SeeSession - Perception 0.3.3</title>
 
 <link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
 
@@ -730,7 +730,7 @@ nützlich, wenn man bestimme Werte verfolgen will.</p>
   
   <span class="ruby-comment"># Logfile festlegen</span>
   <span class="ruby-keyword">unless</span> <span class="ruby-identifier">logdir</span>
-    <span class="ruby-identifier">mycaller</span> = <span class="ruby-constant">CallerUtils</span>.<span class="ruby-identifier">mycaller</span>(<span class="ruby-value">:skip</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">'perception'</span>, <span class="ruby-string">'ruby\gems'</span>, <span class="ruby-string">'ruby/gems'</span>, <span class="ruby-string">'test/unit'</span>]) 
+    <span class="ruby-identifier">mycaller</span> = <span class="ruby-constant">CallerUtils</span>.<span class="ruby-identifier">mycaller</span>(<span class="ruby-value">:skip</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">'perception'</span>, <span class="ruby-string">'ruby\gems'</span>, <span class="ruby-string">'ruby/gems'</span>, <span class="ruby-string">'rubygems'</span>, <span class="ruby-string">'test/unit'</span>]) 
     <span class="ruby-identifier">logdir</span> =   <span class="ruby-constant">CallerUtils</span>.<span class="ruby-identifier">mycaller_maindir</span>(<span class="ruby-identifier">mycaller</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/log'</span>           <span class="ruby-keyword">if</span> <span class="ruby-identifier">mycaller</span>
   <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">logdir</span>.<span class="ruby-identifier">nil?</span>  <span class="ruby-operator">||</span>  <span class="ruby-identifier">logdir</span> <span class="ruby-operator">==</span> <span class="ruby-string">'test/log'</span> )
@@ -738,9 +738,9 @@ nützlich, wenn man bestimme Werte verfolgen will.</p>
     <span class="ruby-identifier">logdir</span> = <span class="ruby-constant">Dir</span><span class="ruby-operator">::</span><span class="ruby-identifier">tmpdir</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/log'</span>
   <span class="ruby-keyword">end</span>
   <span class="ruby-identifier">logfile</span> =  <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">logdir</span>, <span class="ruby-identifier">filename</span>)
-  <span class="ruby-comment"># puts &quot;\nmycaller=#{mycaller.inspect_pp}&quot;</span>
-  <span class="ruby-comment"># puts &quot;\nlogdir=#{logdir.inspect_pp}&quot;</span>
-  <span class="ruby-comment"># puts &quot;\nlogfile=#{logfile.inspect_pp}&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;\nmycaller=#{mycaller.inspect_pp}&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;\nlogdir=#{logdir.inspect_pp}&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;\nlogfile=#{logfile.inspect_pp}&quot;</span>
   
         
   <span class="ruby-comment"># Erzeugen, wenn nötig</span>

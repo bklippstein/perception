@@ -1,8 +1,8 @@
 # ruby encoding: utf-8
 # ü
 if $0 == __FILE__ 
-  require 'kyanite/smart_load_path'
-  smart_load_path   
+  require 'drumherum'
+  smart_init
   require 'perception'
 end
 
@@ -53,15 +53,42 @@ end
 
 
 # -----------------------------------------------------------------------------------------
-#  Tests
+#  Ausprobieren
 #
-if $0 == __FILE__ then
+if $0 == __FILE__  &&  Drumherum::loaded? then
 
-  # ms = 2635200
-  # puts (Time.now - ms*0).inspect_see(:norm => :de, :precision => 5)
-  # see Time.now
- 
-  require File.join(File.dirname(__FILE__), '..', '..', 'test', 'test_date_and_time' )     
+  # Hier einstellen, was laufen soll
+  $run = :try
+  #$run = :tests
+  #$run = :demo
+  
+  case $run     
+    
+  when :try #-------------------------------------------------------------------------------      
+    
+    ms = 2635200
+    puts (Time.now - ms*0).inspect_see(:norm => :de, :precision => 5)
+    see Time.now 
+    
+  when :demo #------------------------------------------------------------------------------     
+  
+    require File.join(Drumherum::directory_main, 'demo', 'demo_pp' )
+    Perception::DemoSee.see_all_demos   
+  
+    
+  when :tests #------------------------------------------------------------------------------     
+  
+    require File.join(Drumherum::directory_main, 'test', 'test_date_and_time' )
+    
+    
+  else #--------------------------------------------------------------------------------------
+  
+    see '$run einstellen!'
+    
+  
+  end # case  
+
+    
   
   
 end # if

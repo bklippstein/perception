@@ -1,8 +1,8 @@
 # ruby encoding: utf-8
 # ü
 if $0 == __FILE__ 
-  require 'kyanite/smart_load_path'
-  smart_load_path   
+  require 'drumherum'
+  smart_init
   require 'perception'
 end
 
@@ -17,7 +17,7 @@ module Perception #:nodoc
       
       # Logfile festlegen
       unless logdir
-        mycaller = CallerUtils.mycaller(:skip => ['perception', 'ruby\gems', 'ruby/gems', 'test/unit']) 
+        mycaller = CallerUtils.mycaller(:skip => ['perception', 'ruby\gems', 'ruby/gems', 'rubygems', 'test/unit']) 
         logdir =   CallerUtils.mycaller_maindir(mycaller) + '/log'           if mycaller
       end
       if ( logdir.nil?  ||  logdir == 'test/log' )
@@ -25,9 +25,9 @@ module Perception #:nodoc
         logdir = Dir::tmpdir + '/log'
       end
       logfile =  File.join(logdir, filename)
-      # puts "\nmycaller=#{mycaller.inspect_pp}"
-      # puts "\nlogdir=#{logdir.inspect_pp}"
-      # puts "\nlogfile=#{logfile.inspect_pp}"
+      puts "\nmycaller=#{mycaller.inspect_pp}"
+      puts "\nlogdir=#{logdir.inspect_pp}"
+      puts "\nlogfile=#{logfile.inspect_pp}"
       
             
       # Erzeugen, wenn nötig
@@ -97,25 +97,53 @@ end
 
 
 
-
-
- 
- 
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------
 #  Ausprobieren
-#    
-if $0 == __FILE__ then
+#
+if $0 == __FILE__  &&  Drumherum::loaded? then
+
+  # Hier einstellen, was laufen soll
+  $run = :try
+  #$run = :tests
+  #$run = :demo
   
- 
-  see "Hallo"
-  see 'Jups.', :g, :h
-  #seee.log_status
-  log 'Jups.'
-  log 'Jups.', :g, :h
+  case $run     
+    
+  when :try #-------------------------------------------------------------------------------    
+    
+    see $LOAD_PATH
+    see
+    see "Hallo"
+    see 'Jups.', :g, :h
+    see seee.logger
+    log 'Jups.'
+    log 'Jups.', :g, :h
+    
+  when :demo #------------------------------------------------------------------------------     
+  
+    require File.join(Drumherum::directory_main, 'demo', 'demo_pp' )
+    Perception::DemoSee.see_all_demos   
+  
+    
+  when :tests #------------------------------------------------------------------------------     
+  
+    require File.join(Drumherum::directory_main, 'test', '_start_all' )
+    
+    
+  else #--------------------------------------------------------------------------------------
+  
+    see '$run einstellen!'
+    
+  
+  end # case  
 
-
+    
+  
   
 end # if
+
+ 
+
 
 
 

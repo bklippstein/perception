@@ -1,11 +1,11 @@
 # ruby encoding: utf-8
 # ü
 if $0 == __FILE__ 
-  require 'kyanite/smart_load_path'
-  smart_load_path   
+  require 'drumherum'
+  smart_init 
 end
+require 'drumherum/unit_test'
 require 'perception'
-require 'kyanite/unit_test'
 
 
 class TestPerceptionPPP < UnitTest
@@ -127,10 +127,7 @@ ENDOFSTRING
     assert_equal result1,               test.inspect_pp  
     assert_equal "\n" + result2,        see_puts(test);   setup
     assert_equal "\n" + result2,        see_print(test);  setup    
-    # puts
-    # require File.join(File.dirname(__FILE__), '..', '..', 'klippstein_ruby_extensions', 'lib', 'string' )  
-    # pp test.inspect_see.overlapdiff(result3)
-    # puts
+
     assert_equal result3,               test.inspect_see#.gsub("\n",'')      
     assert_equal "\n" + result3,        see_pp(test);     setup   
     assert_equal "\n" + result3,        see(test);        setup          

@@ -1,8 +1,10 @@
+console.rb
 History.txt
 License.txt
 Manifest.txt
-README.txt
 Rakefile.rb
+README.txt
+version.rb
 demo/demo_pp.rb
 demo/demo_system_info.rb
 demo/demo_zz.rb
@@ -17,7 +19,6 @@ lib/perception/perception_private.rb
 lib/perception/ppp.rb
 lib/perception/string_spread.rb
 profile.rb
-script/console.rb
 test/_start_all.rb
 test/test_date_and_time.rb
 test/test_numeric.rb

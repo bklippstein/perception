@@ -1,5 +1,10 @@
-
-require File.join(File.dirname(__FILE__), 'lib', 'perception' )  
+# ruby encoding: utf-8
+# ü
+if $0 == __FILE__ 
+  require 'drumherum'
+  smart_init
+  require 'perception'
+end
 
 $mode = :nothing
 $mode = :profile
@@ -7,7 +12,7 @@ $mode = :tracker
 
     
     if $mode == :tracker
-      require 'kyanite/operation/call_tracker' 
+      require 'drumherum/call_tracker' 
     elsif $mode == :profile
      require 'profile'
     end   

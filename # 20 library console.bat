@@ -5,7 +5,6 @@ REM @cmd /C chcp 1252 > NUL
 set RUBYOPT=-rubygems
 echo.
 
-cd script
 ruby console.rb
 
 echo.
