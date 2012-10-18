@@ -6,7 +6,9 @@ if $0 == __FILE__
   require 'perception'
 end
 
-module Perception #:nodoc
+# Some constant definitions
+#
+module Perception 
 
   unless defined?(TIME_FORMATS)
     TIME_FORMATS = {

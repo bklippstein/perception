@@ -1,274 +1,268 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: Perception
+  
+    &mdash; Documentation by YARD 0.8.3
+  
+</title>
 
-<html>
-<head>
-<meta content="text/html; charset=utf8" http-equiv="Content-Type">
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
 
-<title>module Perception - Perception 0.3.3</title>
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
 
-<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/klippstein.css" type="text/css" media="screen" charset="utf-8" />
 
-<script type="text/javascript">
-  var rdoc_rel_prefix = "./";
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
 </script>
 
-<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/klippstein.js"></script>
 
 
-<body id="top" class="module">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="./index.html">Home</a>
-    <a href="./table_of_contents.html#classes">Classes</a>
-    <a href="./table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
-
-
-  <nav id="search-section" class="section project-section" class="initially-hidden">
-  <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
-             title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
-  </form>
-
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
-
-
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/perception/const.rb
-    <li>lib/perception/date_and_time.rb
-    <li>lib/perception/logging.rb
-    <li>lib/perception/numeric.rb
-    <li>lib/perception/perception_main.rb
-    <li>lib/perception/perception_private.rb
-    <li>lib/perception/string_spread.rb
-  </ul>
-</nav>
-
-    
-  </div>
-
-  <div id="class-metadata">
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (P)</a> &raquo;
     
     
+    <span class="title">Perception</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: Perception
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
     
+  
     
-  </div>
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/perception/const.rb<span class="defines">,<br />
+  lib/perception/numeric.rb,<br /> lib/perception/logging.rb,<br /> lib/perception/string_spread.rb,<br /> lib/perception/date_and_time.rb,<br /> lib/perception/perception_main.rb,<br /> lib/perception/perception_private.rb</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
 
-  <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="./History_txt.html">History</a>
-  
-    <li class="file"><a href="./License_txt.html">License</a>
-  
-    <li class="file"><a href="./README_txt.html">README</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-    <li><a href="./Perception.html">Perception</a>
-  
-    <li><a href="./Perception/NumericI.html">Perception::NumericI</a>
-  
-    <li><a href="./Perception/SeeSession.html">Perception::SeeSession</a>
-  
-    <li><a href="./Perception/StringSpreadI.html">Perception::StringSpreadI</a>
-  
-    <li><a href="./Perception/TimeI.html">Perception::TimeI</a>
-  
-    <li><a href="./Object.html">Object</a>
-  
-    <li><a href="./PPP.html">PPP</a>
-  
-  </ul>
-</nav>
-
-  </div>
-</nav>
-
-<div id="documentation">
-  <h1 class="module">module Perception</h1>
-
-  <div id="description" class="description">
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
     
 <p>Perception: Human perceptible printouts</p>
 
-<h6 id="label-"></h6>
+<h40></h40>
 
-<p>Welcome to <a href="Perception.html">Perception</a>. It’s a intuitive
-toolkit for simple everyday debugging.  <a
-href="Perception.html">Perception</a> offers a powerfull replacement for
-print, puts and pp. You get auto-intended and structured output on your
-console without any configuration. <a href="Perception.html">Perception</a>
-also offers temporary printouts (overwritten by the next print), printing
-two informations in one line without destroying the structure and
-optionally slows down printing to readable speed, depending on the
-complexity of the output.</p>
+<p>Welcome to Perception. It's a intuitive toolkit for simple everyday
+debugging.  Perception offers a powerfull replacement for print, puts and
+pp. You get auto-intended and structured output on your console without any
+configuration. Perception also offers temporary printouts (overwritten by
+the next print), printing two informations in one line without destroying
+the structure and optionally slows down printing to readable speed,
+depending on the complexity of the output.</p>
 
-  </div><!-- description -->
 
+  </div>
+</div>
+<div class="tags">
   
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
   
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Perception/NumericI.html" title="Perception::NumericI (module)">NumericI</a></span>, <span class='object_link'><a href="Perception/StringSpreadI.html" title="Perception::StringSpreadI (module)">StringSpreadI</a></span>, <span class='object_link'><a href="Perception/TimeI.html" title="Perception::TimeI (module)">TimeI</a></span>
+    
   
-  <section id="5Buntitled-5D" class="documentation-section">
     
-
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Perception/SeeSession.html" title="Perception::SeeSession (class)">SeeSession</a></span>
     
+  
+</p>
 
-    
-    <!-- Constants -->
-    <section id="constants-list" class="section">
-      <h3 class="section-header">Constants</h3>
-      <dl>
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
       
-        <dt id="PPP_ANTI_NEWLINE">PPP_ANTI_NEWLINE
-        
-        <dd class="description">
-        
+        <dt id="TIME_FORMATS-constant" class="">TIME_FORMATS =
+          
+        </dt>
+        <dd><pre class="code"><span class='lbrace'>{</span>
+    <span class='comment'>#           0             1                   2                     3                       4
+</span>      <span class='symbol'>:iso</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>%Y-%m-%d</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>%Y-%m-%d  %H:%M</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>%Y-%m-%d  %H:%M:%S</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>%Y-%m-%d  %H:%M:%S</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>%Y-%m-%d %A %H:%M:%S</span><span class='tstring_end'>'</span></span>  <span class='rbracket'>]</span><span class='comma'>,</span>
+      <span class='symbol'>:de</span>  <span class='op'>=&gt;</span> <span class='lbracket'>[</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>%d.%b.%Y</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>%d.%b.%Y  %H:%M</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>%d.%b.%Y  %H:%M:%S</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>%d. %B %Y  %H:%M:%S</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>%A, %d. %B %Y  %H:%M:%S</span><span class='tstring_end'>'</span></span>  <span class='rbracket'>]</span>   <span class='comment'># %e is not working
+</span><span class='rbrace'>}</span></pre></dd>
       
-        <dt id="PPP_ECKIGE_KLAMMER_AUF">PPP_ECKIGE_KLAMMER_AUF
-        
-        <dd class="description">
-        
+        <dt id="RULER-constant" class="">RULER =
+          
+        </dt>
+        <dd><pre class="code"><span class='id identifier rubyid_r100'>r100</span> <span class='op'>+</span> <span class='id identifier rubyid_r100'>r100</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_r10'>r10</span> <span class='op'>+</span> <span class='id identifier rubyid_r10'>r10</span></pre></dd>
       
-        <dt id="PPP_ECKIGE_KLAMMER_ZU">PPP_ECKIGE_KLAMMER_ZU
-        
-        <dd class="description">
-        
+        <dt id="SEE_PERCEPTION_TIME_PER_WORD-constant" class="">SEE_PERCEPTION_TIME_PER_WORD =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>200</span></pre></dd>
       
-        <dt id="PPP_GESCHW_KLAMMER_AUF">PPP_GESCHW_KLAMMER_AUF
-        
-        <dd class="description">
-        
+        <dt id="SEE_TAB_WIDTH-constant" class="">SEE_TAB_WIDTH =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>2</span></pre></dd>
       
-        <dt id="PPP_GESCHW_KLAMMER_ZU">PPP_GESCHW_KLAMMER_ZU
-        
-        <dd class="description">
-        
+        <dt id="SEE_LEVEL_START-constant" class="">SEE_LEVEL_START =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>1</span></pre></dd>
       
-        <dt id="PPP_KOMMA">PPP_KOMMA
-        
-        <dd class="description"><p>nicht verwenden: 07..13, 27</p>
-        
+        <dt id="SEE_INDENT_START-constant" class="">SEE_INDENT_START =
+          
+        </dt>
+        <dd><pre class="code"><span class='kw'>false</span></pre></dd>
       
-        <dt id="PPP_PFEIL">PPP_PFEIL
-        
-        <dd class="description">
-        
+        <dt id="PPP_KOMMA-constant" class="">PPP_KOMMA =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>1</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span></pre></dd>
       
-        <dt id="PPP_SEARCH">PPP_SEARCH
-        
-        <dd class="description">
-        
+        <dt id="PPP_SEARCH-constant" class="">PPP_SEARCH =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>2</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span></pre></dd>
       
-        <dt id="PPP_SPITZE_KLAMMER_AUF">PPP_SPITZE_KLAMMER_AUF
-        
-        <dd class="description">
-        
+        <dt id="PPP_GESCHW_KLAMMER_AUF-constant" class="">PPP_GESCHW_KLAMMER_AUF =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>3</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span></pre></dd>
       
-        <dt id="PPP_SPITZE_KLAMMER_ZU">PPP_SPITZE_KLAMMER_ZU
-        
-        <dd class="description">
-        
+        <dt id="PPP_GESCHW_KLAMMER_ZU-constant" class="">PPP_GESCHW_KLAMMER_ZU =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>4</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span></pre></dd>
       
-        <dt id="PPP_TR_ALL">PPP_TR_ALL
-        
-        <dd class="description">
-        
+        <dt id="PPP_ECKIGE_KLAMMER_AUF-constant" class="">PPP_ECKIGE_KLAMMER_AUF =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>5</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span></pre></dd>
       
-        <dt id="PPP_TR_ARRAY_P">PPP_TR_ARRAY_P
-        
-        <dd class="description"><p>codieren:     P =&gt; Q, in P fehlen derzeit die spitzen Klammern, weil
-sonst Hash nicht funktioniert decodieren:   Q =&gt; R</p>
-        
+        <dt id="PPP_ECKIGE_KLAMMER_ZU-constant" class="">PPP_ECKIGE_KLAMMER_ZU =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>6</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span></pre></dd>
       
-        <dt id="PPP_TR_ARRAY_Q">PPP_TR_ARRAY_Q
-        
-        <dd class="description">
-        
+        <dt id="PPP_SPITZE_KLAMMER_AUF-constant" class="">PPP_SPITZE_KLAMMER_AUF =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>14</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span></pre></dd>
       
-        <dt id="PPP_TR_ARRAY_R">PPP_TR_ARRAY_R
-        
-        <dd class="description">
-        
+        <dt id="PPP_SPITZE_KLAMMER_ZU-constant" class="">PPP_SPITZE_KLAMMER_ZU =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>15</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span></pre></dd>
       
-        <dt id="PPP_TUDDELCHEN1">PPP_TUDDELCHEN1
-        
-        <dd class="description">
-        
+        <dt id="PPP_PFEIL-constant" class="">PPP_PFEIL =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>16</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span><span class='op'>+</span><span class='int'>16</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span></pre></dd>
       
-        <dt id="PPP_TUDDELCHEN2">PPP_TUDDELCHEN2
-        
-        <dd class="description">
-        
+        <dt id="PPP_TUDDELCHEN1-constant" class="">PPP_TUDDELCHEN1 =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>17</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span></pre></dd>
       
-        <dt id="RULER">RULER
-        
-        <dd class="description">
-        
+        <dt id="PPP_TUDDELCHEN2-constant" class="">PPP_TUDDELCHEN2 =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>18</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span></pre></dd>
       
-        <dt id="SEE_INDENT_START">SEE_INDENT_START
-        
-        <dd class="description">
-        
+        <dt id="PPP_ANTI_NEWLINE-constant" class="">PPP_ANTI_NEWLINE =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>31</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span></pre></dd>
       
-        <dt id="SEE_LEVEL_START">SEE_LEVEL_START
-        
-        <dd class="description">
-        
+        <dt id="PPP_TR_ARRAY_P-constant" class="">PPP_TR_ARRAY_P =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>%q{</span><span class='tstring_content'>'&quot;{}[]&lt;&gt;</span><span class='tstring_end'>}</span></span></pre></dd>
       
-        <dt id="SEE_PERCEPTION_TIME_PER_WORD">SEE_PERCEPTION_TIME_PER_WORD
-        
-        <dd class="description">
-        
+        <dt id="PPP_TR_ARRAY_Q-constant" class="">PPP_TR_ARRAY_Q =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>PPP_TUDDELCHEN1</span> <span class='op'>+</span> <span class='const'>PPP_TUDDELCHEN2</span> <span class='op'>+</span>
+<span class='const'>PPP_GESCHW_KLAMMER_AUF</span> <span class='op'>+</span> <span class='const'>PPP_GESCHW_KLAMMER_ZU</span> <span class='op'>+</span>  
+<span class='const'>PPP_ECKIGE_KLAMMER_AUF</span> <span class='op'>+</span> <span class='const'>PPP_ECKIGE_KLAMMER_ZU</span> <span class='op'>+</span> 
+<span class='const'>PPP_SPITZE_KLAMMER_AUF</span> <span class='op'>+</span> <span class='const'>PPP_SPITZE_KLAMMER_ZU</span></pre></dd>
       
-        <dt id="SEE_TAB_WIDTH">SEE_TAB_WIDTH
-        
-        <dd class="description"><p>automatic indention</p>
-        
+        <dt id="PPP_TR_ARRAY_R-constant" class="">PPP_TR_ARRAY_R =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>%q{</span><span class='tstring_content'>'&quot;{}[]&lt;&gt;</span><span class='tstring_end'>}</span></span></pre></dd>
       
-        <dt id="TIME_FORMATS">TIME_FORMATS
-        
-        <dd class="description">
-        
+        <dt id="PPP_TR_ALL-constant" class="">PPP_TR_ALL =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>PPP_TR_ARRAY_Q</span> <span class='op'>+</span> <span class='const'>PPP_KOMMA</span> <span class='op'>+</span> <span class='const'>PPP_ANTI_NEWLINE</span></pre></dd>
       
-      </dl>
-    </section>
-    
-
-    
-
-    <!-- Methods -->
-    
-  </section><!-- 5Buntitled-5D -->
-
-</div><!-- documentation -->
+    </dl>
+  
 
 
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
-</footer>
 
+
+
+
+
+
+
+</div>
+
+    <div id="footer">
+  Generated on Thu Oct 18 11:04:18 2012 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.3 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

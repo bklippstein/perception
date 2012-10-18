@@ -9,7 +9,7 @@ end
 
 
 
-module Perception #:nodoc
+module Perception 
 
   
   # Eine SeeSession-Instanz entspricht einer Session mit der Konsole.

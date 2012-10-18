@@ -6,4 +6,14 @@ if $0 == __FILE__
   require 'perception'
 end
 
-see seee.logger
+# 
+
+module Fly
+def Fly.hallo
+  rawlog "Hallo raw"
+end
+end
+
+Fly.hallo
+seee.log_status "My Message"
+

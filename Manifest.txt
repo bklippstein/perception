@@ -1,9 +1,9 @@
 console.rb
-History.txt
-License.txt
+History.rdoc
+License.rdoc
 Manifest.txt
 Rakefile.rb
-README.txt
+README.rdoc
 version.rb
 demo/demo_pp.rb
 demo/demo_system_info.rb

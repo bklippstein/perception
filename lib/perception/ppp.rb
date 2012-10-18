@@ -7,70 +7,22 @@ if $0 == __FILE__
 end
 
 
-
+# patches pretty print
 class PPP < PP
 
 
-  # ------------------------------------------------------------------------------
-  #  
-  #   
+  
+  
 
-  def self.pp(obj, out=$>, width=79 )
-    q = PPP.new(out, width, "\n")
-    q.guard_inspect_key {q.pp(obj)}
-    q.flush
-    #$pp = q
-    out
-  end  
-  
-  # sorgt dafür, dass Listen länger als 3 Elemente untereinander ausgegeben werden
-  def seplist(list, sep=nil, iter_method=:each) # :yield: element
-    sep = lambda { comma_newline }   if (sep.kind_of?(Integer)  &&  list.size > sep )
-    sep = lambda { comma_breakable } if (sep.nil? || sep.kind_of?(Integer))
-    first = true
-    list.__send__(iter_method) {|*v|
-      if first
-        first = false
-      else
-        sep.call
-      end
-      yield(*v)
-    }
-  end
-    
-  def comma_newline
-    text ","
-    breakable('',9999)   
-  end    
-
-  
-  # Hashes mit mehr als drei Keys werden untereinander dargestellt
-  def pp_hash(obj)
-    group(1, '{', '}') {
-      seplist(obj, 3, :each_pair) {|k, v|
-        group {
-          pp k
-          text '=>'
-          group(1) {
-            breakable ''
-            pp v
-          }
-        }
-      }
-    }
-  end  
-  
-  
-  
   
   # ------------------------------------------------------------------------------
-  #  
-  #     
-  
-
+  # @group Beautify: reworking the pretty print results
+  #       
   
   
-  # Nachbearbeitung des PrettyPrint-Results
+  # reworking the pretty print results
+  # @return [String]
+  #
   def self.beautify(string)
     begin
       result = string# .gsub!("`","'")
@@ -88,7 +40,9 @@ class PPP < PP
   end # def
   
   
-  # Klassifiziert die Struktur eines Objektes für die Ausgabe
+  # Classifies the structure of an object for output  
+  # @return [Symbol]  
+  #
   def self.classify_structure(object)
   
     # Hash
@@ -111,8 +65,10 @@ class PPP < PP
   
   
   
-  # Level 2+ : nur noch eine Zeile  
-  # Level 3+ : komplexe Objekte zusammenkürzen  
+  # Level 2+ : only one line left
+  # Level 3+ : clip complex objects
+  # @return [String]  
+  #
   def self.beautify_focus_level1(string) 
     #return string
     replaces = [[/\n/, ''], [/ {2,}/,' ']]
@@ -124,7 +80,9 @@ class PPP < PP
   
   
   
-  # Object
+  # Beautify for Objects
+  # @return [String]  
+  #
   def self.beautify_object(string) 
     result = string
     result.gsub!(/= *\n */m, '=' )  # unnötigen Zeilenumbruch vermeiden
@@ -154,7 +112,9 @@ class PPP < PP
   
   
   
-  # Hash
+  # Beautify for Hashes
+  # @return [String]  
+  #
   def self.beautify_hash(string) 
     result = string
     result.gsub!(/=> *\n */m, '=>' )  # unnötigen Zeilenumbruch vermeiden
@@ -219,9 +179,11 @@ class PPP < PP
   end      
   
   
-  
-  # Eindimensionales Array
-  # oder Objekt, das sich wie ein Array ausdruckt -- vor der eckigen Klammer ist ein Identifier erlaubt, z.B. WP[ 1, 2, 3]   
+  # Beautify for one-dimensional arrays
+  # or any object that prints like an array.
+  # In front of the brackets there are identifier allowed, eg WP [1, 2, 3]    
+  # @return [String]  
+  #  
   def self.beautify_array_1dim(string) 
     return string
     # tabstops = result[1..-2].analyze_columns( :level_start  => 0,     
@@ -240,9 +202,10 @@ class PPP < PP
   end      
   
   
-  
-  # Zweidimensionales Array  
-  # very hackish
+  # Beautify for two-dimensional arrays -  
+  # very dirty.
+  # @return [String]  
+  #    
   def self.beautify_array_2dim(string) 
     result = string
 
@@ -296,9 +259,15 @@ class PPP < PP
   end        
   
   
+
+
+  # Beautify for complex objects.
+  #
   # Mehrere Ausgaben in einer Zeile.
   # Die einzelnen Ausgaben liegen als Array vor.
   # Das Ergebnis soll aber nicht wie ein Array ausssehen.
+  # @return [String]  
+  #      
   def self.beautify_multi(string)
     result = string
     result = beautify_focus_level1(result)    
@@ -320,20 +289,78 @@ class PPP < PP
   
   
       
+  # ------------------------------------------------------------------------------
+  # @group Pretty Print Patches
+  #    
   
+
+  def self.pp(obj, out=$>, width=79 )
+    q = PPP.new(out, width, "\n")
+    q.guard_inspect_key {q.pp(obj)}
+    q.flush
+    #$pp = q
+    out
+  end  
+  
+  
+
+  # ensures that lists with more than three elements are displayed line by line
+  def seplist(list, sep=nil, iter_method=:each) # :yield: element
+    sep = lambda { comma_newline }   if (sep.kind_of?(Integer)  &&  list.size > sep )
+    sep = lambda { comma_breakable } if (sep.nil? || sep.kind_of?(Integer))
+    first = true
+    list.__send__(iter_method) {|*v|
+      if first
+        first = false
+      else
+        sep.call
+      end
+      yield(*v)
+    }
+  end
+    
+    
+  def comma_newline
+    text ","
+    breakable('',9999)   
+  end    
+
+  
+  
+  # hashes with more than three keys are displayed line by line  
+  def pp_hash(obj)
+    group(1, '{', '}') {
+      seplist(obj, 3, :each_pair) {|k, v|
+        group {
+          pp k
+          text '=>'
+          group(1) {
+            breakable ''
+            pp v
+          }
+        }
+      }
+    }
+  end    
   
   
 
 end # class
 
 
-class String # :nodoc:
+class String 
+
+  # @return [String]
   def pretty_print(q)
     q.text "'#{self}'"
   end
+  
 end
 
-class Set # :nodoc:
+
+class Set 
+
+  # @return [String]
   def pretty_print(q)
     q.group(1, '{', '}') {
       q.seplist(self) {|v|
@@ -342,13 +369,17 @@ class Set # :nodoc:
     }
   end
 
+  
   def pretty_print_cycle(q)
     q.text(empty? ? '{}' : '{...}')
   end
+  
 end
 
 
-class Dictionary # :nodoc:
+class Dictionary 
+
+ # @return [String]
   def inspect
     ary = []
     each {|k,v| ary << k.inspect + "=>" + v.inspect}
@@ -357,7 +388,9 @@ class Dictionary # :nodoc:
 end
 
 
-class Dictionary # :nodoc:
+class Dictionary 
+
+  # @return [String]
   def pretty_print(q)
     q.pp_hash self
   end

@@ -8,8 +8,8 @@ end
 require 'kyanite/array_of_enumerables'
 
 
-module Perception #:nodoc
-  module StringSpreadI #:nodoc
+module Perception 
+  module StringSpreadI 
   
 
   def analyze_columns(options={})
@@ -129,7 +129,7 @@ module Perception #:nodoc
   end # module
 end # module
 
-class String #:nodoc:
+class String 
   include Perception::StringSpreadI
 end
 

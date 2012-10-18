@@ -27,7 +27,7 @@ require 'kyanite/enumerable/structure'   # Methode contentclass
 # printing two informations in one line without destroying the structure and
 # optionally slows down printing to readable speed, depending on the complexity of the output.
 #
-module Perception #:nodoc
+module Perception 
   
   # Eine SeeSession-Instanz entspricht einer Session mit der Konsole.
   class SeeSession  

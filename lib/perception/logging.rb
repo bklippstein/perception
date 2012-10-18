@@ -7,29 +7,49 @@ if $0 == __FILE__
 end
 
 
-module Perception #:nodoc
+module Perception 
 
   class SeeSession
   
+  # @group Logging
+  
+
+    # Looks for a good place to save the log file,
+    # creates log directory & log file if necessary and
+    # instantiates Logger Object.
+    # 
+    # Where is my logfile? Try
+    #  see seee.logger
+    #  =>
+    #  <Logger:0x2a57d20
+    #    @default_formatter = #<Logger::Formatter:0x2a57cc0  @datetime_format=nil>,
+    #    @formatter =         nil,
+    #    @level =             0,
+    #    @logdev =            #<Logger::LogDevice:0x2a57c60  @dev=#<File:C:/Ruby-Projekte/perception/log/see.log>,  @filename='C:/Ruby-Projekte/perception/log/see.log',  @mutex=#<<>>,  @shift_age=0,  @shift_size=1048576>,
+    #    @progname =          nil>
+    #
+    # @return [Logger]
+    #
     def logger( logdir=nil, filename='see.log' )
       return @logger  if @logger
-      require 'logger' unless defined?(Logger)
+      require 'logger'    unless defined?(Logger)
       
       # Logfile festlegen
-      unless logdir
-        mycaller = CallerUtils.mycaller(:skip => ['perception', 'ruby\gems', 'ruby/gems', 'rubygems', 'test/unit']) 
-        logdir =   CallerUtils.mycaller_maindir(mycaller) + '/log'           if mycaller
+      unless logdir      
+        smart_init   if Drumherum.directory_main.empty?
+        logdir = File.expand_path(File.join(Drumherum.directory_main, 'log'))
+        # puts "logdir= #{logdir}   size=#{logdir.split('/').size}"
       end
-      if ( logdir.nil?  ||  logdir == 'test/log' )
+      if ( logdir.nil?  ||  logdir.empty?  ||  logdir == 'test/log'  ||  logdir.split('/').size <= 2)
         require 'tmpdir'
         logdir = Dir::tmpdir + '/log'
       end
+      mycaller = CallerUtils.mycaller(:skip => ['perception', 'ruby\gems', 'ruby/gems', 'test/unit'])    
       logfile =  File.join(logdir, filename)
-      puts "\nmycaller=#{mycaller.inspect_pp}"
-      puts "\nlogdir=#{logdir.inspect_pp}"
-      puts "\nlogfile=#{logfile.inspect_pp}"
-      
-            
+      #puts "mycaller=#{mycaller.inspect_pp}"
+      #puts "logdir=#{logdir.inspect_pp}"
+      #puts "logfile=#{logfile.inspect_pp}"
+           
       # Erzeugen, wenn nötig
       begin
         # Dir erzeugen
@@ -40,7 +60,11 @@ module Perception #:nodoc
         # File erzeugen
         unless File.exist?(logfile)
           File.open(logfile,(File::WRONLY | File::APPEND | File::CREAT)) 
-          log_status("Logfile created by #{mycaller}")
+          if  (mycaller.nil? || mycaller.empty?)
+            log_status
+          else
+            log_status("Logfile created by #{mycaller}") 
+          end
         end
         #Logger erzeugen
         @logger =        Logger.new( logfile )
@@ -55,7 +79,18 @@ module Perception #:nodoc
     end # def        
     
     
-    
+    # Prints a separator, the actual time and an optional message in the log file.
+    # Usage:
+    #  seee.log_status "My Message"
+    #  => (in log file)
+    #
+    #   ------------------------------------------------------------------------------------------------------------------------
+    #   2012-10-17 Wednesday 10:47:05
+    #   My Message  
+    #
+    # @return [void]
+    # @param [String] message message to print
+    # 
     def log_status(message='')
       status =  "\n\n\n# " + ('-'*120) + "\n"
       status += "# " + Time.now.inspect_see + "\n"

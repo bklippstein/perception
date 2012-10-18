@@ -8,10 +8,78 @@ end
 
 
 
-module Perception #:nodoc
+module Perception 
 
  module NumericI 
+ 
+    # ------------------------------------------------------------------------------
+    # @group Slash needless digits
+    #   
+    
+    # Slash needless digits.
+    # Needless are digits that are
+    # * beyond the measurement precision or
+    # * not perceived by humans (instead they disturb the reception)    
+    #
+    # Example:
+    #    input (+/-)     result (+)     result (-)   result.class
+    #  ----------------------------------------------------------
+    #       12567.89          12600         -12600         Fixnum
+    #       1256.789           1260          -1260         Fixnum
+    #      123.56789            124           -124         Fixnum
+    #         100.01            100           -100         Fixnum
+    #          100.0            100           -100         Fixnum
+    #           99.9           99.9          -99.9          Float
+    #           12.0             12            -12         Fixnum
+    #             12             12            -12         Fixnum
+    #       12.56789           12.6          -12.6          Float
+    #       1.256789           1.26          -1.26          Float
+    #            1.5            1.5           -1.5          Float
+    #              0              0              0         Fixnum
+    #      0.1256789          0.126         -0.126          Float
+    #     0.01256789         0.0126        -0.0126          Float
+    #    0.001256789        0.00126       -0.00126          Float
+    #   0.0001256789       0.000126      -0.000126          Float
+    #
+    # @return [Numeric]
+    # @param [Integer] precision How many digits are significant?
+    def significant( precision = 3)
+    
+        # sprintf mit gemischter Schreibweise
+        fucking_c_lib_result = sprintf("%.#{precision}g", self)
+        fucking_c_lib_result =~ /^(.*)e/
+        meine_zahl = $+ || fucking_c_lib_result            
+        exponent = $'
+        # pp meine_zahl
+        # pp exponent
+        
+        #  ohne Exponent
+        if exponent.nil?
+          result = meine_zahl.to_f
+          if result.abs >= (10**(precision-1))  ||  result == result.to_i
+            return result.to_i
+          else
+            return result
+          end          
+         
+        # mit Exponent
+        else
+     
+          result = meine_zahl.to_f * 10**(exponent.to_i)
+          if exponent[0..0] == '+' 
+            return result.to_i
+          
+          else
+            return result
 
+          end
+        
+        end # Expontent?
+    end # def significant   
+
+    # ------------------------------------------------------------------------------
+    # @group Easily human readable numbers
+    #    
     
     # Formatiert eine Zahl so, dass sie leicht menschenlesbar wird: 
     # - Quasi-rechtsbündig (mit dem Komma als Bezugspunkt, abhängig von der Klassenzugehörigkeit der Zahl)
@@ -76,56 +144,19 @@ module Perception #:nodoc
     end
     
     
-    # Streicht überflüssige Stellen weg.
-    # Wandelt in Integer um, wenn das ohne Informationsverlust möglich ist.
-    # Überflüssig sind Stellen, die 
-    # * jenseits der Messprecision liegen oder
-    # * nicht von Menschen wahrgenommen werden (stattdessen stören sie die Rezeption)
-    # 
-    def significant( precision = 3)
-    
-        # sprintf mit gemischter Schreibweise
-        fucking_c_lib_result = sprintf("%.#{precision}g", self)
-        fucking_c_lib_result =~ /^(.*)e/
-        meine_zahl = $+ || fucking_c_lib_result            
-        exponent = $'
-        # pp meine_zahl
-        # pp exponent
-        
-        #  ohne Exponent
-        if exponent.nil?
-          result = meine_zahl.to_f
-          if result.abs >= (10**(precision-1))  ||  result == result.to_i
-            return result.to_i
-          else
-            return result
-          end          
-         
-        # mit Exponent
-        else
-     
-          result = meine_zahl.to_f * 10**(exponent.to_i)
-          if exponent[0..0] == '+' 
-            return result.to_i
-          
-          else
-            return result
-
-          end
-        
-        end # Expontent?
-    end # def significant      
+   
     
 
   end # module NumericI 
 end # module Perception
 
 
-class Numeric #:nodoc:
+class Numeric 
   include Perception::NumericI
 end
 
-class NilClass #:nodoc:
+# @private
+class NilClass 
     def size(*a);                       0;              end  
 end
 
@@ -151,11 +182,15 @@ if $0 == __FILE__  &&  Drumherum::loaded? then
 
   when :try1 #-------------------------------------------------------------------------------   
   
+    seee.out << :log
     test = [12567.89, 1256.789, 123.56789, 100.01, 100.0, 99.9, 12.0, 12, 12.56789, 1.256789, 1.5, 0, 0.1256789,0.01256789,0.001256789,0.0001256789, ]
     test.each do |t|
+    
+      see_print "#"
       see_print t.to_s.rjust(15)
       see_print t.significant.to_s.rjust(15)
       see_print (t * -1).significant.to_s.rjust(15)
+      see_print t.significant.class.to_s.rjust(15)      
       see_print "\n"
     end
     

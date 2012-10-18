@@ -7,10 +7,15 @@ if $0 == __FILE__
 end
 
 
-module Perception #:nodoc
+module Perception 
  module TimeI 
  
-
+ 
+  # ------------------------------------------------------------------------------
+  # @group Using inspect_see for to_s and pretty_print
+  #     
+ 
+ # @return [String]
  def inspect_see(options={})
     norm =              options[:norm]        || :iso
     precision_max = 4
@@ -23,12 +28,13 @@ module Perception #:nodoc
  
  
 
-
+ # @return [String]
   def to_s
     self.inspect_see(:precision => 5)
   end  
   
   
+ # @return [String]  
   def pretty_print(q)
     q.text(self.inspect_see(:precision => 5))
   end    
@@ -40,7 +46,7 @@ end # module Perception
 
 
 
-class Time #:nodoc:
+class Time 
   include Perception::TimeI
 end
 
