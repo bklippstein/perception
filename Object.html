@@ -1,623 +1,1075 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Object
+  
+    &mdash; Documentation by YARD 0.8.3
+  
+</title>
 
-<html>
-<head>
-<meta content="text/html; charset=utf8" http-equiv="Content-Type">
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
 
-<title>class Object - Perception 0.3.3</title>
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
 
-<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/klippstein.css" type="text/css" media="screen" charset="utf-8" />
 
-<script type="text/javascript">
-  var rdoc_rel_prefix = "./";
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
 </script>
 
-<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/klippstein.js"></script>
 
 
-<body id="top" class="class">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="./index.html">Home</a>
-    <a href="./table_of_contents.html#classes">Classes</a>
-    <a href="./table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
-
-
-  <nav id="search-section" class="section project-section" class="initially-hidden">
-  <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
-             title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
-  </form>
-
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
-
-
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/perception/logging.rb
-    <li>lib/perception/perception_main.rb
-    <li>lib/perception/perception_private.rb
-    <li>lib/perception/string_spread.rb
-  </ul>
-</nav>
-
-    
-  </div>
-
-  <div id="class-metadata">
-    
-    <nav id="parent-class-section" class="section">
-  <h3 class="section-header">Parent</h3>
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
   
-  <p class="link">BasicObject
+    <a href="_index.html">Index (O)</a> &raquo;
+    
+    
+    <span class="title">Object</span>
   
-</nav>
 
-    <!-- Included Modules -->
-<nav id="includes-section" class="section">
-  <h3 class="section-header">Included Modules</h3>
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
 
-  <ul class="link-list">
+      <div id="search">
   
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
   
-    <li><span class="include">RbConfig</span>
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
   
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
   
-  </ul>
-</nav>
+</div>
+      <div class="clear"></div>
+    </div>
 
-    <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
+    <iframe id="search_frame"></iframe>
 
-  <ul class="link-list">
-    
-    <li><a href="#method-i-inspect_or_to_s">#inspect_or_to_s</a>
-    
-    <li><a href="#method-i-inspect_pp">#inspect_pp</a>
-    
-    <li><a href="#method-i-inspect_see">#inspect_see</a>
-    
-    <li><a href="#method-i-log">#log</a>
-    
-    <li><a href="#method-i-rawlog">#rawlog</a>
-    
-    <li><a href="#method-i-see">#see</a>
-    
-    <li><a href="#method-i-see_each">#see_each</a>
-    
-    <li><a href="#method-i-see_flash">#see_flash</a>
-    
-    <li><a href="#method-i-see_pp">#see_pp</a>
-    
-    <li><a href="#method-i-see_print">#see_print</a>
-    
-    <li><a href="#method-i-see_puts">#see_puts</a>
-    
-    <li><a href="#method-i-see_temp">#see_temp</a>
-    
-    <li><a href="#method-i-seee">#seee</a>
-    
-    <li><a href="#method-i-wait_for_key">#wait_for_key</a>
-    
-  </ul>
-</nav>
-
-  </div>
-
-  <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="./History_txt.html">History</a>
-  
-    <li class="file"><a href="./License_txt.html">License</a>
-  
-    <li class="file"><a href="./README_txt.html">README</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-    <li><a href="./Perception.html">Perception</a>
-  
-    <li><a href="./Perception/NumericI.html">Perception::NumericI</a>
-  
-    <li><a href="./Perception/SeeSession.html">Perception::SeeSession</a>
-  
-    <li><a href="./Perception/StringSpreadI.html">Perception::StringSpreadI</a>
-  
-    <li><a href="./Perception/TimeI.html">Perception::TimeI</a>
-  
-    <li><a href="./Object.html">Object</a>
-  
-    <li><a href="./PPP.html">PPP</a>
-  
-  </ul>
-</nav>
-
-  </div>
-</nav>
-
-<div id="documentation">
-  <h1 class="class">class Object</h1>
-
-  <div id="description" class="description">
-    
-  </div><!-- description -->
-
+    <div id="content"><h1>Class: Object
   
   
   
-  <section id="5Buntitled-5D" class="documentation-section">
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">BasicObject</span>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/perception/logging.rb<span class="defines">,<br />
+  lib/perception/perception_main.rb,<br /> lib/perception/perception_private.rb</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Logging
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#log-instance_method" title="#log (instance method)">- (Object) <strong>log</strong>(input = :kein_input, *rest) </a>
     
 
     
+  </span>
+  
+  
+  
+  
+  
+  
+  
 
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Same as method see, but outputs in logfile only.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rawlog-instance_method" title="#rawlog (instance method)">- (Object) <strong>rawlog</strong>(input = '') </a>
     
 
     
+  </span>
+  
+  
+  
+  
+  
+  
+  
 
-    <!-- Methods -->
+  
+    <span class="summary_desc"><div class='inline'>
+<p>raw output into logfile.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
     
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
+      <a href="#inspect_or_to_s-instance_method" title="#inspect_or_to_s (instance method)">- (Object) <strong>inspect_or_to_s</strong> </a>
+    
 
     
-      <div id="method-i-inspect_or_to_s" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">inspect_or_to_s</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
+  </span>
+  
+  
+  
+  
+  
+  
+  
 
-        <div class="method-description">
-          
-          <p>Liefert entweder inspect oder to_s, je nach Klassenzugehörigkeit Explizite
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Liefert entweder inspect oder to_s, je nach Klassenzugehörigkeit Explizite
+Typabfrage ohne duck typing!.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inspect_pp-instance_method" title="#inspect_pp (instance method)">- (Object) <strong>inspect_pp</strong>(wrap = 200) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Like inspect, but uses the PrettyPrint library.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inspect_see-instance_method" title="#inspect_see (instance method)">- (Object) <strong>inspect_see</strong>(wrap = 200) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>inspect_pp with beautification.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#see-instance_method" title="#see (instance method)">- (Object) <strong>see</strong>(input = :kein_input, *rest) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This is the main method.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#see_each-instance_method" title="#see_each (instance method)">- (Object) <strong>see_each</strong>(input) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#see_flash-instance_method" title="#see_flash (instance method)">- (Object) <strong>see_flash</strong>(input = :kein_input, alternativtext = ' ', times = 6) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Shows two informations in one line.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#see_pp-instance_method" title="#see_pp (instance method)">- (Object) <strong>see_pp</strong>(input = :kein_input) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Like see, but forces behavior like the originally pp method.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#see_print-instance_method" title="#see_print (instance method)">- (Object) <strong>see_print</strong>(input = $_) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Like see, but forces behavior like the originally print method.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#see_puts-instance_method" title="#see_puts (instance method)">- (Object) <strong>see_puts</strong>(input = :kein_input) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Like see, but forces behavior like the originally puts method.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#see_temp-instance_method" title="#see_temp (instance method)">- (Object) <strong>see_temp</strong>(input = :kein_input) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Like see, but temporary print.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#seee-instance_method" title="#seee (instance method)">- (Object) <strong>seee</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the SeeSession-Object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#wait_for_key-instance_method" title="#wait_for_key (instance method)">- (Object) <strong>wait_for_key</strong>(message = 'Press any key') </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Waits for you / the user to press a key.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="inspect_or_to_s-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Object (class)">Object</a></span></tt>) <strong>inspect_or_to_s</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Liefert entweder inspect oder to_s, je nach Klassenzugehörigkeit Explizite
 Typabfrage ohne duck typing!</p>
-          
 
-          
-          <div class="method-source-code" id="inspect_or_to_s-source">
-            <pre><span class="ruby-comment"># File lib/perception/perception_private.rb, line 209</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect_or_to_s</span>
-  <span class="ruby-keyword">return</span> <span class="ruby-string">'empty'</span>            <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span> <span class="ruby-operator">==</span> <span class="ruby-string">''</span>
-  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_s</span>          <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
-  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">inspect_see</span>   <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Time</span>
-  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">inspect_see</span>   <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Numeric</span>)
-  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">inspect_see</span>   <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Set</span>)
-  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">inspect</span>
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- inspect_or_to_s-source -->
-          
-        </div>
 
-        
-
-        
-      </div><!-- inspect_or_to_s-method -->
-
-    
-      <div id="method-i-inspect_pp" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">inspect_pp</span><span
-            class="method-args">( wrap = 200 )</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Like inspect, but uses the PrettyPrint library.  Returns the output of pp
-as String.</p>
-          
-
-          
-          <div class="method-source-code" id="inspect_pp-source">
-            <pre><span class="ruby-comment"># File lib/perception/perception_main.rb, line 271</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect_pp</span>( <span class="ruby-identifier">wrap</span> = <span class="ruby-value">200</span> )
-  <span class="ruby-identifier">result</span> = <span class="ruby-string">''</span>
-  <span class="ruby-keyword">return</span> <span class="ruby-constant">PPP</span><span class="ruby-operator">::</span><span class="ruby-identifier">pp</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">result</span>, <span class="ruby-identifier">wrap</span>) 
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- inspect_pp-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- inspect_pp-method -->
-
-    
-      <div id="method-i-inspect_see" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">inspect_see</span><span
-            class="method-args">( wrap = 200 )</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p><a href="Object.html#method-i-inspect_pp">#inspect_pp</a> with
-beautification</p>
-          
-
-          
-          <div class="method-source-code" id="inspect_see-source">
-            <pre><span class="ruby-comment"># File lib/perception/perception_main.rb, line 278</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect_see</span>( <span class="ruby-identifier">wrap</span> = <span class="ruby-value">200</span> )
-  <span class="ruby-identifier">result</span> = <span class="ruby-string">''</span>
-  <span class="ruby-identifier">result</span> = <span class="ruby-constant">PPP</span><span class="ruby-operator">::</span><span class="ruby-identifier">pp</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">result</span>, <span class="ruby-identifier">wrap</span>)  <span class="ruby-comment"># normal prettyprint</span>
-  <span class="ruby-identifier">result</span> = <span class="ruby-constant">PPP</span>.<span class="ruby-identifier">beautify</span>(<span class="ruby-identifier">result</span>)
-  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- inspect_see-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- inspect_see-method -->
-
-    
-      <div id="method-i-log" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">log</span><span
-            class="method-args">(input=:kein_input, *rest)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Same as method see, but outputs in logfile only</p>
-          
-
-          
-          <div class="method-source-code" id="log-source">
-            <pre><span class="ruby-comment"># File lib/perception/logging.rb, line 75</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">log</span>(<span class="ruby-identifier">input</span>=<span class="ruby-value">:kein_input</span>, *<span class="ruby-identifier">rest</span>)
-  <span class="ruby-identifier">out_bak</span> = <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">out</span>.<span class="ruby-identifier">dup</span>
-  <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">out</span>=[<span class="ruby-value">:log</span>]
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">rest</span>.<span class="ruby-identifier">empty?</span>
-    <span class="ruby-identifier">see</span> <span class="ruby-identifier">input</span>
-  <span class="ruby-keyword">else</span>
-    <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">process_print</span>( ( [<span class="ruby-identifier">input</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">rest</span>), <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:multi</span> )
-  <span class="ruby-keyword">end</span>
-  <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">out</span>=<span class="ruby-identifier">out_bak</span>
-  <span class="ruby-keyword">nil</span>
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- log-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- log-method -->
-
-    
-      <div id="method-i-rawlog" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">rawlog</span><span
-            class="method-args">(input='')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>raw output into logfile</p>
-          
-
-          
-          <div class="method-source-code" id="rawlog-source">
-            <pre><span class="ruby-comment"># File lib/perception/logging.rb, line 89</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">rawlog</span>(<span class="ruby-identifier">input</span>=<span class="ruby-string">''</span>)
-  <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">logger</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">input</span>)       
-  <span class="ruby-keyword">nil</span>
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- rawlog-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- rawlog-method -->
-
-    
-      <div id="method-i-see" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">see</span><span
-            class="method-args">(input=:kein_input, *rest)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>This is the main method. It prints out objects. See the demo.</p>
-          
-
-          
-          <div class="method-source-code" id="see-source">
-            <pre><span class="ruby-comment"># File lib/perception/perception_main.rb, line 167</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">see</span>(<span class="ruby-identifier">input</span>=<span class="ruby-value">:kein_input</span>, *<span class="ruby-identifier">rest</span>)
-
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">input</span> <span class="ruby-operator">==</span> <span class="ruby-value">:kein_input</span>  
-    <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">process_print</span>( <span class="ruby-string">&quot;\n&quot;</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:puts</span> )
-    <span class="ruby-keyword">return</span> <span class="ruby-string">''</span>
-  <span class="ruby-keyword">end</span>        
+  </div>
+</div>
+<div class="tags">
   
-  <span class="ruby-keyword">return</span> <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">process_print</span>( ( [<span class="ruby-identifier">input</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">rest</span>), <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:multi</span> )    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">rest</span>.<span class="ruby-identifier">empty?</span>
-  <span class="ruby-keyword">return</span> <span class="ruby-identifier">see_puts</span>(<span class="ruby-identifier">input</span>)              <span class="ruby-keyword">if</span> <span class="ruby-identifier">input</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
-  <span class="ruby-keyword">return</span> <span class="ruby-identifier">see_pp</span>(<span class="ruby-identifier">input</span>)                <span class="ruby-keyword">if</span> <span class="ruby-identifier">input</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Hash</span>
-  <span class="ruby-keyword">return</span> <span class="ruby-identifier">see_puts</span>(<span class="ruby-identifier">input</span>)              <span class="ruby-keyword">unless</span> (<span class="ruby-identifier">input</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:compact</span>)  <span class="ruby-operator">||</span>  <span class="ruby-identifier">input</span>.<span class="ruby-identifier">instance_variables</span> )   <span class="ruby-comment"># Ordinäre Objekte macht puts</span>
-  <span class="ruby-keyword">return</span> <span class="ruby-identifier">see_pp</span>(<span class="ruby-identifier">input</span>)        <span class="ruby-comment"># Den Rest macht pp    </span>
-                          
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- see-source -->
-          
-        </div>
 
-        
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
 
-        
-      </div><!-- see-method -->
 
+210
+211
+212
+213
+214
+215
+216
+217</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/perception/perception_private.rb', line 210</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_inspect_or_to_s'>inspect_or_to_s</span>
+  <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>empty</span><span class='tstring_end'>'</span></span>            <span class='kw'>if</span> <span class='kw'>self</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span>
+  <span class='kw'>return</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>          <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span> <span class='op'>==</span> <span class='const'>String</span>
+  <span class='kw'>return</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_inspect_see'>inspect_see</span>   <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span> <span class='op'>==</span> <span class='const'>Time</span>
+  <span class='kw'>return</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_inspect_see'>inspect_see</span>   <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>Numeric</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_inspect_see'>inspect_see</span>   <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>Set</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
     
-      <div id="method-i-see_each" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">see_each</span><span
-            class="method-args">(input)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
+      <div class="method_details ">
+  <h3 class="signature " id="inspect_pp-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Object (class)">Object</a></span></tt>) <strong>inspect_pp</strong>(wrap = 200) 
+  
 
-        <div class="method-description">
-          
-          
-          
+  
 
-          
-          <div class="method-source-code" id="see_each-source">
-            <pre><span class="ruby-comment"># File lib/perception/perception_main.rb, line 183</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">see_each</span>(<span class="ruby-identifier">input</span>)
-  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contentclass</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Array</span>
-    <span class="ruby-identifier">see_puts</span> <span class="ruby-string">'['</span>
-    <span class="ruby-identifier">input</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">elt</span><span class="ruby-operator">|</span> <span class="ruby-identifier">see</span> <span class="ruby-identifier">elt</span>} 
-    <span class="ruby-identifier">see_puts</span><span class="ruby-string">']'</span>
-  <span class="ruby-keyword">end</span>
-  <span class="ruby-identifier">input</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">elt</span><span class="ruby-operator">|</span> <span class="ruby-identifier">see</span> <span class="ruby-identifier">elt</span>}     
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- see_each-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- see_each-method -->
-
+  
+</h3><div class="docstring">
+  <div class="discussion">
     
-      <div id="method-i-see_flash" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">see_flash</span><span
-            class="method-args">(input=:kein_input, alternativtext=' ', times=6)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
+<p>Like inspect, but uses the PrettyPrint library.  Returns the output of pp
+as String.</p>
 
-        <div class="method-description">
-          
-          <p>Shows two informations in one line. See the demo.</p>
-          
 
-          
-          <div class="method-source-code" id="see_flash-source">
-            <pre><span class="ruby-comment"># File lib/perception/perception_main.rb, line 208</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">see_flash</span>(<span class="ruby-identifier">input</span>=<span class="ruby-value">:kein_input</span>, <span class="ruby-identifier">alternativtext</span>=<span class="ruby-string">' '</span>, <span class="ruby-identifier">times</span>=<span class="ruby-value">6</span>)
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">input</span> <span class="ruby-operator">==</span> <span class="ruby-value">:kein_input</span>  
-    <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">delayed_newlines</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>   
-    <span class="ruby-keyword">return</span> <span class="ruby-string">''</span>
-  <span class="ruby-keyword">end</span>        
-  <span class="ruby-identifier">see_puts</span> <span class="ruby-identifier">input</span>
-  <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">flash!</span>(<span class="ruby-identifier">alternativtext</span>,<span class="ruby-identifier">times</span>)   <span class="ruby-keyword">if</span> <span class="ruby-identifier">input</span> <span class="ruby-operator">!=</span> <span class="ruby-value">:kein_input</span>     
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- see_flash-source -->
-          
-        </div>
+  </div>
+</div>
+<div class="tags">
+  
 
-        
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
 
-        
-      </div><!-- see_flash-method -->
 
+272
+273
+274
+275</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/perception/perception_main.rb', line 272</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_inspect_pp'>inspect_pp</span><span class='lparen'>(</span> <span class='id identifier rubyid_wrap'>wrap</span> <span class='op'>=</span> <span class='int'>200</span> <span class='rparen'>)</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span>
+  <span class='kw'>return</span> <span class='const'>PPP</span><span class='op'>::</span><span class='id identifier rubyid_pp'>pp</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_result'>result</span><span class='comma'>,</span> <span class='id identifier rubyid_wrap'>wrap</span><span class='rparen'>)</span> 
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
     
-      <div id="method-i-see_pp" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">see_pp</span><span
-            class="method-args">(input=:kein_input)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
+      <div class="method_details ">
+  <h3 class="signature " id="inspect_see-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Object (class)">Object</a></span></tt>) <strong>inspect_see</strong>(wrap = 200) 
+  
 
-        <div class="method-description">
-          
-          <p>Like see, but forces behavior like the originally pp method.</p>
-          
+  
 
-          
-          <div class="method-source-code" id="see_pp-source">
-            <pre><span class="ruby-comment"># File lib/perception/perception_main.rb, line 239</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">see_pp</span>(<span class="ruby-identifier">input</span>=<span class="ruby-value">:kein_input</span>)
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">input</span> <span class="ruby-operator">==</span> <span class="ruby-value">:kein_input</span>  
-    <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">delayed_newlines</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>   
-    <span class="ruby-keyword">return</span> <span class="ruby-string">''</span>
-  <span class="ruby-keyword">end</span>   
-  <span class="ruby-keyword">return</span> <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">process_print</span>( <span class="ruby-identifier">input</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:pp</span> )
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- see_pp-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- see_pp-method -->
-
+  
+</h3><div class="docstring">
+  <div class="discussion">
     
-      <div id="method-i-see_print" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">see_print</span><span
-            class="method-args">(input=$_)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
+<p>inspect_pp with beautification</p>
 
-        <div class="method-description">
-          
-          <p>Like see, but forces behavior like the originally print method.</p>
 
-<p>So you have fully control over your newlines.  Note: If you use “n”, <a
-href="Object.html#method-i-see">#see</a> will indent it. See
-SEE_LEVEL_START.</p>
-          
+  </div>
+</div>
+<div class="tags">
+  
 
-          
-          <div class="method-source-code" id="see_print-source">
-            <pre><span class="ruby-comment"># File lib/perception/perception_main.rb, line 233</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">see_print</span>(<span class="ruby-identifier">input</span>=<span class="ruby-identifier">$_</span>)
-  <span class="ruby-keyword">return</span> <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">process_print</span>( <span class="ruby-identifier">input</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:print</span> )
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- see_print-source -->
-          
-        </div>
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
 
-        
 
-        
-      </div><!-- see_print-method -->
+279
+280
+281
+282
+283
+284</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/perception/perception_main.rb', line 279</span>
 
+<span class='kw'>def</span> <span class='id identifier rubyid_inspect_see'>inspect_see</span><span class='lparen'>(</span> <span class='id identifier rubyid_wrap'>wrap</span> <span class='op'>=</span> <span class='int'>200</span> <span class='rparen'>)</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>PPP</span><span class='op'>::</span><span class='id identifier rubyid_pp'>pp</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_result'>result</span><span class='comma'>,</span> <span class='id identifier rubyid_wrap'>wrap</span><span class='rparen'>)</span>  <span class='comment'># normal prettyprint
+</span>  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>PPP</span><span class='period'>.</span><span class='id identifier rubyid_beautify'>beautify</span><span class='lparen'>(</span><span class='id identifier rubyid_result'>result</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_result'>result</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
     
-      <div id="method-i-see_puts" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">see_puts</span><span
-            class="method-args">(input=:kein_input)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
+      <div class="method_details ">
+  <h3 class="signature " id="log-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Object (class)">Object</a></span></tt>) <strong>log</strong>(input = :kein_input, *rest) 
+  
 
-        <div class="method-description">
-          
-          <p>Like see, but forces behavior like the originally puts method.  So you get
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Same as method see, but outputs in logfile only</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/perception/logging.rb', line 111</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_log'>log</span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='op'>=</span><span class='symbol'>:kein_input</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_rest'>rest</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_out_bak'>out_bak</span> <span class='op'>=</span> <span class='id identifier rubyid_seee'>seee</span><span class='period'>.</span><span class='id identifier rubyid_out'>out</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span>
+  <span class='id identifier rubyid_seee'>seee</span><span class='period'>.</span><span class='id identifier rubyid_out'>out</span><span class='op'>=</span><span class='lbracket'>[</span><span class='symbol'>:log</span><span class='rbracket'>]</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_rest'>rest</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+    <span class='id identifier rubyid_see'>see</span> <span class='id identifier rubyid_input'>input</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_seee'>seee</span><span class='period'>.</span><span class='id identifier rubyid_process_print'>process_print</span><span class='lparen'>(</span> <span class='lparen'>(</span> <span class='lbracket'>[</span><span class='id identifier rubyid_input'>input</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_rest'>rest</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:method</span> <span class='op'>=&gt;</span> <span class='symbol'>:multi</span> <span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_seee'>seee</span><span class='period'>.</span><span class='id identifier rubyid_out'>out</span><span class='op'>=</span><span class='id identifier rubyid_out_bak'>out_bak</span>
+  <span class='kw'>nil</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rawlog-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Object (class)">Object</a></span></tt>) <strong>rawlog</strong>(input = '') 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>raw output into logfile</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+125
+126
+127
+128</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/perception/logging.rb', line 125</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_rawlog'>rawlog</span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_seee'>seee</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span> <span class='op'>&lt;&lt;</span> <span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='rparen'>)</span>       
+  <span class='kw'>nil</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="see-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Object (class)">Object</a></span></tt>) <strong>see</strong>(input = :kein_input, *rest) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This is the main method. It prints out objects. See the demo.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/perception/perception_main.rb', line 168</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_see'>see</span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='op'>=</span><span class='symbol'>:kein_input</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_rest'>rest</span><span class='rparen'>)</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_input'>input</span> <span class='op'>==</span> <span class='symbol'>:kein_input</span>  
+    <span class='id identifier rubyid_seee'>seee</span><span class='period'>.</span><span class='id identifier rubyid_process_print'>process_print</span><span class='lparen'>(</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:method</span> <span class='op'>=&gt;</span> <span class='symbol'>:puts</span> <span class='rparen'>)</span>
+    <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span>
+  <span class='kw'>end</span>        
+  
+  <span class='kw'>return</span> <span class='id identifier rubyid_seee'>seee</span><span class='period'>.</span><span class='id identifier rubyid_process_print'>process_print</span><span class='lparen'>(</span> <span class='lparen'>(</span> <span class='lbracket'>[</span><span class='id identifier rubyid_input'>input</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_rest'>rest</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:method</span> <span class='op'>=&gt;</span> <span class='symbol'>:multi</span> <span class='rparen'>)</span>    <span class='kw'>unless</span> <span class='id identifier rubyid_rest'>rest</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_see_puts'>see_puts</span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='rparen'>)</span>              <span class='kw'>if</span> <span class='id identifier rubyid_input'>input</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span> <span class='op'>==</span> <span class='const'>String</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_see_pp'>see_pp</span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='rparen'>)</span>                <span class='kw'>if</span> <span class='id identifier rubyid_input'>input</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span> <span class='op'>==</span> <span class='const'>Hash</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_see_puts'>see_puts</span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='rparen'>)</span>              <span class='kw'>unless</span> <span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:compact</span><span class='rparen'>)</span>  <span class='op'>||</span>  <span class='id identifier rubyid_input'>input</span><span class='period'>.</span><span class='id identifier rubyid_instance_variables'>instance_variables</span> <span class='rparen'>)</span>   <span class='comment'># Ordinäre Objekte macht puts
+</span>  <span class='kw'>return</span> <span class='id identifier rubyid_see_pp'>see_pp</span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='rparen'>)</span>        <span class='comment'># Den Rest macht pp    
+</span>                          
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="see_each-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Object (class)">Object</a></span></tt>) <strong>see_each</strong>(input) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+184
+185
+186
+187
+188
+189
+190
+191</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/perception/perception_main.rb', line 184</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_see_each'>see_each</span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_contentclass'>contentclass</span> <span class='op'>==</span> <span class='const'>Array</span>
+    <span class='id identifier rubyid_see_puts'>see_puts</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>[</span><span class='tstring_end'>'</span></span>
+    <span class='id identifier rubyid_input'>input</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_elt'>elt</span><span class='op'>|</span> <span class='id identifier rubyid_see'>see</span> <span class='id identifier rubyid_elt'>elt</span><span class='rbrace'>}</span> 
+    <span class='id identifier rubyid_see_puts'>see_puts</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>]</span><span class='tstring_end'>'</span></span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_input'>input</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_elt'>elt</span><span class='op'>|</span> <span class='id identifier rubyid_see'>see</span> <span class='id identifier rubyid_elt'>elt</span><span class='rbrace'>}</span>     
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="see_flash-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Object (class)">Object</a></span></tt>) <strong>see_flash</strong>(input = :kein_input, alternativtext = ' ', times = 6) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Shows two informations in one line. See the demo.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+209
+210
+211
+212
+213
+214
+215
+216</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/perception/perception_main.rb', line 209</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_see_flash'>see_flash</span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='op'>=</span><span class='symbol'>:kein_input</span><span class='comma'>,</span> <span class='id identifier rubyid_alternativtext'>alternativtext</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'> </span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_times'>times</span><span class='op'>=</span><span class='int'>6</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_input'>input</span> <span class='op'>==</span> <span class='symbol'>:kein_input</span>  
+    <span class='id identifier rubyid_seee'>seee</span><span class='period'>.</span><span class='id identifier rubyid_delayed_newlines'>delayed_newlines</span> <span class='op'>+=</span> <span class='int'>1</span>   
+    <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span>
+  <span class='kw'>end</span>        
+  <span class='id identifier rubyid_see_puts'>see_puts</span> <span class='id identifier rubyid_input'>input</span>
+  <span class='id identifier rubyid_seee'>seee</span><span class='period'>.</span><span class='id identifier rubyid_flash!'>flash!</span><span class='lparen'>(</span><span class='id identifier rubyid_alternativtext'>alternativtext</span><span class='comma'>,</span><span class='id identifier rubyid_times'>times</span><span class='rparen'>)</span>   <span class='kw'>if</span> <span class='id identifier rubyid_input'>input</span> <span class='op'>!=</span> <span class='symbol'>:kein_input</span>     
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="see_pp-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Object (class)">Object</a></span></tt>) <strong>see_pp</strong>(input = :kein_input) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Like see, but forces behavior like the originally pp method.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+240
+241
+242
+243
+244
+245
+246</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/perception/perception_main.rb', line 240</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_see_pp'>see_pp</span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='op'>=</span><span class='symbol'>:kein_input</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_input'>input</span> <span class='op'>==</span> <span class='symbol'>:kein_input</span>  
+    <span class='id identifier rubyid_seee'>seee</span><span class='period'>.</span><span class='id identifier rubyid_delayed_newlines'>delayed_newlines</span> <span class='op'>+=</span> <span class='int'>1</span>   
+    <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span>
+  <span class='kw'>end</span>   
+  <span class='kw'>return</span> <span class='id identifier rubyid_seee'>seee</span><span class='period'>.</span><span class='id identifier rubyid_process_print'>process_print</span><span class='lparen'>(</span> <span class='id identifier rubyid_input'>input</span><span class='comma'>,</span> <span class='symbol'>:method</span> <span class='op'>=&gt;</span> <span class='symbol'>:pp</span> <span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="see_print-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Object (class)">Object</a></span></tt>) <strong>see_print</strong>(input = $_) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Like see, but forces behavior like the originally print method.   So you
+have fully control over your newlines.  Note: If you use "n", #see will
+indent it. See SEE_LEVEL_START.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+234
+235
+236</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/perception/perception_main.rb', line 234</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_see_print'>see_print</span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='op'>=</span><span class='gvar'>$_</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_seee'>seee</span><span class='period'>.</span><span class='id identifier rubyid_process_print'>process_print</span><span class='lparen'>(</span> <span class='id identifier rubyid_input'>input</span><span class='comma'>,</span> <span class='symbol'>:method</span> <span class='op'>=&gt;</span> <span class='symbol'>:print</span> <span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="see_puts-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Object (class)">Object</a></span></tt>) <strong>see_puts</strong>(input = :kein_input) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Like see, but forces behavior like the originally puts method.  So you get
 a newline after every print. Note: All newlines are delayed. This offers
 you to undo the print.</p>
-          
 
-          
-          <div class="method-source-code" id="see_puts-source">
-            <pre><span class="ruby-comment"># File lib/perception/perception_main.rb, line 221</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">see_puts</span>(<span class="ruby-identifier">input</span>=<span class="ruby-value">:kein_input</span>)
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">input</span> <span class="ruby-operator">==</span> <span class="ruby-value">:kein_input</span>  
-    <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">delayed_newlines</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>   
-    <span class="ruby-keyword">return</span> <span class="ruby-string">''</span>
-  <span class="ruby-keyword">end</span>   
-  <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">process_print</span>( <span class="ruby-identifier">input</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:puts</span> )
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- see_puts-source -->
-          
-        </div>
 
-        
+  </div>
+</div>
+<div class="tags">
+  
 
-        
-      </div><!-- see_puts-method -->
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
 
+
+222
+223
+224
+225
+226
+227
+228</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/perception/perception_main.rb', line 222</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_see_puts'>see_puts</span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='op'>=</span><span class='symbol'>:kein_input</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_input'>input</span> <span class='op'>==</span> <span class='symbol'>:kein_input</span>  
+    <span class='id identifier rubyid_seee'>seee</span><span class='period'>.</span><span class='id identifier rubyid_delayed_newlines'>delayed_newlines</span> <span class='op'>+=</span> <span class='int'>1</span>   
+    <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span>
+  <span class='kw'>end</span>   
+  <span class='id identifier rubyid_seee'>seee</span><span class='period'>.</span><span class='id identifier rubyid_process_print'>process_print</span><span class='lparen'>(</span> <span class='id identifier rubyid_input'>input</span><span class='comma'>,</span> <span class='symbol'>:method</span> <span class='op'>=&gt;</span> <span class='symbol'>:puts</span> <span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
     
-      <div id="method-i-see_temp" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">see_temp</span><span
-            class="method-args">(input=:kein_input)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
+      <div class="method_details ">
+  <h3 class="signature " id="see_temp-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Object (class)">Object</a></span></tt>) <strong>see_temp</strong>(input = :kein_input) 
+  
 
-        <div class="method-description">
-          
-          <p>Like see, but temporary print.  The following print will overwrite it. 
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Like see, but temporary print.  The following print will overwrite it. 
 Note: Indention will get lost.</p>
-          
 
-          
-          <div class="method-source-code" id="see_temp-source">
-            <pre><span class="ruby-comment"># File lib/perception/perception_main.rb, line 197</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">see_temp</span>(<span class="ruby-identifier">input</span>=<span class="ruby-value">:kein_input</span>)
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">input</span> <span class="ruby-operator">==</span> <span class="ruby-value">:kein_input</span>  
-    <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">delayed_newlines</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>   
-    <span class="ruby-keyword">return</span> <span class="ruby-string">''</span>
-  <span class="ruby-keyword">end</span>          
-  <span class="ruby-identifier">see_print</span> <span class="ruby-identifier">input</span>
-  <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">temp!</span>
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- see_temp-source -->
-          
-        </div>
 
-        
+  </div>
+</div>
+<div class="tags">
+  
 
-        
-      </div><!-- see_temp-method -->
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
 
+
+198
+199
+200
+201
+202
+203
+204
+205</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/perception/perception_main.rb', line 198</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_see_temp'>see_temp</span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='op'>=</span><span class='symbol'>:kein_input</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_input'>input</span> <span class='op'>==</span> <span class='symbol'>:kein_input</span>  
+    <span class='id identifier rubyid_seee'>seee</span><span class='period'>.</span><span class='id identifier rubyid_delayed_newlines'>delayed_newlines</span> <span class='op'>+=</span> <span class='int'>1</span>   
+    <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span>
+  <span class='kw'>end</span>          
+  <span class='id identifier rubyid_see_print'>see_print</span> <span class='id identifier rubyid_input'>input</span>
+  <span class='id identifier rubyid_seee'>seee</span><span class='period'>.</span><span class='id identifier rubyid_temp!'>temp!</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
     
-      <div id="method-i-seee" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">seee</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
+      <div class="method_details ">
+  <h3 class="signature " id="seee-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Object (class)">Object</a></span></tt>) <strong>seee</strong> 
+  
 
-        <div class="method-description">
-          
-          <p>Returns the SeeSession-<a href="Object.html">Object</a>. Offers the
-following methods:</p>
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the SeeSession-Object. Offers the following methods:</p>
 <ul><li>
 <p>seee.indent!</p>
 </li><li>
@@ -635,73 +1087,101 @@ following methods:</p>
 </li><li>
 <p>seee.bench</p>
 </li></ul>
-          
 
-          
-          <div class="method-source-code" id="seee-source">
-            <pre><span class="ruby-comment"># File lib/perception/perception_main.rb, line 161</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">seee</span>
-  <span class="ruby-keyword">return</span> <span class="ruby-constant">Perception</span><span class="ruby-operator">::</span><span class="ruby-constant">SeeSession</span>.<span class="ruby-identifier">instance</span>
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- seee-source -->
-          
-        </div>
 
-        
-
-        
-      </div><!-- seee-method -->
-
-    
-      <div id="method-i-wait_for_key" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">wait_for_key</span><span
-            class="method-args">(message='Press any key')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Waits for you / the user to press a key. Returns the key. Display it with
-#{wait_for_key.chr.inspect}. Note: Indention will get lost.</p>
-          
-
-          
-          <div class="method-source-code" id="wait_for_key-source">
-            <pre><span class="ruby-comment"># File lib/perception/perception_main.rb, line 256</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">wait_for_key</span>(<span class="ruby-identifier">message</span>=<span class="ruby-string">'Press any key'</span>)
-  <span class="ruby-identifier">seee</span>.<span class="ruby-identifier">clear_indent!</span>
-  <span class="ruby-comment">#seee.level -= 1 # Zählt nicht als Level</span>
-  <span class="ruby-identifier">see_temp</span> <span class="ruby-identifier">message</span>
-  <span class="ruby-keyword">unless</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">HighLine</span>)
-    <span class="ruby-identifier">require</span> <span class="ruby-string">'highline/import'</span>
-    <span class="ruby-constant">HighLine</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:public</span>, <span class="ruby-value">:get_character</span>)
-  <span class="ruby-keyword">end</span>
-  <span class="ruby-identifier">input</span> = <span class="ruby-constant">HighLine</span>.<span class="ruby-identifier">new</span>
-  <span class="ruby-keyword">return</span> <span class="ruby-identifier">input</span>.<span class="ruby-identifier">get_character</span>  
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- wait_for_key-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- wait_for_key-method -->
-
-    
-    </section><!-- public-instance-method-details -->
+  </div>
+</div>
+<div class="tags">
   
-  </section><!-- 5Buntitled-5D -->
 
-</div><!-- documentation -->
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
 
 
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
-</footer>
+162
+163
+164</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/perception/perception_main.rb', line 162</span>
 
+<span class='kw'>def</span> <span class='id identifier rubyid_seee'>seee</span>
+  <span class='kw'>return</span> <span class='const'>Perception</span><span class='op'>::</span><span class='const'>SeeSession</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="wait_for_key-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Object (class)">Object</a></span></tt>) <strong>wait_for_key</strong>(message = 'Press any key') 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Waits for you / the user to press a key. Returns the key. Display it with
+#Object.wait_for_keywait_for_key.chrwait_for_key.chr.inspect. Note: Indention will get lost.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/perception/perception_main.rb', line 257</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_wait_for_key'>wait_for_key</span><span class='lparen'>(</span><span class='id identifier rubyid_message'>message</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Press any key</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_seee'>seee</span><span class='period'>.</span><span class='id identifier rubyid_clear_indent!'>clear_indent!</span>
+  <span class='comment'>#seee.level -= 1 # Zählt nicht als Level
+</span>  <span class='id identifier rubyid_see_temp'>see_temp</span> <span class='id identifier rubyid_message'>message</span>
+  <span class='kw'>unless</span> <span class='kw'>defined?</span><span class='lparen'>(</span><span class='const'>HighLine</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>highline/import</span><span class='tstring_end'>'</span></span>
+    <span class='const'>HighLine</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:public</span><span class='comma'>,</span> <span class='symbol'>:get_character</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_input'>input</span> <span class='op'>=</span> <span class='const'>HighLine</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_input'>input</span><span class='period'>.</span><span class='id identifier rubyid_get_character'>get_character</span>  
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Thu Oct 18 11:04:19 2012 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.3 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

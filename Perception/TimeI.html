@@ -1,251 +1,364 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: Perception::TimeI
+  
+    &mdash; Documentation by YARD 0.8.3
+  
+</title>
 
-<html>
-<head>
-<meta content="text/html; charset=utf8" http-equiv="Content-Type">
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
 
-<title>module Perception::TimeI - Perception 0.3.3</title>
+  <link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
 
-<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/klippstein.css" type="text/css" media="screen" charset="utf-8" />
 
-<script type="text/javascript">
-  var rdoc_rel_prefix = "../";
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!" + escape(window.location.href);
 </script>
 
-<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/klippstein.js"></script>
 
 
-<body id="top" class="module">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="../index.html">Home</a>
-    <a href="../table_of_contents.html#classes">Classes</a>
-    <a href="../table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (T)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Perception.html" title="Perception (module)">Perception</a></span></span>
+     &raquo; 
+    <span class="title">TimeI</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: Perception::TimeI
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="../Time.html" title="Time (class)">Time</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/perception/date_and_time.rb</dd>
+  
+</dl>
+<div class="clear"></div>
 
 
-  <nav id="search-section" class="section project-section" class="initially-hidden">
-  <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
-             title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
-  </form>
-
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
 
 
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/perception/date_and_time.rb
-  </ul>
-</nav>
 
+
+
+
+  
+    <h2>
+      Using inspect_see for to_s and pretty_print
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inspect_see-instance_method" title="#inspect_see (instance method)">- (String) <strong>inspect_see</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#pretty_print-instance_method" title="#pretty_print (instance method)">- (String) <strong>pretty_print</strong>(q) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_s-instance_method" title="#to_s (instance method)">- (String) <strong>to_s</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="inspect_see-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>) <strong>inspect_see</strong>(options = {}) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/perception/date_and_time.rb', line 19</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_inspect_see'>inspect_see</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+   <span class='id identifier rubyid_norm'>norm</span> <span class='op'>=</span>              <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:norm</span><span class='rbracket'>]</span>        <span class='op'>||</span> <span class='symbol'>:iso</span>
+   <span class='id identifier rubyid_precision_max'>precision_max</span> <span class='op'>=</span> <span class='int'>4</span>
+   <span class='id identifier rubyid_precision'>precision</span> <span class='op'>=</span>         <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:precision</span><span class='rbracket'>]</span>   <span class='op'>||</span>  <span class='id identifier rubyid_precision_max'>precision_max</span>
+   <span class='id identifier rubyid_precision'>precision</span> <span class='op'>=</span> <span class='int'>0</span>               <span class='kw'>if</span> <span class='id identifier rubyid_precision'>precision</span> <span class='op'>&lt;</span> <span class='int'>0</span>    
+   <span class='id identifier rubyid_precision'>precision</span> <span class='op'>=</span> <span class='id identifier rubyid_precision_max'>precision_max</span>   <span class='kw'>if</span> <span class='id identifier rubyid_precision'>precision</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_precision_max'>precision_max</span>    
+   <span class='id identifier rubyid_formatstring'>formatstring</span> <span class='op'>=</span> <span class='const'>TIME_FORMATS</span><span class='lbracket'>[</span><span class='id identifier rubyid_norm'>norm</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_precision'>precision</span><span class='rbracket'>]</span>
+   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='id identifier rubyid_formatstring'>formatstring</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="pretty_print-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>) <strong>pretty_print</strong>(q) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+38
+39
+40</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/perception/date_and_time.rb', line 38</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_pretty_print'>pretty_print</span><span class='lparen'>(</span><span class='id identifier rubyid_q'>q</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_q'>q</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_inspect_see'>inspect_see</span><span class='lparen'>(</span><span class='symbol'>:precision</span> <span class='op'>=&gt;</span> <span class='int'>5</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_s-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>) <strong>to_s</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+32
+33
+34</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/perception/date_and_time.rb', line 32</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_inspect_see'>inspect_see</span><span class='lparen'>(</span><span class='symbol'>:precision</span> <span class='op'>=&gt;</span> <span class='int'>5</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
     
   </div>
 
-  <div id="class-metadata">
-    
-    
-    
-    <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
+</div>
 
-  <ul class="link-list">
-    
-    <li><a href="#method-i-inspect_see">#inspect_see</a>
-    
-    <li><a href="#method-i-pretty_print">#pretty_print</a>
-    
-    <li><a href="#method-i-to_s">#to_s</a>
-    
-  </ul>
-</nav>
+    <div id="footer">
+  Generated on Thu Oct 18 11:04:18 2012 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.3 (ruby-1.9.3).
+</div>
 
-  </div>
-
-  <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="../History_txt.html">History</a>
-  
-    <li class="file"><a href="../License_txt.html">License</a>
-  
-    <li class="file"><a href="../README_txt.html">README</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-    <li><a href="../Perception.html">Perception</a>
-  
-    <li><a href="../Perception/NumericI.html">Perception::NumericI</a>
-  
-    <li><a href="../Perception/SeeSession.html">Perception::SeeSession</a>
-  
-    <li><a href="../Perception/StringSpreadI.html">Perception::StringSpreadI</a>
-  
-    <li><a href="../Perception/TimeI.html">Perception::TimeI</a>
-  
-    <li><a href="../Object.html">Object</a>
-  
-    <li><a href="../PPP.html">PPP</a>
-  
-  </ul>
-</nav>
-
-  </div>
-</nav>
-
-<div id="documentation">
-  <h1 class="module">module Perception::TimeI</h1>
-
-  <div id="description" class="description">
-    
-  </div><!-- description -->
-
-  
-  
-  
-  <section id="5Buntitled-5D" class="documentation-section">
-    
-
-    
-
-    
-
-    
-
-    <!-- Methods -->
-    
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
-
-    
-      <div id="method-i-inspect_see" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">inspect_see</span><span
-            class="method-args">(options={})</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="inspect_see-source">
-            <pre><span class="ruby-comment"># File lib/perception/date_and_time.rb, line 13</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect_see</span>(<span class="ruby-identifier">options</span>={})
-   <span class="ruby-identifier">norm</span> =              <span class="ruby-identifier">options</span>[<span class="ruby-value">:norm</span>]        <span class="ruby-operator">||</span> <span class="ruby-value">:iso</span>
-   <span class="ruby-identifier">precision_max</span> = <span class="ruby-value">4</span>
-   <span class="ruby-identifier">precision</span> =         <span class="ruby-identifier">options</span>[<span class="ruby-value">:precision</span>]   <span class="ruby-operator">||</span>  <span class="ruby-identifier">precision_max</span>
-   <span class="ruby-identifier">precision</span> = <span class="ruby-value">0</span>               <span class="ruby-keyword">if</span> <span class="ruby-identifier">precision</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>    
-   <span class="ruby-identifier">precision</span> = <span class="ruby-identifier">precision_max</span>   <span class="ruby-keyword">if</span> <span class="ruby-identifier">precision</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">precision_max</span>    
-   <span class="ruby-identifier">formatstring</span> = <span class="ruby-constant">TIME_FORMATS</span>[<span class="ruby-identifier">norm</span>][<span class="ruby-identifier">precision</span>]
-   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-identifier">formatstring</span>)
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- inspect_see-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- inspect_see-method -->
-
-    
-      <div id="method-i-pretty_print" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">pretty_print</span><span
-            class="method-args">(q)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="pretty_print-source">
-            <pre><span class="ruby-comment"># File lib/perception/date_and_time.rb, line 31</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">pretty_print</span>(<span class="ruby-identifier">q</span>)
-  <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">inspect_see</span>(<span class="ruby-value">:precision</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">5</span>))
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- pretty_print-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- pretty_print-method -->
-
-    
-      <div id="method-i-to_s" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">to_s</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/perception/date_and_time.rb, line 26</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
-  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">inspect_see</span>(<span class="ruby-value">:precision</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">5</span>)
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- to_s-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- to_s-method -->
-
-    
-    </section><!-- public-instance-method-details -->
-  
-  </section><!-- 5Buntitled-5D -->
-
-</div><!-- documentation -->
-
-
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
-</footer>
-
+  </body>
+</html>
