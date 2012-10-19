@@ -101,7 +101,7 @@
 
   
     <h2>
-      Slash needless digits
+      Intelligent round: slash needless digits
       <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
     </h2>
 
@@ -125,7 +125,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Slash needless digits.</p>
+<p>Intelligent round: slash needless digits.</p>
 </div></span>
   
 </li>
@@ -143,7 +143,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#inspect_see-instance_method" title="#inspect_see (instance method)">- (Object) <strong>inspect_see</strong>(options = {}) </a>
+      <a href="#inspect_see-instance_method" title="#inspect_see (instance method)">- (String) <strong>inspect_see</strong>(options = {}) </a>
     
 
     
@@ -158,21 +158,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Formatiert eine Zahl so, dass sie leicht menschenlesbar wird:</p>
-<ul><li>
-<p>Quasi-rechtsbündig (mit dem Komma als Bezugspunkt, abhängig von der
-Klassenzugehörigkeit der Zahl)</p>
-</li><li>
-<p>vorangestellte Währungszeichen oder angefügte Einheiten, ohne die
-Bündigkeit zu zerstören</p>
-</li><li>
-<p>intelligente Ausweichstrategie, wenn der vorgegebene Platz nicht ausreicht</p>
-</li><li>
-<p>nur die signifikanten Stellen werden angegeben, damit die Größenordnung
-leicht erfasst werden kann</p>
-</li><li>
-<p>Tausendertrennzeichen wenn nötig.</p>
-</li></ul>
+<p>Formats a number for easily human readability.</p>
 </div></span>
   
 </li>
@@ -190,7 +176,7 @@ leicht erfasst werden kann</p>
       <div class="method_details first">
   <h3 class="signature first" id="inspect_see-instance_method">
   
-    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>inspect_see</strong>(options = {}) 
+    - (<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>) <strong>inspect_see</strong>(options = {}) 
   
 
   
@@ -199,50 +185,191 @@ leicht erfasst werden kann</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Formatiert eine Zahl so, dass sie leicht menschenlesbar wird:</p>
+<p>Formats a number for easily human readability. Example: (using
+<tt>.inspect_see</tt> without options)</p>
+
+<pre class="code ruby"><code>    input    (barrier)    output   (barrier)    note
+-------------------------------------------------------------------------------------------------------    
+     -7213541 ########-7 210 000    ########   Intelligent fallback strategy if space is not sufficient
+      7213541 ########7 210 000     ########
+      -553337 ######## -553 000     ########
+       553337 ########  553 000     ########   Intelligent round: slash needless digits
+    -12567.89 ########  -12 600     ########
+     12567.89 ########   12 600     ########   Thousands separator only if necessary
+    -1256.789 ########    -1260     ########
+     1256.789 ########     1260     ########
+   -123.56789 ########     -124     ########
+    123.56789 ########      124     ########
+       100.01 ########      100     ########
+         12.0 ########       12     ########
+           12 ########       12     ########
+    -12.56789 ########      -12.6   ########
+     12.56789 ########       12.6   ########
+    -1.256789 ########       -1.26  ########
+     1.256789 ########        1.26  ########
+   -0.1256789 ########       -0.126 ########
+    0.1256789 ########        0.126 ########
+  -0.01256789 ########       -0.0126########
+   0.01256789 ########        0.0126########
+ -0.001256789 ########      -0.00126########
+  0.001256789 ########       0.00126########
+-0.0001256789 ########     -0.000126########
+ 0.0001256789 ########      0.000126########</code></pre>
+
+<p>Features:</p>
 <ul><li>
-<p>Quasi-rechtsbündig (mit dem Komma als Bezugspunkt, abhängig von der
-Klassenzugehörigkeit der Zahl)</p>
+<p>aligned right with the separator as reference point</p>
 </li><li>
-<p>vorangestellte Währungszeichen oder angefügte Einheiten, ohne die
-Bündigkeit zu zerstören</p>
+<p>you can preced a currency symbol or append units, without destroying the
+alignment</p>
 </li><li>
-<p>intelligente Ausweichstrategie, wenn der vorgegebene Platz nicht ausreicht</p>
+<p>intelligent fallback strategy if the predetermined space is not sufficient</p>
 </li><li>
-<p>nur die signifikanten Stellen werden angegeben, damit die Größenordnung
-leicht erfasst werden kann</p>
+<p>thousands separator if necessary, and only if necessary</p>
 </li><li>
-<p>Tausendertrennzeichen wenn nötig</p>
+<p>only the significant digits are specified so that the magnitude can be
+easily realised (see <span class='object_link'><a href="#significant-instance_method" title="Perception::NumericI#significant (method)">#significant</a></span>)</p>
 </li></ul>
 
-<p>Optionen sind:</p>
-<ul><li>
-<p>:precision   Wieviel signifikante Stellen sollen ausgegeben werden?
-Default: 3</p>
-</li><li>
-<p>:space_l     Wieviel Platz wird vor dem Komma eingeplant?</p>
-</li><li>
-<p>:space_r     wie :space, bezieht sich aber nur auf den Nachkommateil. Wird
-abhängig davon vorbelegt, ob self Integer oder Float ist.</p>
-</li><li>
-<p>:separator   Kommazeichen</p>
-</li><li>
-<p>:delimiter   Tausendertrennzeichen</p>
-</li><li>
-<p>:pre         wird direkt vor der Zahl ausgegeben  (z.B. €)</p>
-</li><li>
-<p>:past        wird direkt nach der Zahl ausgegeben (z.B. %)</p>
-</li></ul>
-
-<p>Für eine schlichte linksbündige Ausgabe reicht die Methode #significant!   
-vgl. <a
-href="http://de.wikipedia.org/wiki/Wikipedia:Schreibweise_von_Zahlen">de.wikipedia.org/wiki/Wikipedia:Schreibweise_von_Zahlen</a></p>
+<p>If you don't need alignment and thousands separator, use
+<span class='object_link'><a href="#significant-instance_method" title="Perception::NumericI#significant (method)">significant</a></span> instead.         See
+<a href="http://de.wikipedia.org/wiki/Wikipedia:Schreibweise_von_Zahlen" target="_parent" title="Schreibweise von Zahlen">Schreibweise von Zahlen</a>.</p>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>options</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:precision</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>how many digits are significant? Default: 3</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:space_l</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>space before the separator as reference point</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:space_r</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>space behind the separator. Default depends on class (Integer or Float).</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:separator</span>
+          <span class="type">(<tt>Char</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>separator</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:delimiter</span>
+          <span class="type">(<tt>Char</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>thousands separator</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:pre</span>
+          <span class="type">(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>preceding string (e.g. a currency symbol)</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:past</span>
+          <span class="type">(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>appended string (e.g. a unit)</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -250,51 +377,51 @@ href="http://de.wikipedia.org/wiki/Wikipedia:Schreibweise_von_Zahlen">de.wikiped
       <pre class="lines">
 
 
-103
-104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133
-134
-135
-136
-137
 138
 139
 140
 141
 142
 143
-144</pre>
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/perception/numeric.rb', line 103</span>
+      <pre class="code"><span class="info file"># File 'lib/perception/numeric.rb', line 138</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_inspect_see'>inspect_see</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_precision'>precision</span> <span class='op'>=</span>         <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:precision</span><span class='rbracket'>]</span>   <span class='op'>||</span>  <span class='int'>3</span>
@@ -302,7 +429,7 @@ href="http://de.wikipedia.org/wiki/Wikipedia:Schreibweise_von_Zahlen">de.wikiped
   <span class='id identifier rubyid_past'>past</span>  <span class='op'>=</span>             <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:past</span><span class='rbracket'>]</span>        <span class='op'>||</span>  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span>      
   <span class='id identifier rubyid_space_l'>space_l</span> <span class='op'>=</span>           <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:space_l</span><span class='rbracket'>]</span>     <span class='op'>||</span>  <span class='int'>9</span> <span class='op'>+</span> <span class='id identifier rubyid_pre'>pre</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span>  
   <span class='id identifier rubyid_space_r'>space_r</span> <span class='op'>=</span>           <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:space_r</span><span class='rbracket'>]</span>     <span class='op'>||</span>  <span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>Integer</span><span class='rparen'>)</span> <span class='op'>?</span>  <span class='lparen'>(</span><span class='int'>0</span><span class='op'>+</span><span class='id identifier rubyid_past'>past</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='lparen'>(</span><span class='int'>5</span><span class='op'>+</span><span class='id identifier rubyid_past'>past</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span><span class='rparen'>)</span>    <span class='comment'># Integer oder Float?
-</span>  <span class='id identifier rubyid_separator'>separator</span> <span class='op'>=</span>         <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:separator</span><span class='rbracket'>]</span>   <span class='op'>||</span>  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>,</span><span class='tstring_end'>'</span></span>
+</span>  <span class='id identifier rubyid_separator'>separator</span> <span class='op'>=</span>         <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:separator</span><span class='rbracket'>]</span>   <span class='op'>||</span>  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>.</span><span class='tstring_end'>'</span></span>
   <span class='id identifier rubyid_delimiter'>delimiter</span>  <span class='op'>=</span>        <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:delimiter</span><span class='rbracket'>]</span>   <span class='op'>||</span>  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'> </span><span class='tstring_end'>'</span></span>
 
   
@@ -355,7 +482,9 @@ href="http://de.wikipedia.org/wiki/Wikipedia:Schreibweise_von_Zahlen">de.wikiped
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Slash needless digits. Needless are digits that are</p>
+<p>Intelligent round: slash needless digits.  Specify only the significant
+digits so that the magnitude can be easily realised. Needless are digits
+that are</p>
 <ul><li>
 <p>beyond the measurement precision or</p>
 </li><li>
@@ -430,9 +559,6 @@ href="http://de.wikipedia.org/wiki/Wikipedia:Schreibweise_von_Zahlen">de.wikiped
       <pre class="lines">
 
 
-46
-47
-48
 49
 50
 51
@@ -462,10 +588,13 @@ href="http://de.wikipedia.org/wiki/Wikipedia:Schreibweise_von_Zahlen">de.wikiped
 75
 76
 77
-78</pre>
+78
+79
+80
+81</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/perception/numeric.rb', line 46</span>
+      <pre class="code"><span class="info file"># File 'lib/perception/numeric.rb', line 49</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_significant'>significant</span><span class='lparen'>(</span> <span class='id identifier rubyid_precision'>precision</span> <span class='op'>=</span> <span class='int'>3</span><span class='rparen'>)</span>
 
@@ -510,7 +639,7 @@ href="http://de.wikipedia.org/wiki/Wikipedia:Schreibweise_von_Zahlen">de.wikiped
 </div>
 
     <div id="footer">
-  Generated on Thu Oct 18 11:04:18 2012 by
+  Generated on Fri Oct 19 08:50:34 2012 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.3 (ruby-1.9.3).
 </div>

@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+  File: demo1
+  
+    &mdash; Documentation by YARD 0.8.3
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/klippstein.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/klippstein.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: demo1</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'><pre class="code ruby"><span class='comment'># ruby encoding: utf-8
+</span><span class='comment'># 
+</span><span class='comment'># This generates Example_Output_1.
+</span><span class='comment'># --------------------------------
+</span><span class='comment'>#
+</span><span class='comment'>#
+</span><span class='kw'>if</span> <span class='gvar'>$0</span> <span class='op'>==</span> <span class='kw'>__FILE__</span> 
+  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>drumherum</span><span class='tstring_end'>'</span></span>
+  <span class='id identifier rubyid_smart_init'>smart_init</span>
+  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>perception</span><span class='tstring_end'>'</span></span>
+<span class='kw'>end</span>
+
+
+<span class='kw'>module</span> <span class='const'>Perception</span> <span class='comment'>#:nodoc
+</span>
+  <span class='kw'>class</span> <span class='const'>DemoSee</span>
+    <span class='cvar'>@@initialized_count</span> <span class='op'>=</span> <span class='int'>0</span>
+  
+    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span> <span class='id identifier rubyid_announce_first'>announce_first</span><span class='op'>=</span><span class='kw'>true</span> <span class='rparen'>)</span>
+      <span class='id identifier rubyid_seee'>seee</span><span class='period'>.</span><span class='id identifier rubyid_out'>out</span> <span class='op'>&lt;&lt;</span> <span class='symbol'>:log</span>
+      <span class='cvar'>@@initialized_count</span> <span class='op'>+=</span> <span class='int'>1</span>
+      <span class='kw'>return</span>  <span class='kw'>if</span> <span class='lparen'>(</span><span class='cvar'>@@initialized_count</span> <span class='op'>==</span> <span class='int'>1</span>  <span class='op'>&amp;&amp;</span>  <span class='op'>!</span><span class='id identifier rubyid_announce_first'>announce_first</span><span class='rparen'>)</span>
+      <span class='comment'>#seee.slow!(0.5)
+</span>      <span class='id identifier rubyid_seee'>seee</span><span class='period'>.</span><span class='id identifier rubyid_left!'>left!</span>
+      <span class='comment'>#seee.indent!
+</span>      <span class='id identifier rubyid_see'>see</span> <span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span> <span class='op'>*</span> <span class='int'>5</span><span class='rparen'>)</span>   <span class='kw'>if</span> <span class='cvar'>@@initialized_count</span> <span class='op'>&gt;</span> <span class='int'>1</span>  
+      
+      <span class='kw'>if</span> <span class='id identifier rubyid_announce_first'>announce_first</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>String</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_see'>see</span> <span class='id identifier rubyid_announce_first'>announce_first</span>
+        <span class='id identifier rubyid_see'>see</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>=</span><span class='tstring_end'>'</span></span><span class='op'>*</span><span class='id identifier rubyid_announce_first'>announce_first</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span>
+      <span class='kw'>else</span>
+        <span class='id identifier rubyid_see'>see</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Perception Demo #</span><span class='embexpr_beg'>#{</span><span class='cvar'>@@initialized_count</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+        <span class='id identifier rubyid_see'>see</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>==================</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>end</span>
+      <span class='id identifier rubyid_see'>see</span>
+      <span class='comment'># wait_for_key('Press any key to start')
+</span>      
+      
+    <span class='kw'>end</span> <span class='comment'># defü
+</span>  
+  
+  
+    <span class='comment'># Printing basic types
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_demo_see_basic_types'>demo_see_basic_types</span>
+      <span class='id identifier rubyid_see'>see</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>1dim Arrays are printed verticaly, if their size is not too big:</span><span class='tstring_end'>'</span></span>
+      <span class='id identifier rubyid_see'>see</span>
+      <span class='id identifier rubyid_seee'>seee</span><span class='period'>.</span><span class='id identifier rubyid_left!'>left!</span>
+      <span class='id identifier rubyid_see'>see</span> <span class='id identifier rubyid_a'>a</span><span class='op'>=</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>this</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>is</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>an</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>array</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>1</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_see'>see</span> <span class='id identifier rubyid_b'>b</span><span class='op'>=</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>this</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>is</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>another</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>array</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>2</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_see'>see</span> <span class='id identifier rubyid_d'>d</span><span class='op'>=</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>complex array</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span><span class='int'>2</span><span class='comma'>,</span><span class='int'>3</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='symbol'>:key</span> <span class='op'>=&gt;</span> <span class='symbol'>:value</span><span class='comma'>,</span> <span class='symbol'>:love</span> <span class='op'>=&gt;</span> <span class='symbol'>:baby</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='float'>4.0</span><span class='comma'>,</span> <span class='symbol'>:four</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_see'>see</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>        
+      <span class='id identifier rubyid_see'>see</span>
+      <span class='id identifier rubyid_see'>see</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Other Objects:</span><span class='tstring_end'>'</span></span>
+      <span class='id identifier rubyid_see'>see</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ordinary string (without &quot;&quot;)</span><span class='tstring_end'>'</span></span>
+      <span class='id identifier rubyid_see'>see</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>(next one is empty)</span><span class='tstring_end'>'</span></span>
+      <span class='id identifier rubyid_see'>see</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span>
+      <span class='id identifier rubyid_see'>see</span> <span class='int'>1</span>        
+      <span class='id identifier rubyid_see'>see</span> <span class='int'>2</span>      
+      <span class='id identifier rubyid_see'>see</span> <span class='float'>3.0</span>        
+      <span class='id identifier rubyid_see'>see</span> <span class='kw'>nil</span>
+      <span class='id identifier rubyid_see'>see</span> <span class='kw'>true</span>
+      <span class='id identifier rubyid_see'>see</span> <span class='kw'>false</span>
+      <span class='id identifier rubyid_see'>see</span> <span class='symbol'>:a_symbol</span>
+ 
+    <span class='kw'>end</span> <span class='comment'># def
+</span>    
+    
+    <span class='kw'>def</span> <span class='id identifier rubyid_demo_see_pp_object'>demo_see_pp_object</span>
+      <span class='id identifier rubyid_see'>see</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Nested objects reveal their structure. Lower hierary levels may be reduced for this:</span><span class='tstring_end'>'</span></span>
+      <span class='id identifier rubyid_see'>see</span>    
+      <span class='id identifier rubyid_seee'>seee</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span>
+      <span class='id identifier rubyid_see'>see</span> <span class='id identifier rubyid_seee'>seee</span>
+      <span class='id identifier rubyid_see'>see</span>
+      <span class='id identifier rubyid_see'>see</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>The Logger has been reduced. This is it</span><span class='tstring_end'>'</span></span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>s detail view:</span><span class='tstring_end'>'</span></span>
+      <span class='id identifier rubyid_see'>see</span>
+      <span class='id identifier rubyid_see'>see</span> <span class='id identifier rubyid_seee'>seee</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span>
+      <span class='id identifier rubyid_see'>see</span>
+      <span class='id identifier rubyid_see'>see</span>
+      <span class='id identifier rubyid_see'>see</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PrettyPrint shows all at one, but it</span><span class='tstring_end'>'</span></span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>s very hard to read:</span><span class='tstring_end'>'</span></span> 
+      <span class='id identifier rubyid_see'>see</span>
+      <span class='id identifier rubyid_pp'>pp</span> <span class='id identifier rubyid_seee'>seee</span>
+    <span class='kw'>end</span>
+    
+    
+    
+    <span class='kw'>def</span> <span class='id identifier rubyid_demo_see_pp_array'>demo_see_pp_array</span>  
+      <span class='id identifier rubyid_see'>see</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>2dim Arrays are printed like a table:</span><span class='tstring_end'>'</span></span>
+      <span class='id identifier rubyid_see'>see</span>      
+      <span class='ivar'>@array1</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+      <span class='ivar'>@array1</span> <span class='op'>&lt;&lt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>this</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>is</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>an</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>array</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>1</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
+      <span class='ivar'>@array1</span> <span class='op'>&lt;&lt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>this</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>is</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>another</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>array</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>2</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
+      <span class='ivar'>@array1</span> <span class='op'>&lt;&lt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>and</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>this</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>is</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>another</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:tree</span><span class='rbracket'>]</span>
+      <span class='ivar'>@array1</span> <span class='op'>&lt;&lt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>no</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='lbrace'>{</span><span class='symbol'>:key</span> <span class='op'>=&gt;</span> <span class='symbol'>:value</span><span class='rbrace'>}</span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>just</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>another</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>array</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_see'>see</span> <span class='ivar'>@array1</span>
+      <span class='id identifier rubyid_see'>see</span>    
+      <span class='id identifier rubyid_see'>see</span>          
+      <span class='ivar'>@text1</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>long_longlong_long_long</span><span class='tstring_end'>'</span></span>
+      <span class='ivar'>@text2</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>also_long, also_long, also_long_also</span><span class='tstring_end'>'</span></span>
+      <span class='ivar'>@text3</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>hallo</span><span class='tstring_end'>'</span></span>
+      <span class='ivar'>@array2</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+      <span class='ivar'>@array2</span> <span class='op'>&lt;&lt;</span> <span class='words_beg'>%W{</span><span class='tstring_content'>one</span><span class='words_sep'> </span><span class='tstring_content'>a</span><span class='words_sep'> </span><span class='tstring_content'>b</span><span class='words_sep'> </span><span class='tstring_content'>c</span><span class='words_sep'>}</span>
+      <span class='ivar'>@array2</span> <span class='op'>&lt;&lt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>two</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='ivar'>@text1</span><span class='comma'>,</span> <span class='ivar'>@text2</span><span class='comma'>,</span> <span class='ivar'>@text3</span><span class='rbracket'>]</span>
+      <span class='ivar'>@array2</span> <span class='op'>&lt;&lt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>three</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='ivar'>@text2</span><span class='comma'>,</span> <span class='ivar'>@text2</span><span class='comma'>,</span> <span class='ivar'>@text1</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_see'>see</span> <span class='ivar'>@array2</span>
+    <span class='kw'>end</span>    
+
+    
+    <span class='kw'>def</span> <span class='id identifier rubyid_demo_see_pp_hash'>demo_see_pp_hash</span>  
+      <span class='id identifier rubyid_see'>see</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='symbol'>:this</span> <span class='op'>=&gt;</span> <span class='symbol'>:hash</span><span class='comma'>,</span> <span class='symbol'>:in</span> <span class='op'>=&gt;</span> <span class='symbol'>:one</span><span class='comma'>,</span> <span class='symbol'>:see</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>short hash in one line</span><span class='tstring_end'>'</span></span><span class='rbrace'>}</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_see'>see</span>
+      <span class='id identifier rubyid_see'>see</span>       
+      <span class='id identifier rubyid_see'>see</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='symbol'>:this</span> <span class='op'>=&gt;</span> <span class='symbol'>:hash</span><span class='comma'>,</span> <span class='symbol'>:size</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>&gt; 3</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:see</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>longer hash in multiple lines</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:another_key</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>another value</span><span class='tstring_end'>'</span></span><span class='rbrace'>}</span><span class='rparen'>)</span>         
+      <span class='id identifier rubyid_see'>see</span>
+      <span class='id identifier rubyid_see'>see</span>       
+      <span class='ivar'>@hash</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='symbol'>:hash</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
+                <span class='symbol'>:init</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
+                <span class='symbol'>:nil</span>  <span class='op'>=&gt;</span> <span class='kw'>nil</span><span class='comma'>,</span>
+                <span class='symbol'>:symbol</span> <span class='op'>=&gt;</span> <span class='symbol'>:symbol</span><span class='comma'>,</span>
+                <span class='symbol'>:text</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>text</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+                <span class='symbol'>:array</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span><span class='int'>2</span><span class='comma'>,</span><span class='int'>3</span><span class='rbracket'>]</span><span class='comma'>,</span>
+                <span class='symbol'>:integer</span> <span class='op'>=&gt;</span> <span class='int'>1</span><span class='comma'>,</span>
+                <span class='symbol'>:string</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>hallo</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+                <span class='symbol'>:nochn_hash</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:key</span> <span class='op'>=&gt;</span> <span class='symbol'>:value</span><span class='comma'>,</span> <span class='symbol'>:bla</span> <span class='op'>=&gt;</span> <span class='symbol'>:blubb</span><span class='comma'>,</span> <span class='symbol'>:array</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='symbol'>:a</span><span class='comma'>,</span><span class='symbol'>:b</span><span class='comma'>,</span><span class='symbol'>:c</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:another_key</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>another value</span><span class='tstring_end'>'</span></span><span class='rbrace'>}</span>
+               <span class='rbrace'>}</span>
+      <span class='id identifier rubyid_see'>see</span> <span class='ivar'>@hash</span>  
+    <span class='kw'>end</span>   
+
+
+    <span class='kw'>def</span> <span class='id identifier rubyid_demo_see_pp_dictionary'>demo_see_pp_dictionary</span>
+      <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>hashery</span><span class='tstring_end'>'</span></span> <span class='comment'># old: 'facets/dictionary'
+</span>        
+      <span class='ivar'>@dictionary</span> <span class='op'>=</span> <span class='const'>Dictionary</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>  
+      <span class='ivar'>@dictionary</span><span class='lbracket'>[</span><span class='symbol'>:a_dictionary</span><span class='rbracket'>]</span> <span class='op'>=</span>    <span class='kw'>true</span>
+      <span class='ivar'>@dictionary</span><span class='lbracket'>[</span><span class='symbol'>:b_init</span><span class='rbracket'>]</span> <span class='op'>=</span>          <span class='kw'>true</span>
+      <span class='ivar'>@dictionary</span><span class='lbracket'>[</span><span class='symbol'>:c_symbol</span><span class='rbracket'>]</span> <span class='op'>=</span>        <span class='symbol'>:symbol</span>
+      <span class='ivar'>@dictionary</span><span class='lbracket'>[</span><span class='symbol'>:d_array</span><span class='rbracket'>]</span> <span class='op'>=</span>         <span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span><span class='int'>2</span><span class='comma'>,</span><span class='int'>3</span><span class='rbracket'>]</span>
+      <span class='ivar'>@dictionary</span><span class='lbracket'>[</span><span class='symbol'>:e_integer</span><span class='rbracket'>]</span> <span class='op'>=</span>       <span class='int'>1</span>
+      <span class='ivar'>@dictionary</span><span class='lbracket'>[</span><span class='symbol'>:f_string</span><span class='rbracket'>]</span> <span class='op'>=</span>        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>hallo</span><span class='tstring_end'>'</span></span>
+        <span class='ivar'>@subdictionary</span> <span class='op'>=</span> <span class='const'>Dictionary</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>    
+        <span class='ivar'>@subdictionary</span><span class='lbracket'>[</span><span class='symbol'>:a</span><span class='rbracket'>]</span> <span class='op'>=</span>  <span class='symbol'>:value</span>
+        <span class='ivar'>@subdictionary</span><span class='lbracket'>[</span><span class='symbol'>:b</span><span class='rbracket'>]</span> <span class='op'>=</span>  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>blubb</span><span class='tstring_end'>'</span></span>
+        <span class='ivar'>@subdictionary</span><span class='lbracket'>[</span><span class='symbol'>:c</span><span class='rbracket'>]</span> <span class='op'>=</span>  <span class='int'>2</span>
+        <span class='ivar'>@subdictionary</span><span class='lbracket'>[</span><span class='symbol'>:d</span><span class='rbracket'>]</span> <span class='op'>=</span>  <span class='lbracket'>[</span><span class='symbol'>:a</span><span class='comma'>,</span><span class='symbol'>:b</span><span class='comma'>,</span><span class='symbol'>:c</span><span class='rbracket'>]</span>
+        <span class='ivar'>@subdictionary</span><span class='lbracket'>[</span><span class='symbol'>:e</span><span class='rbracket'>]</span> <span class='op'>=</span>  <span class='lbrace'>{</span> <span class='symbol'>:key</span> <span class='op'>=&gt;</span> <span class='symbol'>:value</span><span class='rbrace'>}</span>
+        <span class='ivar'>@subdictionary</span><span class='lbracket'>[</span><span class='symbol'>:f</span><span class='rbracket'>]</span> <span class='op'>=</span>  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>hallo</span><span class='tstring_end'>'</span></span>  
+      <span class='ivar'>@dictionary</span><span class='lbracket'>[</span><span class='symbol'>:g_subdictionary</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@subdictionary</span>  
+      <span class='id identifier rubyid_see'>see</span> <span class='ivar'>@dictionary</span>       
+    <span class='kw'>end</span>
+    
+    
+    <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_see_all_demos'>see_all_demos</span>
+      <span class='const'>Perception</span><span class='op'>::</span><span class='const'>DemoSee</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Basic Types</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_demo_see_basic_types'>demo_see_basic_types</span>      
+      <span class='const'>Perception</span><span class='op'>::</span><span class='const'>DemoSee</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>2dimensional Arrays</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_demo_see_pp_array'>demo_see_pp_array</span>     
+      <span class='const'>Perception</span><span class='op'>::</span><span class='const'>DemoSee</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Nested Objects</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_demo_see_pp_object'>demo_see_pp_object</span>  
+      <span class='const'>Perception</span><span class='op'>::</span><span class='const'>DemoSee</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Hash</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_demo_see_pp_hash'>demo_see_pp_hash</span>       
+      <span class='const'>Perception</span><span class='op'>::</span><span class='const'>DemoSee</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Dictionary</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_demo_see_pp_dictionary'>demo_see_pp_dictionary</span>      
+
+      
+
+ 
+    <span class='kw'>end</span>
+
+  
+  
+  <span class='kw'>end</span> <span class='comment'># class
+</span><span class='kw'>end</span> <span class='comment'># class
+</span>
+
+<span class='kw'>if</span> <span class='gvar'>$0</span> <span class='op'>==</span> <span class='kw'>__FILE__</span> <span class='kw'>then</span>
+
+<span class='comment'># seee.out &lt;&lt; :log
+</span><span class='const'>Perception</span><span class='op'>::</span><span class='const'>DemoSee</span><span class='period'>.</span><span class='id identifier rubyid_see_all_demos'>see_all_demos</span>
+
+   
+<span class='kw'>end</span>
+
+  
+
+    
+
+
+
+
+
+  </pre></div></div>
+
+    <div id="footer">
+  Generated on Fri Oct 19 08:50:34 2012 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.3 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>
