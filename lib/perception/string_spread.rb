@@ -9,9 +9,11 @@ require 'kyanite/array_of_enumerables'
 
 
 module Perception 
+
+  # @private
   module StringSpreadI 
   
-
+  # @private
   def analyze_columns(options={})
   
     # vorbereiten
@@ -64,6 +66,7 @@ module Perception
   # Mit position_add= 0 werden die Spaces vor dem gefundenen Zeichen eingefügt.
   # Standard ist position_add= search.size, damit werden die Spaces hinter den gefundenen Zeichen eingefügt.    
   # Mit PPP_ANTI_NEWLINE werden Zeilen markiert, bei denen anschließend noch das \n entfernt werden kann.
+  # @private  
   def spread_line(tabstops=[], search=/,/, position_add=nil, start=0)
     #puts "spread_line, self=#{self.inspect_pp} tabstops=#{tabstops.join('-')}"
     position_add = search.inspect.size-2       unless position_add
@@ -100,7 +103,7 @@ module Perception
   end # def   
   
   
-  
+  # @private  
   def spread(options={})
     # vorbereiten
     level_start =   options[:level_start]   || 1
@@ -129,6 +132,7 @@ module Perception
   end # module
 end # module
 
+# @private
 class String 
   include Perception::StringSpreadI
 end

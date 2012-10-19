@@ -28,6 +28,7 @@ module Perception
     #    @logdev =            #<Logger::LogDevice:0x2a57c60  @dev=#<File:C:/Ruby-Projekte/perception/log/see.log>,  @filename='C:/Ruby-Projekte/perception/log/see.log',  @mutex=#<<>>,  @shift_age=0,  @shift_size=1048576>,
     #    @progname =          nil>
     #
+    # More: {Object#log log}, {Object#rawlog rawlog}    
     # @return [Logger]
     #
     def logger( logdir=nil, filename='see.log' )
@@ -107,7 +108,12 @@ end # module
 
 class Object
 
-  # Same as method see, but outputs in logfile only
+  # Same as method see, but outputs in logfile only.
+  #
+  # If you want to use both logfile and console , use
+  #   seee.out << :log
+  #
+  # More: {Object#rawlog rawlog}, {Perception::SeeSession#logger seee.logger}  
   def log(input=:kein_input, *rest)
     out_bak = seee.out.dup
     seee.out=[:log]
@@ -121,7 +127,9 @@ class Object
   end    
   
   
-  # raw output into logfile
+  # raw output into logfile without formating.
+  #
+  # More: {Object#log log}, {Perception::SeeSession#logger seee.logger}  
   def rawlog(input='')
     seee.logger << (input)       
     nil

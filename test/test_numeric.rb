@@ -33,17 +33,17 @@ class TestPerceptionNumeric < UnitTest
                '      124     ',
                '      100     ',
                '      100     ',
-               '       99,9   ',
+               '       99.9   ',
                '       12     ',
                '       12     ',
-               '       12,6   ',
-               '        1,26  ',
-               '        1,5   ',
+               '       12.6   ',
+               '        1.26  ',
+               '        1.5   ',
                '        0     ',
-               '        0,126 ',
-               '        0,0126',
-               '       0,00126',
-               '      0,000126']    
+               '        0.126 ',
+               '        0.0126',
+               '       0.00126',
+               '      0.000126']    
     result= test.collect { |t| t.to_f.inspect_see }   
     assert_equal expect, result
     
@@ -79,7 +79,7 @@ class TestPerceptionNumeric < UnitTest
     assert_equal "\n" + result,              see_print(test);  setup       
 
     test   = -0.000314162353463463136537846595
-    result = '     -0,000314'
+    result = '     -0.000314'
     assert_equal "\n" + result,              see(test);        setup
     assert_equal "\n" + result,              see_pp(test);     setup
     assert_equal "\n" + result,              see_puts(test);   setup

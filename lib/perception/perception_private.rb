@@ -12,9 +12,12 @@ end
 module Perception 
 
   
-  # Eine SeeSession-Instanz entspricht einer Session mit der Konsole.
+
+  
   class SeeSession
     @@instance = nil
+    
+    # @private
     attr_accessor :time_last, :delayed_newlines, :level, :indent, :out
     
     # ------------------------------------------------------------------------------
@@ -22,6 +25,7 @@ module Perception
     #    
     
     # Liefert die eine notwendige Instanz 
+    # @private
     def self.instance
         return @@instance   if @@instance
         @@instance = SeeSession.new
@@ -29,11 +33,12 @@ module Perception
     end
     
     
+    # @private    
     def initialize
       init
     end
     
-    
+    # @private    
     def init
       # früher
       @string_last        = ''                # enthält den letzten ausgegebenen String (damit man ihn löschen und wiederherstellen kann)
@@ -67,6 +72,7 @@ module Perception
     #  Ausgeben
     #      
     
+    # @private    
     def wait!(string_akt)
       return unless @time_last 
       verstrichene_zeit = Time.now - @time_last   
@@ -81,6 +87,7 @@ module Perception
     end # wait
     
     
+    # @private    
     def adjust_level
       @call_stack_now   = caller.size 
       call_stack_diff = @call_stack_now - @call_stack_last
@@ -97,6 +104,7 @@ module Perception
     end
     
     
+    # @private    
     def clear_indent!
       @call_stack_last  = 0      # wie direkt nach der Initialisierung 
       @call_stack_now   = 0       
@@ -109,6 +117,7 @@ module Perception
     
     
     # Gibt das see aus
+    # @private    
     def process_print( input, options={} )
     
       # vorbereiten
@@ -157,6 +166,7 @@ module Perception
     
     
     # Führt die aufgeschobenen Newlines aus. Ohne Berücksichtigung der Zeit.
+    # @private    
     def process_newline    
       result = "\n" * @delayed_newlines     
       self.clear!                    if @delayed_clear 
@@ -166,6 +176,7 @@ module Perception
     end    
     
     
+    # @private    
     def printout(string, backward=nil)
       if @out.include?(:console)
         spacer = (' '*SEE_TAB_WIDTH * @level)
@@ -205,8 +216,8 @@ end # module
 
 class Object
   
-  # Liefert entweder inspect oder to_s, je nach Klassenzugehörigkeit
-  # Explizite Typabfrage ohne duck typing!
+  # Returns the result of +inspect+ or the result of +to_s+, depending on the class. 
+  # No duck typing.
   def inspect_or_to_s
     return 'empty'            if self == ''
     return self.to_s          if self.class == String

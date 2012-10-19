@@ -10,13 +10,15 @@ end
 
 module Perception 
 
+
  module NumericI 
  
     # ------------------------------------------------------------------------------
-    # @group Slash needless digits
+    # @group Intelligent round: slash needless digits
     #   
     
-    # Slash needless digits.
+    # Intelligent round: slash needless digits. 
+    # Specify only the significant digits so that the magnitude can be easily realised.
     # Needless are digits that are
     # * beyond the measurement precision or
     # * not perceived by humans (instead they disturb the reception)    
@@ -43,6 +45,7 @@ module Perception
     #
     # @return [Numeric]
     # @param [Integer] precision How many digits are significant?
+    #
     def significant( precision = 3)
     
         # sprintf mit gemischter Schreibweise
@@ -81,24 +84,56 @@ module Perception
     # @group Easily human readable numbers
     #    
     
-    # Formatiert eine Zahl so, dass sie leicht menschenlesbar wird: 
-    # - Quasi-rechtsbündig (mit dem Komma als Bezugspunkt, abhängig von der Klassenzugehörigkeit der Zahl)
-    # - vorangestellte Währungszeichen oder angefügte Einheiten, ohne die Bündigkeit zu zerstören    
-    # - intelligente Ausweichstrategie, wenn der vorgegebene Platz nicht ausreicht
-    # - nur die signifikanten Stellen werden angegeben, damit die Größenordnung leicht erfasst werden kann
-    # - Tausendertrennzeichen wenn nötig
+    # Formats a number for easily human readability.
+    # Example: (using +.inspect_see+ without options)
+    #      input    (barrier)    output   (barrier)    note
+    #  -------------------------------------------------------------------------------------------------------    
+    #       -7213541 ########-7 210 000    ########   Intelligent fallback strategy if space is not sufficient
+    #        7213541 ########7 210 000     ########
+    #        -553337 ######## -553 000     ########
+    #         553337 ########  553 000     ########   Intelligent round: slash needless digits
+    #      -12567.89 ########  -12 600     ########
+    #       12567.89 ########   12 600     ########   Thousands separator only if necessary
+    #      -1256.789 ########    -1260     ########
+    #       1256.789 ########     1260     ########
+    #     -123.56789 ########     -124     ########
+    #      123.56789 ########      124     ########
+    #         100.01 ########      100     ########
+    #           12.0 ########       12     ########
+    #             12 ########       12     ########
+    #      -12.56789 ########      -12.6   ########
+    #       12.56789 ########       12.6   ########
+    #      -1.256789 ########       -1.26  ########
+    #       1.256789 ########        1.26  ########
+    #     -0.1256789 ########       -0.126 ########
+    #      0.1256789 ########        0.126 ########
+    #    -0.01256789 ########       -0.0126########
+    #     0.01256789 ########        0.0126########
+    #   -0.001256789 ########      -0.00126########
+    #    0.001256789 ########       0.00126########
+    #  -0.0001256789 ########     -0.000126########
+    #   0.0001256789 ########      0.000126######## 
     #
-    # Optionen sind:
-    # * :precision   Wieviel signifikante Stellen sollen ausgegeben werden? Default: 3
-    # * :space_l     Wieviel Platz wird vor dem Komma eingeplant? 
-    # * :space_r     wie :space, bezieht sich aber nur auf den Nachkommateil. Wird abhängig davon vorbelegt, ob self Integer oder Float ist.
-    # * :separator   Kommazeichen 
-    # * :delimiter   Tausendertrennzeichen
-    # * :pre         wird direkt vor der Zahl ausgegeben  (z.B. €)
-    # * :past        wird direkt nach der Zahl ausgegeben (z.B. %)      
+    # Features:
+    # * aligned right with the separator as reference point
+    # * you can preced a currency symbol or append units, without destroying the alignment
+    # * intelligent fallback strategy if the predetermined space is not sufficient
+    # * thousands separator if necessary, and only if necessary
+    # * only the significant digits are specified so that the magnitude can be easily realised (see {#significant})   
     #
-    # Für eine schlichte linksbündige Ausgabe reicht die Methode #significant!               
-    # vgl. http://de.wikipedia.org/wiki/Wikipedia:Schreibweise_von_Zahlen
+    # If you don't need alignment and thousands separator, use {Perception::NumericI#significant significant} instead.        
+    # See {http://de.wikipedia.org/wiki/Wikipedia:Schreibweise_von_Zahlen Schreibweise von Zahlen}.
+    #
+    # @return [String]
+    # @param [Hash] options
+    # @option options [Integer] :precision how many digits are significant? Default: 3
+    # @option options [Integer] :space_l space before the separator as reference point 
+    # @option options [Integer] :space_r space behind the separator. Default depends on class (Integer or Float).
+    # @option options [Char] :separator separator
+    # @option options [Char] :delimiter  thousands separator 
+    # @option options [String] :pre preceding string (e.g. a currency symbol) 
+    # @option options [String] :past appended string (e.g. a unit) 
+    #
     #
     def inspect_see(options={})
       precision =         options[:precision]   ||  3
@@ -106,7 +141,7 @@ module Perception
       past  =             options[:past]        ||  ''      
       space_l =           options[:space_l]     ||  9 + pre.size  
       space_r =           options[:space_r]     ||  (self.kind_of?(Integer) ?  (0+past.size) : (5+past.size))    # Integer oder Float?
-      separator =         options[:separator]   ||  ','
+      separator =         options[:separator]   ||  '.'
       delimiter  =        options[:delimiter]   ||  ' '
 
       
@@ -173,7 +208,7 @@ if $0 == __FILE__  &&  Drumherum::loaded? then
 
   # Hier einstellen, was laufen soll
   $run = :try1
-  #$run = :try2
+  $run = :try2
   #$run = :tests
   #$run = :demo
   
@@ -197,11 +232,14 @@ if $0 == __FILE__  &&  Drumherum::loaded? then
     
   when :try2 #-------------------------------------------------------------------------------      
     
+    seee.out << :log    
     test = [7213541, 553337, 12567.89, 1256.789, 123.56789, 100.01, 100.0, 99.9, 12.0, 12, 12.56789, 1.256789, 1.5, 0, 0.1256789,0.01256789,0.001256789,0.0001256789, ]
     test.each do |t|
       t = t*-1    
+      see_print "#"
       see_print t.to_s.rjust(15) +      ' ########'     + t.to_f.inspect_see + "########\n"  
       t = t*-1
+      see_print "#"      
       see_print t.to_s.rjust(15) +      ' ########'     + t.to_f.inspect_see + "########\n"  
     end    
     

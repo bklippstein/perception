@@ -8,6 +8,7 @@ end
 
 
 # patches pretty print
+# @private
 class PPP < PP
 
 
@@ -347,7 +348,7 @@ class PPP < PP
 
 end # class
 
-
+# @private
 class String 
 
   # @return [String]
@@ -357,7 +358,7 @@ class String
   
 end
 
-
+# @private
 class Set 
 
   # @return [String]
@@ -376,7 +377,7 @@ class Set
   
 end
 
-
+# @private
 class Dictionary 
 
  # @return [String]

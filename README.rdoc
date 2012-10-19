@@ -1,23 +1,39 @@
-
-= Perception - Readable Printouts For Logs And Console
-
+= Perception: Human perceptible printouts
 http://bklippstein.github.com/perception/frames.html
 
-Powerfull replacement for print, puts and pp. Intuitive toolkit for simple everyday debugging. 
+Welcome to Perception. It's a intuitive toolkit for simple everyday debugging. 
+Perception offers a powerfull replacement for print, puts and pp and is an alternative to Awesome Print.
 
-You get auto-intended and structured output on your console without any configuration. 
+You get auto-intended and structured output on your console without any configuration.
 
-Perception also offers temporary printouts (overwritten by the next print). So you can print
-two informations in one place without destroying the structure. 
-
-Perception optionally slows down printing to readable speed, depending on the complexity of the output.
-
+Perception also offers temporary printouts (overwritten by the next print), printing two informations 
+in one line without destroying the structure and optionally slows down printing to readable speed, 
+depending on the complexity of the output.
 
 
-== Usage
-  require 'perception'
-use +see+ instead of pp, puts, print.
-[] There are demos included. Run them.  
+== see: Powerfull replacement for print, puts and pp
+{include:Object#see}
+More: {Object#see}
+
+== log: use logging without configuration
+You can use log instead of see, the formating is the same. 
+The log directory and the logfile are automatically created if necessary.
+
+More: {Object#log log}, {Object#rawlog rawlog}, {Perception::SeeSession#logger seee.logger}
+
+== Intelligent round: slash needless digits 
+{include:Perception::NumericI#significant}
+More: {Perception::NumericI#significant significant}
+
+== Easily human readable numbers 
+{include:Perception::NumericI#inspect_see}
+More: {Perception::NumericI#inspect_see inspect_see}
+
+
+== Examples and Demos
+* {file:demo/Example_Output_1.rb}
+* {file:demo/Example_Output_2.rb} 
+* {file:demo/demo3.rb} (interactive)
 
 
 == More Info

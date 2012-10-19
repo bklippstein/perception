@@ -5,9 +5,11 @@ Manifest.txt
 Rakefile.rb
 README.rdoc
 version.rb
-demo/demo_pp.rb
-demo/demo_system_info.rb
-demo/demo_zz.rb
+demo/demo1.rb
+demo/demo2.rb
+demo/demo3.rb
+demo/Example_Output_1.rb
+demo/Example_Output_2.rb
 init.rb
 lib/perception.rb
 lib/perception/const.rb

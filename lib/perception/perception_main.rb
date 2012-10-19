@@ -17,22 +17,27 @@ require 'kyanite/enumerable/structure'   # Methode contentclass
 
   
 
-# Perception: Human perceptible printouts
-# ========================================
+# = Perception: Human perceptible printouts
 #
 # Welcome to Perception. It's a intuitive toolkit for simple everyday debugging. 
-# Perception offers a powerfull replacement for print, puts and pp.
+# Perception offers a powerfull replacement for print, puts and pp 
+# and is an alternative to {https://github.com/michaeldv/awesome_print Awesome Print}.
+#
 # You get auto-intended and structured output on your console without any configuration.
+#
 # Perception also offers temporary printouts (overwritten by the next print),
 # printing two informations in one line without destroying the structure and
 # optionally slows down printing to readable speed, depending on the complexity of the output.
 #
 module Perception 
   
-  # Eine SeeSession-Instanz entspricht einer Session mit der Konsole.
+  # An instance of SeeSession corresponds to a session with the console.
   class SeeSession  
+  
+    # @group Automatic Indenting
     
     # Turns automatic indention ON. 
+    # @return void
     def indent!
       @indent           = true
       @level            = SEE_LEVEL_START
@@ -42,7 +47,8 @@ module Perception
     end
     
     
-    # Turns automatic indention OFF.    
+    # Turns automatic indention OFF.  
+    # @return void
     def left!
       @indent           = false
       @level            = SEE_LEVEL_START
@@ -50,10 +56,46 @@ module Perception
       @call_stack_now   = 0 
       nil
     end    
+    
+    # @group Slowing down
 
+    # Slows down output to readable speed. 
+    # The speed depends on the length and the complexity of the printing.
+    # You can adjust the speed with the parameter:
+    # * slow! 1    -->  same as slow!
+    # * slow! 2    -->  slow, but double speed
+    # * slow! 0.5  -->  even slower 
+    # * slow! nil  -->  full speed (same as fast!)
+    # @return void
+    # @param [Float] speed 
+    def slow!(speed=1)
+      @speed = speed  
+      nil
+    end  
+
+    
+    # Adjusts printing speed to full speed.
+    # This is used after slow!
+    # @return void    
+    def fast!
+      @speed = nil 
+      nil
+    end      
+
+    # @group Simple Benchmarking    
+    
+    # @return [Float] the time in seconds since the last printout with see.
+    def bench
+      return 0 unless @time_last
+      return (Time.now - @time_last)   
+    end    
+    
+    
+    # @group Progress Indicator   
     
     # Undos the last print. 
     # Note: Indention will get lost.
+    # @return void      
     def clear!     
       return if @cursor_now <= SEE_TAB_WIDTH * @level    
       return if @string_last.empty?
@@ -71,41 +113,16 @@ module Perception
     
     # Marks the last print as temporary.
     # The following print will overwrite it. 
-    # Note: Indention will get lost.    
+    # Note: Indention will get lost.  
+    # @return void  
     def temp! 
       @delayed_clear = true   
       nil
     end        
   
     
-    # Slows down output to readable speed. 
-    # The speed depends on the length and the complexity of the printing.
-    # You can adjust the speed with the parameter:
-    # * slow! 1    -->  same as slow!
-    # * slow! 2    -->  slow, but double speed
-    # * slow! 0.5  -->  even slower 
-    # * slow! nil  -->  full speed (same as fast!)
-    def slow!(speed=1)
-      @speed = speed  
-      nil
-    end  
+    # @group Two layers of information in one line       
 
-    
-    # Adjusts printing speed to full speed.
-    # This is used after slow!
-    def fast!
-      @speed = nil 
-      nil
-    end      
-
-    
-    # Returns the time in seconds since the last #see-printout. 
-    def bench
-      return 0 unless @time_last
-      return (Time.now - @time_last)   
-    end    
-
-    
     # Shows two informations in one line. See the demo.
     #
     # Via seee.flash! können zwei Informationen abwechselnd in der gleichen Zeile angezeigt werden.
@@ -114,6 +131,7 @@ module Perception
     # Ohne Angabe eines Zweittextes wird der Ersttext einfach zum Blinken gebracht. Nachträglich, also wenn er schon ausgegeben ist.
     # Das ist sehr nützlich, wenn man bestimme Werte verfolgen will.  
     #
+    # @return void      
     def flash!(alternativtext=' ', how_many=6)
       string_bak = @string_last.dup
       method_bak = @method_last    
@@ -149,6 +167,8 @@ class Object
 #  Wrapper for SeeSession
 #  
   
+  # @group Main methods  
+  
   # Returns the SeeSession-Object. Offers the following methods: 
   # * seee.indent!
   # * seee.left!
@@ -159,12 +179,34 @@ class Object
   # * seee.flash!
   # * seee.bench
   #
+  # @return [Perception::SeeSession]
   def seee
     return Perception::SeeSession.instance
   end  
   
+
+
   
-  # This is the main method. It prints out objects. See the demo.
+  # You get auto-intended and structured output on your console without any configuration. 
+  # Usage:
+  #   require 'perception'
+  # and use +see+ instead of +pp+, +puts+, +print+ and +.inspect+.
+  #
+  # This is the printout for a nested hash as example:
+  #  {:hash        =>  true,
+  #   :init        =>  true,
+  #   :nil         =>  nil,
+  #   :symbol      =>  :symbol,
+  #   :text        =>  'text',
+  #   :array       =>  [1,  2,  3],
+  #   :integer     =>  1,
+  #   :string      =>  'hallo',
+  #   :nochn_hash  =>  {:key=>:value,  :bla=>:blubb,  :array=>[:a, :b, :c],  :another_key=>'another value'}}  
+  #
+  # See more examples at {file:demo/Example_Output_1.rb} and {file:demo/Example_Output_2.rb} 
+  # or watch the interactive demo at {file:demo/demo3.rb}.
+  #
+  # @return [String]
   def see(input=:kein_input, *rest)
 
     if input == :kein_input  
@@ -181,6 +223,7 @@ class Object
   end # def
   
   
+  # @private
   def see_each(input)
     if self.contentclass == Array
       see_puts '['
@@ -190,11 +233,12 @@ class Object
     input.each {|elt| see elt}     
   end
   
-
+    # @group Several variants of see
 
   # Like see, but temporary print. 
   # The following print will overwrite it. 
-  # Note: Indention will get lost.      
+  # Note: Indention will get lost. 
+  # @return [String]
   def see_temp(input=:kein_input)
     if input == :kein_input  
       seee.delayed_newlines += 1   
@@ -206,6 +250,7 @@ class Object
   
   
   # Shows two informations in one line. See the demo.
+  # @return [String]  
   def see_flash(input=:kein_input, alternativtext=' ', times=6)
     if input == :kein_input  
       seee.delayed_newlines += 1   
@@ -218,7 +263,8 @@ class Object
   
   # Like see, but forces behavior like the originally puts method. 
   # So you get a newline after every print.
-  # Note: All newlines are delayed. This offers you to undo the print.    
+  # Note: All newlines are delayed. This offers you to undo the print.   
+  # @return [String]
   def see_puts(input=:kein_input)
     if input == :kein_input  
       seee.delayed_newlines += 1   
@@ -231,12 +277,14 @@ class Object
   # Like see, but forces behavior like the originally print method.  
   # So you have fully control over your newlines. 
   # Note: If you use "\n", #see will indent it. See SEE_LEVEL_START.
+  # @return [String]  
   def see_print(input=$_)
     return seee.process_print( input, :method => :print )
   end
   
   
-  # Like see, but forces behavior like the originally pp method.   
+  # Like see, but behavior similar to the originally pp method.   
+  # @return [String]  
   def see_pp(input=:kein_input)
     if input == :kein_input  
       seee.delayed_newlines += 1   
@@ -247,6 +295,7 @@ class Object
   
   
 
+  # @endgroup 
   
   
 

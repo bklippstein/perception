@@ -1,5 +1,9 @@
 # ruby encoding: utf-8
-# ü
+# 
+# This generates Example_Output_1.
+# --------------------------------
+#
+#
 if $0 == __FILE__ 
   require 'drumherum'
   smart_init
@@ -13,7 +17,7 @@ module Perception #:nodoc
     @@initialized_count = 0
   
     def initialize( announce_first=true )
-      #seee.out << :log
+      seee.out << :log
       @@initialized_count += 1
       return  if (@@initialized_count == 1  &&  !announce_first)
       #seee.slow!(0.5)
@@ -32,18 +36,21 @@ module Perception #:nodoc
       # wait_for_key('Press any key to start')
       
       
-    end # def
+    end # defü
   
   
   
     # Printing basic types
     def demo_see_basic_types
-      see '1dim Arrays:'
-      seee.indent!
+      see '1dim Arrays are printed verticaly, if their size is not too big:'
       see
+      seee.left!
+      see a=['this','is','an','array','1']
+      see b=['this','is','another','array','2']
+      see d=['complex array', [1,2,3], {:key => :value, :love => :baby}, 4.0, :four]
+      see []        
       see
       see 'Other Objects:'
-      see []      
       see 'ordinary string (without "")'
       see '(next one is empty)'
       see ''
@@ -55,17 +62,30 @@ module Perception #:nodoc
       see false
       see :a_symbol
  
-      see ['complex array', [1,2,3], {:key => :value, :love => :baby}, 3.0 , '']
     end # def
     
     
     def demo_see_pp_object
+      see 'Nested objects reveal their structure. Lower hierary levels may be reduced for this:'
+      see    
       seee.logger
       see seee
+      see
+      see 'The Logger has been reduced. This is it''s detail view:'
+      see
+      see seee.logger
+      see
+      see
+      see 'PrettyPrint shows all at one, but it''s very hard to read:' 
+      see
+      pp seee
     end
     
     
+    
     def demo_see_pp_array  
+      see '2dim Arrays are printed like a table:'
+      see      
       @array1 = []
       @array1 << ['this','is','an','array','1']
       @array1 << ['this','is','another','array','2']
@@ -129,13 +149,14 @@ module Perception #:nodoc
     
     
     def self.see_all_demos
-      Perception::DemoSee.new('PrettyPrint Array').demo_see_pp_array     
-      Perception::DemoSee.new('PrettyPrint Object').demo_see_pp_object  
-      Perception::DemoSee.new('PrettyPrint Hash').demo_see_pp_hash       
-      Perception::DemoSee.new('PrettyPrint Dictionary').demo_see_pp_dictionary      
+      Perception::DemoSee.new('Basic Types').demo_see_basic_types      
+      Perception::DemoSee.new('2dimensional Arrays').demo_see_pp_array     
+      Perception::DemoSee.new('Nested Objects').demo_see_pp_object  
+      Perception::DemoSee.new('Hash').demo_see_pp_hash       
+      Perception::DemoSee.new('Dictionary').demo_see_pp_dictionary      
 
       
-      Perception::DemoSee.new('PrettyPrint div').demo_see_basic_types  
+
  
     end
 
@@ -147,6 +168,7 @@ end # class
 
 if $0 == __FILE__ then
 
+# seee.out << :log
 Perception::DemoSee.see_all_demos
 
    
