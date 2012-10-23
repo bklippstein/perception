@@ -11,7 +11,7 @@ end
 module Perception 
 
 
- module NumericI 
+  module NumericI 
  
     # ------------------------------------------------------------------------------
     # @group Intelligent round: slash needless digits

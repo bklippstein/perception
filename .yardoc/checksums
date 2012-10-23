@@ -1,9 +1,0 @@
-lib/perception.rb d3d2829069930f1fcf43c14ca0d9e2e7587ab104
-lib/perception/ppp.rb e8a1ef9644899385fa16e14ba620a6f11f80ef69
-lib/perception/const.rb f232b3095d578dd33c2c9b298d069c7adac8b0ce
-lib/perception/numeric.rb 042763cb3c1d884b34ea033aa694045b9d862cc9
-lib/perception/logging.rb 349f8c1740b1c627845204ee7dd6d89e94fa541f
-lib/perception/string_spread.rb f6114c1ac4e67966ef622bc22e1fd6e766ca0b8f
-lib/perception/date_and_time.rb 7befd545bb7552ef0ff1afa957a38bf513b73dc0
-lib/perception/perception_main.rb c7b68766a2620217fe8f83c11243af16bc85e47f
-lib/perception/perception_private.rb 3d685f8a943fe6a44f7b42198d3faba4d63721fb
