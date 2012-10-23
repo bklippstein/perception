@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII" />
+<title>
+  File: Example_Output_1
+  
+    &mdash; Documentation by YARD 0.8.3
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/klippstein.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/klippstein.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: Example_Output_1</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'><pre class="code ruby"># See source code and run it for yourself: {file:demo/demo1.rb}
+
+
+    Basic Types
+    ===========
+
+
+    1dim Arrays are printed verticaly, if their size is not too big:
+
+
+    ['this', 'is', 'an', 'array', '1']
+    ['this', 'is', 'another', 'array', '2']
+    ['complex array', [1, 2, 3], {:key=&gt;:value, :love=&gt;:baby}, 4.0, :four]
+    []
+
+
+    Other Objects:
+    ordinary string (without &quot;&quot;)
+    (next one is empty)
+    empty
+            1
+            2
+            3     
+    nil
+    true
+    false
+    :a_symbol
+
+
+
+
+
+
+    2dimensional Arrays
+    ===================
+
+
+    2dim Arrays are printed like a table:
+
+
+    [['this',   'is',           'an',      'array',   '1'], 
+     ['this',   'is',           'another', 'array',   '2'], 
+     ['and',    'this',         'is',      'another', :tree], 
+     ['no',     {:key=&gt;:value}, 'just',    'another', 'array']]
+
+
+
+
+    [['one',     'a',                                    'b',                                    'c'],
+     ['two',     'long_longlong_long_long',              'also_long, also_long, also_long_also', 'hallo'],
+     ['three',   'also_long, also_long, also_long_also', 'also_long, also_long, also_long_also', 'long_longlong_long_long']]
+
+
+
+
+
+
+    Nested Objects
+    ==============
+
+
+    Nested objects reveal their structure. Lower hierary levels may be reduced for this:
+
+
+    #&lt;Perception::SeeSession:0x2aa0cc8
+     @call_stack_last =  5,
+     @call_stack_now =   6,
+     @cursor_now =       1148,
+     @delayed_clear =    false,
+     @delayed_newlines = 0,
+     @indent =           false,
+     @level =            1,
+     @logger =           #&lt;Logger:0x2ae80c8  @default_formatter=#&lt;&gt;,  @formatter=nil,  @level=0,  @logdev=#&lt;&lt;&gt;&lt;&lt;&gt;&gt;&gt;,  @progname=nil&gt;,
+     @method_last =      :puts,
+     @method_now =       :pp,
+     @out =              {:console, :log},
+     @speed =            nil,
+     @string_last =      '
+    ',
+     @time_last =        2012-10-18 Thursday 23:27:03&gt;
+
+
+    The Logger has been reduced. This is its detail view:
+
+
+    #&lt;Logger:0x2ae80c8
+     @default_formatter = #&lt;Logger::Formatter:0x2ae8020  @datetime_format=nil&gt;,
+     @formatter =         nil,
+     @level =             0,
+     @logdev =            #&lt;Logger::LogDevice:0x2af3750  @dev=#&lt;File:C:/Ruby-Projekte/perception/log/see.log&gt;,  @filename='C:/Ruby-Projekte/perception/log/see.log',  @mutex=#&lt;&lt;&gt;&gt;,  @shift_age=0,  @shift_size=1048576&gt;,
+     @progname =          nil&gt;
+
+
+
+
+    PrettyPrint shows all at one, but its very hard to read:
+
+
+    PrettyPrint shows all at one, but its very hard to read:
+
+    #&lt;Perception::SeeSession:0x2aa0cc8
+     @call_stack_last=5,
+     @call_stack_now=5,
+     @cursor_now=2196,
+     @delayed_clear=false,
+     @delayed_newlines=1,
+     @indent=false,
+     @level=1,
+     @logger=
+      #&lt;Logger:0x2ae80c8
+       @default_formatter=#&lt;Logger::Formatter:0x2ae8020 @datetime_format=nil&gt;,
+       @formatter=nil,
+       @level=0,
+       @logdev=
+        #&lt;Logger::LogDevice:0x2af3750
+         @dev=#&lt;File:C:/Ruby-Projekte/perception/log/see.log&gt;,
+         @filename='C:/Ruby-Projekte/perception/log/see.log',
+         @mutex=
+          #&lt;Logger::LogDevice::LogDeviceMutex:0x2af3738
+           @mon_count=0,
+           @mon_mutex=#&lt;Mutex:0x2af36c0&gt;,
+           @mon_owner=nil&gt;,
+         @shift_age=0,
+         @shift_size=1048576&gt;,
+       @progname=nil&gt;,
+     @method_last=:puts,
+     @method_now=:puts,
+     @out={:console, :log},
+     @speed=nil,
+     @string_last='',
+     @time_last=2012-10-18 Thursday 23:27:03&gt;
+
+
+
+
+
+
+
+    Hash
+    ====
+
+
+    {:this=&gt;:hash,  :in=&gt;:one,  :see=&gt;'short hash in one line'}
+
+
+
+
+    {:this         =&gt;  :hash,
+     :size         =&gt;  '&gt; 3',
+     :see          =&gt;  'longer hash in multiple lines',
+     :another_key  =&gt;  'another value'}
+
+
+
+
+    {:hash        =&gt;  true,
+     :init        =&gt;  true,
+     :nil         =&gt;  nil,
+     :symbol      =&gt;  :symbol,
+     :text        =&gt;  'text',
+     :array       =&gt;  [1,  2,  3],
+     :integer     =&gt;  1,
+     :string      =&gt;  'hallo',
+     :nochn_hash  =&gt;  {:key=&gt;:value,  :bla=&gt;:blubb,  :array=&gt;[:a, :b, :c],  :another_key=&gt;'another value'}}
+
+
+
+
+
+
+    Dictionary
+    ==========
+
+
+    {:a_dictionary     =&gt;  true,
+     :b_init           =&gt;  true,
+     :c_symbol         =&gt;  :symbol,
+     :d_array          =&gt;  [1,  2,  3],
+     :e_integer        =&gt;  1,
+     :f_string         =&gt;  'hallo',
+     :g_subdictionary  =&gt;  {:a=&gt;:value,  :b=&gt;'blubb',  :c=&gt;2,  :d=&gt;[:a, :b, :c],  :e=&gt;{:key=&gt;:value},  :f=&gt;'hallo'}}
+     
+     </pre></div></div>
+
+    <div id="footer">
+  Generated on Tue Oct 23 14:08:23 2012 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.3 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>
