@@ -16,17 +16,18 @@ require 'perception'
 #  
 # http://nubyonrails.com/articles/tutorial-publishing-rubygems-with-hoe
 #
-$hoe = Hoe.spec Drumherum.project_name do 
+$hoe = Hoe.spec Drumherum.project_name do |p|
 
-  # self.rubyforge_name = 'yourgemx' # if different than 'yourgem'
-   
-  developer('Bjoern Klippstein', 'klippstein@klippstein.com')
-  summary               = 'Beautiful and readable printouts for console and logs.' 
-  extra_deps            << ['drumherum',  '>= 0.1.19']
-  extra_deps            << ['kyanite',    '>= 0.5.17']
-  extra_deps            << ['highline',   '>= 1.6.15']
-  remote_rdoc_dir = '' # Release to root only one project  
-  urls                  = [[Drumherum.url_docs], [Drumherum.url_source]]
+  p.summary               = 'Beautiful and readable printouts for console and logs.' 
+  p.description           = 'Beautiful and readable printouts for console and logs.' 
+  p.extra_deps            << ['drumherum',  '>= 0.1.27']
+  p.extra_deps            << ['kyanite',    '>= 0.5.17']
+  p.extra_deps            << ['highline',   '>= 1.6.15']
+  p.extra_dev_deps        << ['yard_klippstein_template', '>= 0.0.20']    
+  
+  p.developer('Bjoern Klippstein', 'klippstein@klippstein.com')  
+  p.remote_rdoc_dir = '' # Release to root only one project  
+  p.urls                  = [Drumherum.url_docs, Drumherum.url_source]
                               
 end
 
