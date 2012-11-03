@@ -63,11 +63,14 @@
   
 </div>
       <div class="clear"></div>
+      <div id="project-header">
+  
+</div>      
     </div>
-
-    <iframe id="search_frame"></iframe>
-
-    <div id="content"><h1>Class: Perception::SeeSession
+    
+    <div id="body">    
+      <iframe id="search_frame"></iframe>
+      <div id="content"><h1>Class: Perception::SeeSession
   
   
   
@@ -75,19 +78,21 @@
 
 <dl class="box">
   
-    <dt class="r1">Inherits:</dt>
-    <dd class="r1">
-      <span class="inheritName"><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></span>
-      
-        <ul class="fullTree">
-          <li><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></li>
-          
-            <li class="next">Perception::SeeSession</li>
-          
-        </ul>
-        <a href="#" class="inheritanceTree">show all</a>
-      
+    <div class="row">
+      <dt class="r1">Inherits</dt>
+      <dd class="r1">
+        <span class="inheritName"><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></span>
+        
+          <ul class="fullTree">
+            <li><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></li>
+            
+              <li class="next">Perception::SeeSession</li>
+            
+          </ul>
+          <a href="#" class="inheritanceTree">show all</a>
+        
       </dd>
+    </div>
     
   
   
@@ -97,15 +102,17 @@
   
   
   
-    <dt class="r2 last">Defined in:</dt>
+    <div class="row">      
+    <dt class="r2 last">Defined in</dt>
     <dd class="r2 last">lib/perception/perception_main.rb<span class="defines">,<br />
   lib/perception/logging.rb,<br /> lib/perception/perception_private.rb</span>
 </dd>
-  
+    </div>     
+   
 </dl>
 <div class="clear"></div>
 
-<h2>Overview</h2><div class="docstring">
+<div class="docstring">
   <div class="discussion">
     
 <p>An instance of SeeSession corresponds to a session with the console.</p>
@@ -117,21 +124,6 @@
   
 
 </div>
-  <h2>Constant Summary</h2>
-  
-    <dl class="constants">
-      
-        <dt id="instance-classvariable" class="">@@instance =
-          
-        </dt>
-        <dd><pre class="code"><span class='kw'>nil</span></pre></dd>
-      
-    </dl>
-  
-
-
-
-
 
 
 
@@ -152,18 +144,17 @@
     
   </span>
   
-  
-  
-  
-  
-  
-  
-
-  
     <span class="summary_desc"><div class='inline'>
 <p>Prints a separator, the actual time and an optional message in the log
 file.</p>
 </div></span>
+    
+  
+  
+  
+  
+  
+  
   
 </li>
 
@@ -177,18 +168,17 @@ file.</p>
     
   </span>
   
-  
-  
-  
-  
-  
-  
-
-  
     <span class="summary_desc"><div class='inline'>
 <p>Looks for a good place to save the log file, creates log directory &amp;
 log file if necessary and instantiates Logger Object.</p>
 </div></span>
+    
+  
+  
+  
+  
+  
+  
   
 </li>
 
@@ -211,17 +201,16 @@ log file if necessary and instantiates Logger Object.</p>
     
   </span>
   
-  
-  
-  
-  
-  
-  
-
-  
     <span class="summary_desc"><div class='inline'>
 <p>Turns automatic indention ON.</p>
 </div></span>
+    
+  
+  
+  
+  
+  
+  
   
 </li>
 
@@ -235,17 +224,16 @@ log file if necessary and instantiates Logger Object.</p>
     
   </span>
   
-  
-  
-  
-  
-  
-  
-
-  
     <span class="summary_desc"><div class='inline'>
 <p>Turns automatic indention OFF.</p>
 </div></span>
+    
+  
+  
+  
+  
+  
+  
   
 </li>
 
@@ -268,17 +256,16 @@ log file if necessary and instantiates Logger Object.</p>
     
   </span>
   
-  
-  
-  
-  
-  
-  
-
-  
     <span class="summary_desc"><div class='inline'>
 <p>Adjusts printing speed to full speed.</p>
 </div></span>
+    
+  
+  
+  
+  
+  
+  
   
 </li>
 
@@ -292,17 +279,16 @@ log file if necessary and instantiates Logger Object.</p>
     
   </span>
   
-  
-  
-  
-  
-  
-  
-
-  
     <span class="summary_desc"><div class='inline'>
 <p>Slows down output to readable speed.</p>
 </div></span>
+    
+  
+  
+  
+  
+  
+  
   
 </li>
 
@@ -325,17 +311,16 @@ log file if necessary and instantiates Logger Object.</p>
     
   </span>
   
-  
-  
-  
-  
-  
-  
-
-  
     <span class="summary_desc"><div class='inline'>
 <p>The time in seconds since the last printout with see.</p>
 </div></span>
+    
+  
+  
+  
+  
+  
+  
   
 </li>
 
@@ -358,17 +343,16 @@ log file if necessary and instantiates Logger Object.</p>
     
   </span>
   
-  
-  
-  
-  
-  
-  
-
-  
     <span class="summary_desc"><div class='inline'>
 <p>Undos the last print.</p>
 </div></span>
+    
+  
+  
+  
+  
+  
+  
   
 </li>
 
@@ -382,17 +366,16 @@ log file if necessary and instantiates Logger Object.</p>
     
   </span>
   
-  
-  
-  
-  
-  
-  
-
-  
     <span class="summary_desc"><div class='inline'>
 <p>Marks the last print as temporary.</p>
 </div></span>
+    
+  
+  
+  
+  
+  
+  
   
 </li>
 
@@ -415,23 +398,39 @@ log file if necessary and instantiates Logger Object.</p>
     
   </span>
   
-  
-  
-  
-  
-  
-  
-
-  
     <span class="summary_desc"><div class='inline'>
 <p>Shows two informations in one line.</p>
 </div></span>
+    
+  
+  
+  
+  
+  
+  
   
 </li>
 
       
     </ul>
   
+
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <div class="constants-dl-row">      
+        <dt id="instance-classvariable" class="">@@instance =
+          
+        </dt>
+        <dd><pre class="code"><span class='kw'>nil</span></pre></dd>
+        </div>    
+      
+    </dl>
+  
+
+
 
 
 
@@ -1262,17 +1261,22 @@ Note: Indention will get lost.</p>
   </div>
 
 </div>
+    </div>   
 
-    <div id="footer">
-  Generated on Fri Oct 26 12:15:03 2012 by
-  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a> 0.8.3
-  with <a href="http://bklippstein.github.com/yard_klippstein_template/index.html" 
-          title="Klippstein Template for Ruby YARD" 
-          target="_parent">
-          yard_klippstein_template
-          </a>  
+    <div id="footer">      
+      <div id="project-footer">
+</div>      
+      Generated on Sat Nov  3 01:18:31 2012 by
+<a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a> 0.8.3
+with <a href="http://bklippstein.github.com/yard_klippstein_template/index.html" 
+        title="Klippstein Template for Ruby YARD" 
+        target="_parent">
+        yard_klippstein_template
+        </a>  
 
-</div>
 
+
+    </div>     
+    
   </body>
 </html>

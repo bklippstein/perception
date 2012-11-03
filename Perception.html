@@ -63,11 +63,14 @@
   
 </div>
       <div class="clear"></div>
+      <div id="project-header">
+  
+</div>      
     </div>
-
-    <iframe id="search_frame"></iframe>
-
-    <div id="content"><h1>Module: Perception
+    
+    <div id="body">    
+      <iframe id="search_frame"></iframe>
+      <div id="content"><h1>Module: Perception
   
   
   
@@ -82,15 +85,34 @@
   
   
   
-    <dt class="r1 last">Defined in:</dt>
+    <div class="row">      
+    <dt class="r1 last">Defined in</dt>
     <dd class="r1 last">lib/perception/const.rb<span class="defines">,<br />
   lib/perception/numeric.rb,<br /> lib/perception/logging.rb,<br /> lib/perception/string_spread.rb,<br /> lib/perception/date_and_time.rb,<br /> lib/perception/perception_main.rb,<br /> lib/perception/perception_private.rb</span>
 </dd>
-  
+    </div>     
+   
 </dl>
 <div class="clear"></div>
 
-<h2>Overview</h2><div class="docstring">
+<div class="box-additions">
+  <dl class="box">
+    <div class="row">     
+    <dt class="r1 last">Defined Under Namespace</dt>
+    <dd class="r1 last">
+      
+        
+          <strong class="modules">Modules:</strong> <span class='object_link'><a href="Perception/NumericI.html" title="Perception::NumericI (module)">NumericI</a></span>, <span class='object_link'><a href="Perception/TimeI.html" title="Perception::TimeI (module)">TimeI</a></span>
+        
+      
+        
+          <strong class="classes">Classes:</strong> <span class='object_link'><a href="Perception/SeeSession.html" title="Perception::SeeSession (class)">SeeSession</a></span>
+        
+       
+    </dd>
+    </div>      
+  </dl>
+</div><div class="docstring">
   <div class="discussion">
     
 <h1>Perception: Human perceptible printouts</h1>
@@ -113,23 +135,16 @@ complexity of the output.</p>
 <div class="tags">
   
 
-</div><h2>Defined Under Namespace</h2>
-<p class="children">
-  
-    
-      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Perception/NumericI.html" title="Perception::NumericI (module)">NumericI</a></span>, <span class='object_link'><a href="Perception/TimeI.html" title="Perception::TimeI (module)">TimeI</a></span>
-    
-  
-    
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Perception/SeeSession.html" title="Perception::SeeSession (class)">SeeSession</a></span>
-    
-  
-</p>
+</div>
+
+
+
 
   <h2>Constant Summary</h2>
   
     <dl class="constants">
       
+        <div class="constants-dl-row">      
         <dt id="TIME_FORMATS-constant" class="">TIME_FORMATS =
           
         </dt>
@@ -138,97 +153,135 @@ complexity of the output.</p>
 </span>      <span class='symbol'>:iso</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>%Y-%m-%d</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>%Y-%m-%d  %H:%M</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>%Y-%m-%d  %H:%M:%S</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>%Y-%m-%d  %H:%M:%S</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>%Y-%m-%d %A %H:%M:%S</span><span class='tstring_end'>'</span></span>  <span class='rbracket'>]</span><span class='comma'>,</span>
       <span class='symbol'>:de</span>  <span class='op'>=&gt;</span> <span class='lbracket'>[</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>%d.%b.%Y</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>%d.%b.%Y  %H:%M</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>%d.%b.%Y  %H:%M:%S</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>%d. %B %Y  %H:%M:%S</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>%A, %d. %B %Y  %H:%M:%S</span><span class='tstring_end'>'</span></span>  <span class='rbracket'>]</span>   <span class='comment'># %e is not working
 </span><span class='rbrace'>}</span></pre></dd>
+        </div>    
       
+        <div class="constants-dl-row">      
         <dt id="RULER-constant" class="">RULER =
           
         </dt>
         <dd><pre class="code"><span class='id identifier rubyid_r100'>r100</span> <span class='op'>+</span> <span class='id identifier rubyid_r100'>r100</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_r10'>r10</span> <span class='op'>+</span> <span class='id identifier rubyid_r10'>r10</span></pre></dd>
+        </div>    
       
+        <div class="constants-dl-row">      
         <dt id="SEE_PERCEPTION_TIME_PER_WORD-constant" class="">SEE_PERCEPTION_TIME_PER_WORD =
           
         </dt>
         <dd><pre class="code"><span class='int'>200</span></pre></dd>
+        </div>    
       
+        <div class="constants-dl-row">      
         <dt id="SEE_TAB_WIDTH-constant" class="">SEE_TAB_WIDTH =
           
         </dt>
         <dd><pre class="code"><span class='int'>2</span></pre></dd>
+        </div>    
       
+        <div class="constants-dl-row">      
         <dt id="SEE_LEVEL_START-constant" class="">SEE_LEVEL_START =
           
         </dt>
         <dd><pre class="code"><span class='int'>1</span></pre></dd>
+        </div>    
       
+        <div class="constants-dl-row">      
         <dt id="SEE_INDENT_START-constant" class="">SEE_INDENT_START =
           
         </dt>
         <dd><pre class="code"><span class='kw'>false</span></pre></dd>
+        </div>    
       
+        <div class="constants-dl-row">      
         <dt id="PPP_KOMMA-constant" class="">PPP_KOMMA =
           
         </dt>
         <dd><pre class="code"><span class='int'>1</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span></pre></dd>
+        </div>    
       
+        <div class="constants-dl-row">      
         <dt id="PPP_SEARCH-constant" class="">PPP_SEARCH =
           
         </dt>
         <dd><pre class="code"><span class='int'>2</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span></pre></dd>
+        </div>    
       
+        <div class="constants-dl-row">      
         <dt id="PPP_GESCHW_KLAMMER_AUF-constant" class="">PPP_GESCHW_KLAMMER_AUF =
           
         </dt>
         <dd><pre class="code"><span class='int'>3</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span></pre></dd>
+        </div>    
       
+        <div class="constants-dl-row">      
         <dt id="PPP_GESCHW_KLAMMER_ZU-constant" class="">PPP_GESCHW_KLAMMER_ZU =
           
         </dt>
         <dd><pre class="code"><span class='int'>4</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span></pre></dd>
+        </div>    
       
+        <div class="constants-dl-row">      
         <dt id="PPP_ECKIGE_KLAMMER_AUF-constant" class="">PPP_ECKIGE_KLAMMER_AUF =
           
         </dt>
         <dd><pre class="code"><span class='int'>5</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span></pre></dd>
+        </div>    
       
+        <div class="constants-dl-row">      
         <dt id="PPP_ECKIGE_KLAMMER_ZU-constant" class="">PPP_ECKIGE_KLAMMER_ZU =
           
         </dt>
         <dd><pre class="code"><span class='int'>6</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span></pre></dd>
+        </div>    
       
+        <div class="constants-dl-row">      
         <dt id="PPP_SPITZE_KLAMMER_AUF-constant" class="">PPP_SPITZE_KLAMMER_AUF =
           
         </dt>
         <dd><pre class="code"><span class='int'>14</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span></pre></dd>
+        </div>    
       
+        <div class="constants-dl-row">      
         <dt id="PPP_SPITZE_KLAMMER_ZU-constant" class="">PPP_SPITZE_KLAMMER_ZU =
           
         </dt>
         <dd><pre class="code"><span class='int'>15</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span></pre></dd>
+        </div>    
       
+        <div class="constants-dl-row">      
         <dt id="PPP_PFEIL-constant" class="">PPP_PFEIL =
           
         </dt>
         <dd><pre class="code"><span class='int'>16</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span><span class='op'>+</span><span class='int'>16</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span></pre></dd>
+        </div>    
       
+        <div class="constants-dl-row">      
         <dt id="PPP_TUDDELCHEN1-constant" class="">PPP_TUDDELCHEN1 =
           
         </dt>
         <dd><pre class="code"><span class='int'>17</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span></pre></dd>
+        </div>    
       
+        <div class="constants-dl-row">      
         <dt id="PPP_TUDDELCHEN2-constant" class="">PPP_TUDDELCHEN2 =
           
         </dt>
         <dd><pre class="code"><span class='int'>18</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span></pre></dd>
+        </div>    
       
+        <div class="constants-dl-row">      
         <dt id="PPP_ANTI_NEWLINE-constant" class="">PPP_ANTI_NEWLINE =
           
         </dt>
         <dd><pre class="code"><span class='int'>31</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span></pre></dd>
+        </div>    
       
+        <div class="constants-dl-row">      
         <dt id="PPP_TR_ARRAY_P-constant" class="">PPP_TR_ARRAY_P =
           
         </dt>
         <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>%q{</span><span class='tstring_content'>'&quot;{}[]&lt;&gt;</span><span class='tstring_end'>}</span></span></pre></dd>
+        </div>    
       
+        <div class="constants-dl-row">      
         <dt id="PPP_TR_ARRAY_Q-constant" class="">PPP_TR_ARRAY_Q =
           
         </dt>
@@ -236,16 +289,21 @@ complexity of the output.</p>
 <span class='const'>PPP_GESCHW_KLAMMER_AUF</span> <span class='op'>+</span> <span class='const'>PPP_GESCHW_KLAMMER_ZU</span> <span class='op'>+</span>  
 <span class='const'>PPP_ECKIGE_KLAMMER_AUF</span> <span class='op'>+</span> <span class='const'>PPP_ECKIGE_KLAMMER_ZU</span> <span class='op'>+</span> 
 <span class='const'>PPP_SPITZE_KLAMMER_AUF</span> <span class='op'>+</span> <span class='const'>PPP_SPITZE_KLAMMER_ZU</span></pre></dd>
+        </div>    
       
+        <div class="constants-dl-row">      
         <dt id="PPP_TR_ARRAY_R-constant" class="">PPP_TR_ARRAY_R =
           
         </dt>
         <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>%q{</span><span class='tstring_content'>'&quot;{}[]&lt;&gt;</span><span class='tstring_end'>}</span></span></pre></dd>
+        </div>    
       
+        <div class="constants-dl-row">      
         <dt id="PPP_TR_ALL-constant" class="">PPP_TR_ALL =
           
         </dt>
         <dd><pre class="code"><span class='const'>PPP_TR_ARRAY_Q</span> <span class='op'>+</span> <span class='const'>PPP_KOMMA</span> <span class='op'>+</span> <span class='const'>PPP_ANTI_NEWLINE</span></pre></dd>
+        </div>    
       
     </dl>
   
@@ -254,22 +312,23 @@ complexity of the output.</p>
 
 
 
-
-
-
-
 </div>
+    </div>   
 
-    <div id="footer">
-  Generated on Fri Oct 26 12:15:03 2012 by
-  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a> 0.8.3
-  with <a href="http://bklippstein.github.com/yard_klippstein_template/index.html" 
-          title="Klippstein Template for Ruby YARD" 
-          target="_parent">
-          yard_klippstein_template
-          </a>  
+    <div id="footer">      
+      <div id="project-footer">
+</div>      
+      Generated on Sat Nov  3 01:18:31 2012 by
+<a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a> 0.8.3
+with <a href="http://bklippstein.github.com/yard_klippstein_template/index.html" 
+        title="Klippstein Template for Ruby YARD" 
+        target="_parent">
+        yard_klippstein_template
+        </a>  
 
-</div>
 
+
+    </div>     
+    
   </body>
 </html>
