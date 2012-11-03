@@ -20,7 +20,7 @@ $hoe = Hoe.spec Drumherum.project_name do |p|
 
   p.summary               = 'Beautiful and readable printouts for console and logs.' 
   p.description           = 'Beautiful and readable printouts for console and logs.' 
-  p.extra_deps            << ['drumherum',  '>= 0.1.29']
+  p.extra_deps            << ['drumherum',  '>= 0.1.31']
   p.extra_deps            << ['kyanite',    '>= 0.7.2']
   p.extra_deps            << ['highline',   '>= 1.6.15']
   p.extra_dev_deps        << ['yard_klippstein_template', '>= 0.0.37']    

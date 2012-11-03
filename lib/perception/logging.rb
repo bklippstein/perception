@@ -37,14 +37,21 @@ module Perception
       
       # Logfile festlegen
       unless logdir      
-        smart_init   if Drumherum.directory_main.empty?
-        logdir = File.expand_path(File.join(Drumherum.directory_main, 'log'))
-        # puts "logdir= #{logdir}   size=#{logdir.split('/').size}"
-      end
-      if ( logdir.nil?  ||  logdir.empty?  ||  logdir == 'test/log'  ||  logdir.split('/').size <= 2)
-        require 'tmpdir'
-        logdir = Dir::tmpdir + '/log'
-      end
+      
+        if Drumherum.host_os == :windows
+          smart_init   if Drumherum.directory_main.empty?
+          logdir = File.expand_path(File.join(Drumherum.directory_main, 'log'))
+          # puts "logdir= #{logdir}   size=#{logdir.split('/').size}"
+          if ( logdir.nil?  ||  logdir.empty?  ||  logdir == 'test/log'  ||  logdir.split('/').size <= 2)
+            require 'tmpdir'
+            logdir = Dir::tmpdir + '/log'
+          end          
+        else # :linux
+          logdir = "~/log"
+        end        
+
+      end # unless
+
       mycaller = CallerUtils.mycaller(:skip => ['perception', 'ruby\gems', 'ruby/gems', 'test/unit'])    
       logfile =  File.join(logdir, filename)
       #puts "mycaller=#{mycaller.inspect_pp}"
