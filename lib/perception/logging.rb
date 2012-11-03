@@ -42,13 +42,11 @@ module Perception
           smart_init   if Drumherum.directory_main.empty?
           logdir = File.expand_path(File.join(Drumherum.directory_main, 'log'))
           # puts "logdir= #{logdir}   size=#{logdir.split('/').size}"
-          if ( logdir.nil?  ||  logdir.empty?  ||  logdir == 'test/log'  ||  logdir.split('/').size <= 2)
-            require 'tmpdir'
-            logdir = Dir::tmpdir + '/log'
-          end          
-        else # :linux
-          logdir = "~/log"
-        end        
+        end # if windows     
+        if ( Drumherum.host_os != :windows  ||  logdir.nil?  ||  logdir.empty?  ||  logdir == 'test/log'  ||  logdir.split('/').size <= 2 )
+          require 'tmpdir'
+          logdir = Dir::tmpdir + '/log'
+        end          
 
       end # unless
 
@@ -62,7 +60,7 @@ module Perception
       begin
         # Dir erzeugen
         unless File.exist?(logdir)
-          Dir.mkdir(logdir)
+          FileUtils.makedirs(logdir)
           puts "\n\nSeeSession#logger: Directory #{logdir} created\n\n"
         end
         # File erzeugen
