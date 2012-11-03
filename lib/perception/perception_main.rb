@@ -6,7 +6,7 @@ if $0 == __FILE__
   require 'perception'
 end
 
-require 'kyanite/array/array'
+require 'kyanite/array'
 require 'kyanite/enumerable/structure'   # Methode contentclass
 
 # Get auto-intended output on your console without any configuration,

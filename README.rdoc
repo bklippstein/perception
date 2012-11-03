@@ -38,7 +38,7 @@ More: {Perception::NumericI#inspect_see inspect_see}
 
 == More Info
 * *Documentation*: {http://bklippstein.github.com/drumherum/frames.html github.com/drumherum}
-* *Source* *code*: {https://github.com/bklippstein/drumherum github.com/bklippstein/drumherum}
+* *Source* *code*: {https://github.com/bklippstein/drumherum github.com/bklippstein}
 * *License*: {http://creativecommons.org/licenses/by-sa/3.0/de/deed.en cc-by-sa Creative Commons Attribution-Share Alike 3.0 Germany}
 * *Autor*: {mailto:klippstein@klippstein.com Björn Klippstein}
 

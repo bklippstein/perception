@@ -5,10 +5,10 @@
 require 'drumherum'
 require 'pp'
 require 'set'
-require 'kyanite/string/mgsub'
+require 'kyanite/string/misc'
 require 'kyanite/string/nested'
 require 'kyanite/general/callerutils'
-require 'kyanite/array/array'
+require 'kyanite/array'
 
 
 require 'perception/const' 

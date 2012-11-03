@@ -20,14 +20,14 @@ $hoe = Hoe.spec Drumherum.project_name do |p|
 
   p.summary               = 'Beautiful and readable printouts for console and logs.' 
   p.description           = 'Beautiful and readable printouts for console and logs.' 
-  p.extra_deps            << ['drumherum',  '>= 0.1.27']
-  p.extra_deps            << ['kyanite',    '>= 0.5.17']
+  p.extra_deps            << ['drumherum',  '>= 0.1.29']
+  p.extra_deps            << ['kyanite',    '>= 0.7.2']
   p.extra_deps            << ['highline',   '>= 1.6.15']
-  p.extra_dev_deps        << ['yard_klippstein_template', '>= 0.0.20']    
+  p.extra_dev_deps        << ['yard_klippstein_template', '>= 0.0.37']    
   
   p.developer('Bjoern Klippstein', 'klippstein@klippstein.com')  
   p.remote_rdoc_dir = '' # Release to root only one project  
-  p.urls                  = [Drumherum.url_docs, Drumherum.url_source]
+  p.urls                  = [Drumherum.url_docs, 'https://github.com/bklippstein']
                               
 end
 
