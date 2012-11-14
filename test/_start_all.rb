@@ -2,6 +2,8 @@
 # 
 #	Führt alle Tests aus
 #
+require 'drumherum'
+smart_init 
+Dir["#{File.join(Drumherum::directory_main, 'test')}/test_*.rb"].sort.each { |t| require t }  
 
-test_verzeichnis = File.expand_path(File.dirname(__FILE__) )    
-Dir["#{File.join(test_verzeichnis)}/test_*.rb"].sort.each { |t| require t }  
+
