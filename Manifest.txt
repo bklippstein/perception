@@ -12,6 +12,7 @@ demo/Example_Output_1.rb
 demo/Example_Output_2.rb
 init.rb
 lib/perception.rb
+lib/perception/_test_all.rb
 lib/perception/const.rb
 lib/perception/date_and_time.rb
 lib/perception/logging.rb
@@ -21,7 +22,6 @@ lib/perception/perception_private.rb
 lib/perception/ppp.rb
 lib/perception/string_spread.rb
 profile.rb
-test/_start_all.rb
 test/test_date_and_time.rb
 test/test_numeric.rb
 test/test_ppp.rb
